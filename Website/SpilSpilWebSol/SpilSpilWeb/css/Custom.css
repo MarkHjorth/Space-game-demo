@@ -1,0 +1,9 @@
+﻿.break-list li {
+    width: 34%;
+    float: left;
+    margin-right: 8%;
+}
+
+.x-small {
+    font-size: 50%;
+}
