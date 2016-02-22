@@ -23,4 +23,15 @@ public class BulletScript : MonoBehaviour
         // Destroy the bullet 
         Destroy(gameObject);
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        var name = collider.name;
+        if (name == "Enemy")
+        {
+            Debug.Log("HIT!");
+            Destroy(collider.gameObject);
+        }
+    }
+        
 }

@@ -31,16 +31,6 @@ public class PlayerMobility : MonoBehaviour {
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         Vector3 forward = new Vector3(0f, 0f, 1f);
         transform.rotation = Quaternion.AngleAxis(angle, forward); 
-
-        //Rotate from mouse movement
-		//var mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		//rot = Quaternion.LookRotation (transform.position - mousePosition, Vector3.forward);
-		//transform.rotation = rot;
-		//transform.eulerAngles = new Vector3 (0, 0, transform.eulerAngles.z);
-		//rb.angularVelocity = 0;
-
-
-		
 	}
 
 	void ControlMovement()
@@ -65,3 +55,11 @@ public class PlayerMobility : MonoBehaviour {
 		}
 	}
 }
+
+
+//Rotate from mouse movement
+//var mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+//rot = Quaternion.LookRotation (transform.position - mousePosition, Vector3.forward);
+//transform.rotation = rot;
+//transform.eulerAngles = new Vector3 (0, 0, transform.eulerAngles.z);
+//rb.angularVelocity = 0;
