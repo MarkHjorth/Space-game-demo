@@ -7,10 +7,12 @@ public class PlayerMobility : MonoBehaviour {
 	private Rigidbody2D rb;
     public GameObject Bullet;
     public Quaternion rot;
+    private Transform weapon;
 
 	void Start ()
 	{
 		rb = GetComponent<Rigidbody2D>();
+        weapon = transform.FindChild("Weapon");
 	}
 
 	void FixedUpdate()
@@ -51,7 +53,7 @@ public class PlayerMobility : MonoBehaviour {
             var accuracyMax = (ang.eulerAngles.z + 5.125f);
             var accuracy = Random.Range(accuracyMin, accuracyMax);
             ang.eulerAngles = new Vector3(ang.eulerAngles.x, ang.eulerAngles.y, accuracy);
-            Instantiate(Bullet, transform.position, ang);
+            Instantiate(Bullet, weapon.position, ang);
 		}
 	}
 }

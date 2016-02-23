@@ -7,6 +7,7 @@ public class BulletScript : MonoBehaviour
     // Public variable 
     public int speed = 1600;
     private Rigidbody2D rb;
+    private EnemyMobility enemy;
 
     // Gets called once when the bullet is created
     void Start () 
@@ -29,8 +30,13 @@ public class BulletScript : MonoBehaviour
         var name = collider.name;
         if (name == "Enemy")
         {
-            Debug.Log("HIT!");
-            Destroy(collider.gameObject);
+            enemy = (EnemyMobility) collider.GetComponent(typeof(EnemyMobility));
+            enemy.isHit(1);
+            Destroy(gameObject);
+        }
+        if (name != "Player" && name != "Weapon" && name != "Bullet(Clone)")
+        {
+            Destroy(gameObject);
         }
     }
         

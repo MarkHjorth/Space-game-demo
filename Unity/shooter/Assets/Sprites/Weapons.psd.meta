@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 80f3c11b9b65a435e929631eb8be38ed
+timeCreated: 1456221637
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Weapons_0
+    21300002: Weapons_1
+    21300004: Weapons_2
+    21300006: Weapons_3
+    21300008: Weapons_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 8192
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Weapons_0
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 478
+        width: 145
+        height: 93
+      alignment: 9
+      pivot: {x: 0.7646483, y: 0.46411985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -78.87401, y: 49.836853}
+        - {x: -110.87401, y: -2.163147}
+        - {x: -110.87401, y: -43.163147}
+        - {x: 22.125992, y: -43.163147}
+        - {x: 34.12599, y: -23.163147}
+        - {x: 34.12599, y: 38.836853}
+        - {x: 5.125992, y: 49.836853}
+    - name: Weapons_1
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 325
+        width: 163
+        height: 72
+      alignment: 9
+      pivot: {x: 0.9321744, y: 0.607975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14.9444275, y: 23.2258}
+        - {x: -39.944427, y: 25.2258}
+        - {x: -119.94443, y: 25.2258}
+        - {x: -124.94443, y: 17.2258}
+        - {x: -124.94443, y: -15.7742}
+        - {x: -66.94443, y: -42.7742}
+        - {x: -16.944427, y: -42.7742}
+        - {x: 3.0555725, y: -9.7742}
+        - {x: 3.0555725, y: 12.2258}
+        - {x: -0.9444275, y: 15.2258}
+      - - {x: -151.94443, y: -11.7742}
+        - {x: -150.94443, y: -11.7742}
+        - {x: -147.94443, y: -8.7742}
+        - {x: -148.94443, y: -5.7742004}
+        - {x: -151.94443, y: -5.7742004}
+      - - {x: -105.94443, y: 24.2258}
+        - {x: -102.94443, y: 25.2258}
+        - {x: -102.94443, y: 28.2258}
+        - {x: -107.94443, y: 28.2258}
+        - {x: -107.94443, y: 26.2258}
+    - name: Weapons_2
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 221
+        width: 150
+        height: 83
+      alignment: 9
+      pivot: {x: 0.9233781, y: 0.45009935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.506714, y: 45.641754}
+        - {x: -106.506714, y: 45.641754}
+        - {x: -116.506714, y: 20.641754}
+        - {x: -116.506714, y: -6.358246}
+        - {x: -101.506714, y: -37.358246}
+        - {x: 9.493286, y: -37.358246}
+        - {x: 11.493286, y: -32.358246}
+        - {x: 11.493286, y: 30.641754}
+        - {x: -30.506714, y: 42.641754}
+      - - {x: -138.50671, y: 37.641754}
+        - {x: -135.50671, y: 37.641754}
+        - {x: -133.50671, y: 39.641754}
+        - {x: -134.50671, y: 42.641754}
+        - {x: -138.50671, y: 42.641754}
+    - name: Weapons_3
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 146
+        width: 153
+        height: 89
+      alignment: 9
+      pivot: {x: 0.9008508, y: 0.5606914}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -133.83017, y: 39.098465}
+        - {x: -137.83017, y: 34.098465}
+        - {x: -137.83017, y: -18.901535}
+        - {x: -123.83017, y: -45.901535}
+        - {x: -114.83017, y: -49.901535}
+        - {x: 0.16983032, y: -49.901535}
+        - {x: 15.16983, y: -36.901535}
+        - {x: 15.16983, y: 21.098465}
+        - {x: -0.8301697, y: 39.098465}
+    - name: Weapons_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 25
+        width: 176
+        height: 88
+      alignment: 9
+      pivot: {x: 0.8817515, y: 0.5470652}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -153.18826, y: 39.85826}
+        - {x: -155.18826, y: 32.85826}
+        - {x: -155.18826, y: -48.14174}
+        - {x: 17.811737, y: -48.14174}
+        - {x: 20.811737, y: -42.14174}
+        - {x: 20.811737, y: 25.858261}
+        - {x: 16.811737, y: 39.85826}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
