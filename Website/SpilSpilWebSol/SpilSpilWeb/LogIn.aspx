@@ -9,9 +9,9 @@
                 <div class="account-wall">
                     <i class="fa fa-5x fa-rocket login-title">Sign in</i>
                     <div class="form-signin">
-                        <input id="email" type="text" class="form-control center-block" placeholder="Email" required autofocus />
-                        <input type="password" class="form-control center-block" placeholder="Password" required />
-                        <button id="btn" class="btn btn-lg btn-primary btn-block center-block" type="submit" >
+                        <input id="email" type="text" class="form-control center-block" placeholder="Email" runat="server" required autofocus />
+                        <input id="password" type="password" class="form-control center-block" placeholder="Password" runat="server" required />
+                        <button id="btn" class="btn btn-lg btn-primary btn-block center-block" type="submit" runat="server" onserverclick="btn_create_user_click" >
                             Sign in
                         </button>
                         <a href="newUser.aspx" class="pull-left new-account">Create an account </a>
