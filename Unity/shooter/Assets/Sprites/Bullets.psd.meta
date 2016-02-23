@@ -1,0 +1,220 @@
+fileFormatVersion: 2
+guid: 5d9c604bc41444cfa8def09c9baee43d
+timeCreated: 1456080637
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Bullets_0
+    21300002: Bullets_1
+    21300004: Bullets_2
+    21300006: Bullets_3
+    21300008: Bullets_4
+    21300010: Bullets_5
+    21300012: Bullets_7
+    21300014: Bullets_8
+    21300016: Bullets_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 8192
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Bullets_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 370
+        width: 284
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 142, y: -21}
+        - {x: 142, y: 32}
+        - {x: 78, y: 60}
+        - {x: -26, y: 86}
+        - {x: -85, y: 86}
+        - {x: -136, y: 52}
+        - {x: -142, y: 32}
+        - {x: -142, y: -28}
+        - {x: -131, y: -57}
+        - {x: -86, y: -86}
+        - {x: -28, y: -86}
+        - {x: -15, y: -82}
+        - {x: 81, y: -54}
+        - {x: 133, y: -42}
+    - name: Bullets_1
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 417
+        width: 371
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35.5, y: 43}
+        - {x: -177.5, y: 6}
+        - {x: -185.5, y: 3}
+        - {x: -185.5, y: -7}
+        - {x: -172.5, y: -31}
+        - {x: -34.5, y: -43}
+        - {x: 175.5, y: -43}
+        - {x: 185.5, y: -31}
+        - {x: 185.5, y: 19}
+        - {x: 168.5, y: 43}
+    - name: Bullets_2
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 401
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Bullets_3
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 180
+        width: 189
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -90.5, y: 54.5}
+        - {x: -94.5, y: 33.5}
+        - {x: -94.5, y: -45.5}
+        - {x: -89.5, y: -54.5}
+        - {x: 16.5, y: -54.5}
+        - {x: 93.5, y: -2.5}
+        - {x: 93.5, y: 14.5}
+        - {x: 9.5, y: 54.5}
+    - name: Bullets_4
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 227
+        width: 65
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Bullets_5
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 227
+        width: 65
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Bullets_6
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 227
+        width: 65
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Bullets_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 326
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 163, y: -2}
+        - {x: 163, y: 10}
+        - {x: 66, y: 79}
+        - {x: -18, y: 90}
+        - {x: -92, y: 90}
+        - {x: -123, y: 78}
+        - {x: -163, y: 30}
+        - {x: -163, y: -35}
+        - {x: -146, y: -63}
+        - {x: -102, y: -90}
+        - {x: -40, y: -90}
+        - {x: -3, y: -88}
+        - {x: 51, y: -81}
+        - {x: 86, y: -67}
+        - {x: 113, y: -37}
+    - name: Bullets_8
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 49
+        width: 226
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 43}
+        - {x: -113, y: 8}
+        - {x: -113, y: -3}
+        - {x: -45, y: -43}
+        - {x: 105, y: -43}
+        - {x: 113, y: -41}
+        - {x: 113, y: 34}
+        - {x: 88, y: 43}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
