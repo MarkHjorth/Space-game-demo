@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -21,8 +22,29 @@ public partial class mpDeafuæt : System.Web.UI.MasterPage
         {
             
         }
-        Page.Title = Page.Title + " - spilSpillet";
+        Page.Title = Page.Title + " - wizzGames";
+
+        if(HttpContext.Current.User.Identity.Name != "")
+        {
+            string s = HttpContext.Current.User.Identity.Name;
+            link_login.HRef = "~/LoggedIn/LogOut.aspx";
+            btn_login.InnerHtml = "Sign out";
+        }
+
+        if(IsPostBack)
+        {
+            newsSignUp();
+        }
     }
 
-    
+    protected void signOut(object sender, EventArgs e)
+    {
+        FormsAuthentication.SignOut();
+    }
+
+    protected void newsSignUp()
+    {
+        string s = emailAddress.Value;
+        Response.Redirect("tba.aspx");
+    }
 }

@@ -7,3 +7,36 @@
 .x-small {
     font-size: 50%;
 }
+
+.banner {
+    background-image: url(../img/BannerNoText.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+}
+
+.bannerText {
+    padding-left: 25%;
+    padding-right: 25%;
+    border: 3px solid lightgray;
+
+}
+
+.blacks {
+    background-color: black;
+}
+
+.shopping-item {
+  float: none;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  text-align: center;
+  background-color:rgba(211,211,211,0.5);
+  border-radius:4%;
+}
+
+.insta_widget {
+    border: none;
+    overflow: hidden;
+    width: 70%;
+}

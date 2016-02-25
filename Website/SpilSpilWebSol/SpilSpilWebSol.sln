@@ -24,6 +24,27 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SpilSpilWeb(1)", "SpilSpilW
 		SlnRelativePath = "SpilSpilWeb\"
 	EndProjectSection
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite3", "..\..\..\..\Desktop\WebSite3\", "{8E143D8F-7010-40B7-B1C7-2CB5F225601A}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_56331"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Desktop\WebSite3\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56331\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_56331"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Desktop\WebSite3\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56331\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "56331"
+		SlnRelativePath = "..\..\..\..\Desktop\WebSite3\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +52,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{864AFE17-E42B-4B26-A814-0DAECA6BB0D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{864AFE17-E42B-4B26-A814-0DAECA6BB0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E143D8F-7010-40B7-B1C7-2CB5F225601A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E143D8F-7010-40B7-B1C7-2CB5F225601A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

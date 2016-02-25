@@ -7,19 +7,17 @@
         <div class="row">
             <div class="col-sm-6 col-md-12">
                 <div class="account-wall">
-                    <%--<img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120" alt="">--%>
                     <i class="fa fa-5x fa-space-shuttle login-title">&nbspCreate account</i>
-                    <div class="form-newuser">
+                    <form class="form-newuser" runat="server">
+                        <input id="honneyPot" type="text" class="hidden" runat="server" />
                         <input type="text" id="name" class="form-control center-block" placeholder="Full name" required="required" autofocus data-validation-required-message="Please enter your full name" runat="server" />
                         <input type="email" id="email" class="form-control center-block" placeholder="Email" required="required" data-validation-required-message="Please enter a valid Email" />
                         <input type="email" id="confemail" class="form-control center-block" placeholder="Confirm Email" required="required" oninput="checkem(this)" />
-                        <input type="password" id="pass" class="form-control center-block" placeholder="Password" required="required" runat="server" />
+                        <input type="password" id="pass" class="form-control center-block" placeholder="Password" required="required" runat="server" oninput="checkPassSafe(this)" />
                         <input type="password" id="confpass" class="form-control center-block" placeholder="Confirm Password" required="required" oninput="checkps(this)" runat="server" />
-                        <button class="btn btn-lg btn-primary btn-block center-block" type="submit" id="createAcc" >
-                            Create Account
-                        </button>
+                        <asp:Button class="btn btn-lg btn-primary btn-block center-block" type="submit" Text="Create Account" ID="createAcc" runat="server" OnClick="btn_create_user_click"></asp:Button>
                         <span class="clearfix"></span>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -41,14 +39,17 @@
         function checkps(input) {
             if (input.value != document.getElementById('pass').value) {
                 input.setCustomValidity('Passwords must be matching!');
-            } else {
+            }
+            else {
                 // input is valid -- reset the error message
                 input.setCustomValidity('');
             }
+
         }
 
         //Check if password is safe
         function checkPassSafe(str) {
+            debugger;
             // at least one number, one lowercase and one uppercase letter
             // at least six characters
             var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;

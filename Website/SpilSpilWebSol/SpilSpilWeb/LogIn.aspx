@@ -8,16 +8,15 @@
             <div class="col-sm-6 col-md-4 col-md-offset-4">
                 <div class="account-wall">
                     <i class="fa fa-5x fa-rocket login-title">Sign in</i>
-                    <div class="form-signin">
+                    <form id="signinform" class="form-signin" runat="server">
+                        <input id="honneyPot" type="text" class="hidden" runat="server" />
                         <input id="email" type="text" class="form-control center-block" placeholder="Email" runat="server" required autofocus />
                         <input id="password" type="password" class="form-control center-block" placeholder="Password" runat="server" required />
-                        <button id="btn" class="btn btn-lg btn-primary btn-block center-block" type="submit" runat="server" onserverclick="btn_create_user_click" >
-                            Sign in
-                        </button>
+                        <asp:button id="btn" text="Sign in" class="btn btn-lg btn-primary btn-block center-block" type="submit" runat="server" OnClick="btn_login_click"></asp:button>
                         <a href="newUser.aspx" class="pull-left new-account">Create an account </a>
-                        <a href="#" class="pull-right need-help">Forgot password</a>
+                        <a href="tba.aspx" class="pull-right need-help">Forgot password</a>
                         <span class="clearfix"></span>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

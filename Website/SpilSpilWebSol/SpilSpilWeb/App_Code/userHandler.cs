@@ -28,7 +28,7 @@ public class userHandler : BaseDB
         }
     }
 
-    public bool validateUser(string mail, string pass)
+    public string validateUser(string mail, string pass)
     {
         try
         {
@@ -36,17 +36,13 @@ public class userHandler : BaseDB
 
             if(curUser.Password == pass)
             {
-                return true;
+                return curUser.Name;
             }
         }
         catch
         {
-            return false;
+            return null;
         }
-
-        
-
-
-        return false;
+        return null;
     }
 }
