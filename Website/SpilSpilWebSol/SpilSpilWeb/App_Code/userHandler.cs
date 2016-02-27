@@ -6,7 +6,7 @@ using System.Web;
 /// <summary>
 /// Summary description for userHandler
 /// </summary>
-public class userHandler : BaseDB
+public class userHandler
 {
     public userHandler()
     {
@@ -15,11 +15,11 @@ public class userHandler : BaseDB
         //
     }
 
-    private User getUser(string email)
+    private string getUser(string email)
     {
         try
         {
-            return context.Users.Where(x => x.Email == email).FirstOrDefault();
+            return null;
         }
         catch
         {
@@ -30,19 +30,19 @@ public class userHandler : BaseDB
 
     public string validateUser(string mail, string pass)
     {
-        try
-        {
-            User curUser = getUser(mail);
+        //try
+        //{
+        //    User curUser = getUser(mail);
 
-            if(curUser.Password == pass)
-            {
-                return curUser.Name;
-            }
-        }
-        catch
-        {
-            return null;
-        }
+        //    if(curUser.Password == pass)
+        //    {
+        //        return curUser.Name;
+        //    }
+        //}
+        //catch
+        //{
+        //    return null;
+        //}
         return null;
     }
 }

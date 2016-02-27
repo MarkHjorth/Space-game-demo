@@ -103,12 +103,12 @@
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li runat="server" id="Home"><a href="Default.aspx">Home</a></li>
+                                <li runat="server" id="Home"><a href="/Default.aspx">Home</a></li>
                                 <li runat="server" id="Scoreboards"><a href="/tba.aspx">Scoreboards</a></li>
                                 <li runat="server" id="MyStats"><a href="/tba.aspx">My Stats</a></li>
                                 <li runat="server" id="Download"><a href="/tba.aspx">Download 2984</a></li>
-                                <li runat="server" id="About"><a href="/tba.aspx">About 2984</a></li>
-                                <li runat="server" id="Contact"><a href="/tba.aspx">About wizzGames</a></li>
+                                <li runat="server" id="About"><a href="/About2984.aspx">2984</a></li>
+                                <li runat="server" id="Contact"><a href="/AboutwizzGames.aspx">About wizzGames</a></li>
                             </ul>
                         </div>
                     </div>

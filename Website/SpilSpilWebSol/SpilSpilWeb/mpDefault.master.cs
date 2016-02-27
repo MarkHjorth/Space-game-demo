@@ -30,11 +30,6 @@ public partial class mpDeafuæt : System.Web.UI.MasterPage
             link_login.HRef = "~/LoggedIn/LogOut.aspx";
             btn_login.InnerHtml = "Sign out";
         }
-
-        if(IsPostBack)
-        {
-            newsSignUp();
-        }
     }
 
     protected void signOut(object sender, EventArgs e)

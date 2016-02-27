@@ -40,3 +40,11 @@
     overflow: hidden;
     width: 70%;
 }
+
+.row-margin {
+    margin: 2%;
+}
+
+.aboutUs {
+    margin: 0 auto;
+}

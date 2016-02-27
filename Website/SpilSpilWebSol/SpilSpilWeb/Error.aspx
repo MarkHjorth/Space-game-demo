@@ -8,6 +8,9 @@
             <div class="col-sm-6 col-md-4 col-md-offset-4">
                 <div class="account-wall text-center">
                     <h2>ERROR</h2>
+                    <p>
+                        This page does not exist..
+                    </p>
                 </div>
             </div>
         </div>
