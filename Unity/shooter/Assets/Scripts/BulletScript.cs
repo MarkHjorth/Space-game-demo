@@ -7,7 +7,7 @@ public class BulletScript : MonoBehaviour
     // Public variable 
     public int speed = 1600;
     private Rigidbody2D rb;
-    private EnemyMobility enemy;
+    private Enemy enemy;
 
     // Gets called once when the bullet is created
     void Start () 
@@ -30,7 +30,7 @@ public class BulletScript : MonoBehaviour
         var name = collider.name;
         if (name == "Enemy")
         {
-            enemy = (EnemyMobility) collider.GetComponent(typeof(EnemyMobility));
+            enemy = (Enemy) collider.GetComponent(typeof(Enemy));
             enemy.isHit(1);
             Destroy(gameObject);
         }

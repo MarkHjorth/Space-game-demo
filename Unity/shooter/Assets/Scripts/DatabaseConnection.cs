@@ -7,16 +7,21 @@ using System;
 public class DatabaseConnection : MonoBehaviour
 {
 
-    static string conString = "user id=dmaa0914_3Sem_2_Grupperum;" +
-        "password=IsAllowed;server=kraka.ucn.dk;" +
-        "database=dmaa0914_3Sem_2_Grupperum; " +
+    static string conString = "user id=dmaa0914_Spec14Games_1;" +
+        "password=Marco19_heck;server=kraka.ucn.dk;" +
+        "database=dmaa0914_Spec14Games_1; " +
         "connection timeout=30";
     SqlConnection con = new SqlConnection(conString);
+    SqlCommand sc = null;
+    SqlDataReader resultSet = null;
 
+    void Start()
+    {
+    }
     
     public SqlDataReader ExecuteStringGet(string command) 
     {
-        SqlDataReader resultSet = null;
+        resultSet = null;
 
         try
         {
@@ -27,7 +32,7 @@ public class DatabaseConnection : MonoBehaviour
             Debug.Log(e.ToString());
         }
 
-        SqlCommand sc = new SqlCommand(command, con);
+        sc = new SqlCommand(command, con);
         try
         {
             resultSet = sc.ExecuteReader();
@@ -42,11 +47,9 @@ public class DatabaseConnection : MonoBehaviour
 
         public bool ExecuteStringPut(string command)
         {
-            SqlConnection con = new SqlConnection(conString);
-
             con.Open();
 
-            SqlCommand sc = new SqlCommand(command, con);
+            sc = new SqlCommand(command, con);
             try
             {
                 sc.ExecuteReader();
