@@ -1,0 +1,10 @@
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Debug\wizzHost.exe.config
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Debug\wizzHost.exe
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Debug\wizzHost.pdb
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Debug\WCFwizzGames.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Debug\wizzAppServer.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Debug\WCFwizzGames.pdb
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Debug\wizzAppServer.pdb
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Debug\wizzHost.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Debug\wizzHost.exe
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Debug\wizzHost.pdb

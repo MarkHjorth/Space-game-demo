@@ -41,7 +41,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <div id="form1" runat="server">
         <div>
             <div class="header-area">
                 <div class="container">
@@ -64,23 +64,23 @@
             </div>
             <!-- End header area -->
 
-            <div class="site-branding-area">
+            <div class="site-branding-area banner">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-5">
+                        <div class="col-sm-3">
                             <div class="logo">
-                                <h1><a href="Default.aspx">spil<span>Spillet </span></a></h1>
+                                <h1><a href="Default.aspx">wizz<span>Games </span></a></h1>
                             </div>
                         </div>
 
-                        <div class="col-sm-5 logo">
-                            <h1><a href="Default.aspx">2984</a></h1>
+                        <div class="col-sm-6 logo">
+                            <h1 class="text-center"><a class="bannerText" href="Default.aspx">2984</a></h1>
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <div class="shopping-item">
-                                <a href="LogIn.aspx">
-                                    <span class="log-in">Log in</span>
+                                <a href="LogIn.aspx" id="link_login" runat="server" onclick="signOut">
+                                    <span id="btn_login" runat="server" class="log-in">Log in</span>
                                     <i class="fa fa-user"></i><%--<span class="product-count">5</span>--%>
                                 </a>
                             </div>
@@ -103,12 +103,12 @@
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li runat="server" id="Home"><a href="Default.aspx">Home</a></li>
-                                <li runat="server" id="Scoreboards"><a href="tba.aspx">Scoreboards</a></li>
-                                <li runat="server" id="MyStats"><a href="tba.aspx">My Stats</a></li>
-                                <li runat="server" id="Download"><a href="tba.aspx">Download 2984</a></li>
-                                <li runat="server" id="About"><a href="tba.aspx">About 2984</a></li>
-                                <li runat="server" id="Contact"><a href="tba.aspx">About spilSpillet</a></li>
+                                <li runat="server" id="Home"><a href="/Default.aspx">Home</a></li>
+                                <li runat="server" id="Scoreboards"><a href="/tba.aspx">Scoreboards</a></li>
+                                <li runat="server" id="MyStats"><a href="/tba.aspx">My Stats</a></li>
+                                <li runat="server" id="Download"><a href="/tba.aspx">Download 2984</a></li>
+                                <li runat="server" id="About"><a href="/About2984.aspx">2984</a></li>
+                                <li runat="server" id="Contact"><a href="/AboutwizzGames.aspx">About wizzGames</a></li>
                             </ul>
                         </div>
                     </div>
@@ -117,14 +117,25 @@
             <!-- End mainmenu area -->
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-            <div class="footer-top-area">
+            <div class="footer-top-area banner">
                 <div class="zigzag-bottom"></div>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-sm-6">
                             <div class="footer-about-us">
-                                <h2>spil<span>Spillet</span></h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus vero quam laborum quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi iure eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi veritatis magni at?</p>
+                                <h2>wizz<span>Games</span></h2>
+                                <p>
+                                    We are a small, two-man, project group, in the process 
+                                    of developping a 2D space-shooter game. wizzGames is our 
+                                    team, and our game is called '2984'. The game 
+                                    title is loosley based on the 1948 novel 'Nineteen 
+                                    Eighty-Four'. The game is supposed to be the base for our 
+                                    fourth semester project, at UCN, which will include this 
+                                    web site, the game, a lot of database stuff and maybe even
+                                    mobile applications.
+                                    <br />
+                                    Read more about us on the <a href="/tba.aspx">About</a> page!
+                                </p>
                             </div>
                         </div>
 
@@ -132,11 +143,10 @@
                             <div class="footer-menu">
                                 <h2 class="footer-wid-title">Usefull Links</h2>
                                 <ul class="break-list">
-                                    <li><a href="#">My account</a></li>
+                                    <li><a href="/LoggedIn/Account.aspx">My account</a></li>
                                     <li><a href="#">My Statistics</a></li>
-                                    <li><a href="#">Wishlist</a></li>
                                     <li><a href="#">Contact devs</a></li>
-                                    <li><a href="Default.aspx">Front page</a></li>
+                                    <li><a href="/Default.aspx">Front page</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -146,12 +156,12 @@
                                 <h2 class="footer-wid-title">Newsletter</h2>
                                 <p>
                                     Sign up here to sell your soul to the dark lords of the universe. 
-                                    Also, you will get news and updates in your inbox..
+                                    Also, you will get news and updates in your email inbox..
                                 </p>
                                 <div class="newsletter-form">
-                                    <form action="#">
-                                        <input type="email" placeholder="Type your email">
-                                        <input type="submit" value="Subscribe">
+                                    <form method="post">
+                                        <input type="text" id="emailAddress" placeholder="Type your email" required runat="server" />
+                                        <input type="submit" value="Subscribe" />
                                     </form>
                                 </div>
                             </div>
@@ -161,22 +171,21 @@
             </div>
             <!-- End footer top area -->
 
-            <div class="footer-bottom-area">
+            <div class="footer-bottom-area blacks">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8">
                             <div class="copyright">
-                                <p>&copy; 2016 spilSpillet. All Rights Reserved. Coded with <i class="fa fa-space-shuttle"></i>by <a href="https://en.wikipedia.org/wiki/Carbon_group" target="_blank">Group 14</a></p>
+                                <p>&copy; 2016 wizzGames. All Rights Reserved. Coded with <i class="fa fa-space-shuttle"></i>&nbspby <a href="https://en.wikipedia.org/wiki/Carbon_group" target="_blank">Group 14</a></p>
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="footer-social">
-                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/groups/1664422403836900/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="https://twitter.com/WizzGamesTweet" target="_blank"><i class="fa fa-twitter"></i></a>
+                                <a href="https://www.instagram.com/wizzgamesinsta/" target="_blank"><i class="fa fa-instagram"></i></a>
                                 <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
                             </div>
                         </div>
                     </div>
@@ -200,6 +209,6 @@
             <!-- Main Script -->
             <script src="js/main.js"></script>
         </div>
-    </form>
+    </div>
 </body>
 </html>
