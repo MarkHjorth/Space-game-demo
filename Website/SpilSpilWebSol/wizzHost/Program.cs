@@ -15,7 +15,6 @@ namespace wizzHost
         {
             using (ServiceHost serviceHost = new ServiceHost(typeof(wizzService)))
             {
-                
                 serviceHost.Open();
                 DisplayHostInfo(serviceHost);
                 Console.WriteLine("The service is ready.");

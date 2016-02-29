@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using wizzAppServer;
-using wizzAppServer.Models;
+using wizzAppServer.DBmanager;
 
 namespace WCF_wizzGames
 {
