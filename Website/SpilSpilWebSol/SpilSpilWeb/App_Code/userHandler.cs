@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ServiceReference1;
 
 /// <summary>
 /// Summary description for userHandler
 /// </summary>
 public class userHandler
 {
+    private IwizzService service = new IwizzServiceClient();
+    
     public userHandler()
     {
         //
@@ -19,6 +22,7 @@ public class userHandler
     {
         try
         {
+
             return null;
         }
         catch
@@ -44,5 +48,10 @@ public class userHandler
         //    return null;
         //}
         return null;
+    }
+
+    public string CreateUser(string name, string mail, string password)
+    {
+        return service.CreateUser(name, mail, password);
     }
 }

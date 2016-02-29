@@ -20,5 +20,10 @@ namespace wizzAppServer
         {
             return userCtrl.ValidateUser(mail, password);
         }
+
+        public string CreateUser(string name, string mail, string password)
+        {
+            return userCtrl.CreateUser(name, mail, password);
+        }
     }
 }

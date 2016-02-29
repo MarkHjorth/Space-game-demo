@@ -11,5 +11,6 @@ namespace wizzAppServer
     {
         User GetUser(string email);
         string ValidateUser(string mail, string password);
+        string CreateUser(string name, string mail, string password);
     }
 }

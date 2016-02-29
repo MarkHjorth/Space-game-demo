@@ -18,6 +18,10 @@ namespace WCF_wizzGames
         [OperationContract]
         string ValidateUser(string mail, string password);
 
-        // TODO: Add your service operations here
+        [OperationContract]
+        string CreateUser(string name, string mail, string password);
+
+        [OperationContract]
+        bool TestConnection();
     }
 }

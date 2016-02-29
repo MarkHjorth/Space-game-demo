@@ -14,6 +14,9 @@ namespace WCF_wizzGames
     {
         private IwizzAppServer iws = new wizzServer();
 
+        public wizzService()
+        { }
+
         public User GetUserWeb(string email)
         {
             return iws.GetUser(email);
@@ -22,6 +25,16 @@ namespace WCF_wizzGames
         public string ValidateUser(string email, string password)
         {
             return iws.ValidateUser(email, password);
+        }
+
+        public string CreateUser(string name, string mail, string password)
+        {
+            return iws.CreateUser(name, mail, password);
+        }
+
+        public bool TestConnection()
+        {
+            return true;
         }
     }
 }

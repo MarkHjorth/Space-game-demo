@@ -23,6 +23,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SpilSpilWeb(1)", "SpilSpilW
 		VWDPort = "53009"
 		SlnRelativePath = "SpilSpilWeb\"
 	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{54A84636-7797-44B3-BB84-E2B2EEC3B1CB} = {54A84636-7797-44B3-BB84-E2B2EEC3B1CB}
+	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite3", "..\..\..\..\Desktop\WebSite3\", "{8E143D8F-7010-40B7-B1C7-2CB5F225601A}"
 	ProjectSection(WebsiteProperties) = preProject
