@@ -27,3 +27,4 @@ sysinfo.txt
 Unity/shooter/Library
 Unity/shooter/obj/Debug
 Unity/shooter/Temp
+*.exe
