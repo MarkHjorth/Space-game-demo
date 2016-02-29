@@ -1,0 +1,8 @@
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\WCF wizzGames\bin\Debug\WCFwizzGames.dll.config
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\WCF wizzGames\bin\Debug\WCFwizzGames.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\WCF wizzGames\bin\Debug\WCFwizzGames.pdb
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\WCF wizzGames\bin\Debug\wizzAppServer.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\WCF wizzGames\bin\Debug\wizzAppServer.pdb
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\WCF wizzGames\obj\Debug\WCFwizzGames.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\WCF wizzGames\obj\Debug\WCFwizzGames.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\WCF wizzGames\obj\Debug\WCFwizzGames.pdb

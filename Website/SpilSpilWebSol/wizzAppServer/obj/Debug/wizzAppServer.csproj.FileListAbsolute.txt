@@ -1,0 +1,5 @@
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\bin\Debug\wizzAppServer.dll.config
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\bin\Debug\wizzAppServer.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\bin\Debug\wizzAppServer.pdb
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\obj\Debug\wizzAppServer.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\obj\Debug\wizzAppServer.pdb

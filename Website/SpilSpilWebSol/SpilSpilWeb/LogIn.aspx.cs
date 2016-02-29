@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -14,20 +16,41 @@ public partial class LogIn : System.Web.UI.Page
         uh = new userHandler();
     }
 
-    protected void btn_create_user_click(object sender, EventArgs ev)
+    protected void btn_login_click(object sender, EventArgs e)
     {
+        if(honneyPot.Value != "")
+        {
+            Response.Redirect("~/tba.aspx");
+        }
+
+        string userName = null;
         string mail = email.Value;
         string pass = password.Value;
+        try
+        {
+            userName = uh.validateUser(mail, pass);
+        }
+        catch { }
 
-        bool isUser = uh.validateUser(mail, pass);
+
+        bool isUser = (userName != null);
 
         if(isUser)
         {
-            Response.Redirect("~/account.aspx");
+            FormsAuthentication.RedirectFromLoginPage(userName, true);
         }
         else
         {
-            Response.Redirect(Request.RawUrl);
+            Response.Write("<script>alert('Hello');</script>");
+            string filename = Server.MapPath("/LoginLog.txt");
+            using (StreamWriter writer = new StreamWriter(filename, true))
+            {
+                writer.WriteLine(DateTime.Now.ToString() + " - Failed login attempt with user \"" + userName + "\" from IP: " + Request.UserHostAddress.ToString());
+                writer.Flush();
+                writer.Close();
+            }
+
+            //Response.Redirect("~/error.aspx");
         }
     }
 }
