@@ -30,11 +30,9 @@ public partial class wizzService : System.Web.Services.Protocols.SoapHttpClientP
     
     private System.Threading.SendOrPostCallback GetUserWebOperationCompleted;
     
-    private System.Threading.SendOrPostCallback ValidateUserOperationCompleted;
-    
     private System.Threading.SendOrPostCallback CreateUserOperationCompleted;
     
-    private System.Threading.SendOrPostCallback TestConnectionOperationCompleted;
+    private System.Threading.SendOrPostCallback ValidateUserOperationCompleted;
     
     /// CodeRemarks
     public wizzService() {
@@ -45,13 +43,10 @@ public partial class wizzService : System.Web.Services.Protocols.SoapHttpClientP
     public event GetUserWebCompletedEventHandler GetUserWebCompleted;
     
     /// CodeRemarks
-    public event ValidateUserCompletedEventHandler ValidateUserCompleted;
-    
-    /// CodeRemarks
     public event CreateUserCompletedEventHandler CreateUserCompleted;
     
     /// CodeRemarks
-    public event TestConnectionCompletedEventHandler TestConnectionCompleted;
+    public event ValidateUserCompletedEventHandler ValidateUserCompleted;
     
     /// CodeRemarks
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IwizzService/GetUserWeb", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -80,38 +75,6 @@ public partial class wizzService : System.Web.Services.Protocols.SoapHttpClientP
         if ((this.GetUserWebCompleted != null)) {
             System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
             this.GetUserWebCompleted(this, new GetUserWebCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-        }
-    }
-    
-    /// CodeRemarks
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IwizzService/ValidateUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-    public string ValidateUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string mail, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password) {
-        object[] results = this.Invoke("ValidateUser", new object[] {
-                    mail,
-                    password});
-        return ((string)(results[0]));
-    }
-    
-    /// CodeRemarks
-    public void ValidateUserAsync(string mail, string password) {
-        this.ValidateUserAsync(mail, password, null);
-    }
-    
-    /// CodeRemarks
-    public void ValidateUserAsync(string mail, string password, object userState) {
-        if ((this.ValidateUserOperationCompleted == null)) {
-            this.ValidateUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnValidateUserOperationCompleted);
-        }
-        this.InvokeAsync("ValidateUser", new object[] {
-                    mail,
-                    password}, this.ValidateUserOperationCompleted, userState);
-    }
-    
-    private void OnValidateUserOperationCompleted(object arg) {
-        if ((this.ValidateUserCompleted != null)) {
-            System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-            this.ValidateUserCompleted(this, new ValidateUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
         }
     }
     
@@ -150,30 +113,34 @@ public partial class wizzService : System.Web.Services.Protocols.SoapHttpClientP
     }
     
     /// CodeRemarks
-    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IwizzService/TestConnection", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-    public void TestConnection(out bool TestConnectionResult, [System.Xml.Serialization.XmlIgnoreAttribute()] out bool TestConnectionResultSpecified) {
-        object[] results = this.Invoke("TestConnection", new object[0]);
-        TestConnectionResult = ((bool)(results[0]));
-        TestConnectionResultSpecified = ((bool)(results[1]));
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IwizzService/ValidateUser", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+    public string ValidateUser([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string mail, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password) {
+        object[] results = this.Invoke("ValidateUser", new object[] {
+                    mail,
+                    password});
+        return ((string)(results[0]));
     }
     
     /// CodeRemarks
-    public void TestConnectionAsync() {
-        this.TestConnectionAsync(null);
+    public void ValidateUserAsync(string mail, string password) {
+        this.ValidateUserAsync(mail, password, null);
     }
     
     /// CodeRemarks
-    public void TestConnectionAsync(object userState) {
-        if ((this.TestConnectionOperationCompleted == null)) {
-            this.TestConnectionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTestConnectionOperationCompleted);
+    public void ValidateUserAsync(string mail, string password, object userState) {
+        if ((this.ValidateUserOperationCompleted == null)) {
+            this.ValidateUserOperationCompleted = new System.Threading.SendOrPostCallback(this.OnValidateUserOperationCompleted);
         }
-        this.InvokeAsync("TestConnection", new object[0], this.TestConnectionOperationCompleted, userState);
+        this.InvokeAsync("ValidateUser", new object[] {
+                    mail,
+                    password}, this.ValidateUserOperationCompleted, userState);
     }
     
-    private void OnTestConnectionOperationCompleted(object arg) {
-        if ((this.TestConnectionCompleted != null)) {
+    private void OnValidateUserOperationCompleted(object arg) {
+        if ((this.ValidateUserCompleted != null)) {
             System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-            this.TestConnectionCompleted(this, new TestConnectionCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            this.ValidateUserCompleted(this, new ValidateUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
         }
     }
     
@@ -309,32 +276,6 @@ public partial class GetUserWebCompletedEventArgs : System.ComponentModel.AsyncC
 
 /// CodeRemarks
 [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "0.0.0.0")]
-public delegate void ValidateUserCompletedEventHandler(object sender, ValidateUserCompletedEventArgs e);
-
-/// CodeRemarks
-[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "0.0.0.0")]
-[System.Diagnostics.DebuggerStepThroughAttribute()]
-[System.ComponentModel.DesignerCategoryAttribute("code")]
-public partial class ValidateUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-    
-    private object[] results;
-    
-    internal ValidateUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-            base(exception, cancelled, userState) {
-        this.results = results;
-    }
-    
-    /// CodeRemarks
-    public string Result {
-        get {
-            this.RaiseExceptionIfNecessary();
-            return ((string)(this.results[0]));
-        }
-    }
-}
-
-/// CodeRemarks
-[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "0.0.0.0")]
 public delegate void CreateUserCompletedEventHandler(object sender, CreateUserCompletedEventArgs e);
 
 /// CodeRemarks
@@ -361,34 +302,26 @@ public partial class CreateUserCompletedEventArgs : System.ComponentModel.AsyncC
 
 /// CodeRemarks
 [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "0.0.0.0")]
-public delegate void TestConnectionCompletedEventHandler(object sender, TestConnectionCompletedEventArgs e);
+public delegate void ValidateUserCompletedEventHandler(object sender, ValidateUserCompletedEventArgs e);
 
 /// CodeRemarks
 [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "0.0.0.0")]
 [System.Diagnostics.DebuggerStepThroughAttribute()]
 [System.ComponentModel.DesignerCategoryAttribute("code")]
-public partial class TestConnectionCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+public partial class ValidateUserCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
     
     private object[] results;
     
-    internal TestConnectionCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+    internal ValidateUserCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
             base(exception, cancelled, userState) {
         this.results = results;
     }
     
     /// CodeRemarks
-    public bool TestConnectionResult {
+    public string Result {
         get {
             this.RaiseExceptionIfNecessary();
-            return ((bool)(this.results[0]));
-        }
-    }
-    
-    /// CodeRemarks
-    public bool TestConnectionResultSpecified {
-        get {
-            this.RaiseExceptionIfNecessary();
-            return ((bool)(this.results[1]));
+            return ((string)(this.results[0]));
         }
     }
 }

@@ -22,11 +22,16 @@ public class LoginScript : MonoBehaviour {
         SceneManager.LoadScene("Scenes/MainMenu");
     }
 
+    public void newUser()
+    {
+        SceneManager.LoadScene("Scenes/NewUser");
+    }
+
     public void login()
     {
         username = input_user.text;
         password = input_pass.text;
 
-        service.ValidateUser(username, password);
+        Debug.Log(service.ValidateUser(username, password));
     }
 }
