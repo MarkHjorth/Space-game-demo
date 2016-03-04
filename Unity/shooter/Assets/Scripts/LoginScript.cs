@@ -11,6 +11,7 @@ public class LoginScript : MonoBehaviour {
     private string password;
     public InputField input_user;
     public InputField input_pass;
+    public Text errormessage;
 
     void Start()
     {
@@ -31,7 +32,26 @@ public class LoginScript : MonoBehaviour {
     {
         username = input_user.text;
         password = input_pass.text;
+        string loginName = "No user found!";
 
-        Debug.Log(service.ValidateUser(username, password));
+        try
+        {
+            loginName = service.ValidateUser(username, password);
+
+            if (loginName.Equals("No user found!"))
+            {
+                errormessage.text = "Email or password incorrect!";
+                input_user.text = "";
+                input_pass.text = "";
+            }
+            else
+            {
+                errormessage.text = ("Welcome " + loginName);
+            }
+        }
+        catch (System.Exception ex)
+        {
+            errormessage.text = ("Error! - " + ex.StackTrace);
+        }
     }
 }

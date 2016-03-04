@@ -14,6 +14,11 @@ public class MenuScript : MonoBehaviour {
         SceneManager.LoadScene("Scenes/FirstLevel");
     }
 
+    public void loadGame()
+    {
+
+    }
+
     public void loginScreen()
     {
         SceneManager.LoadScene("Scenes/Login");
