@@ -22,19 +22,30 @@ namespace WCF_wizzGames
             return iws.GetUser(email);
         }
 
-        public string ValidateUser(string email, string password)
-        {
-            return iws.ValidateUser(email, password);
-        }
-
         public string CreateUser(string name, string mail, string password)
         {
-            return iws.CreateUser(name, mail, password);
+            try
+            {
+                return iws.CreateUser(name, mail, password);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
-        public bool TestConnection()
+        public string ValidateUser(string email, string password)
         {
-            return true;
+            try
+            {
+                return iws.ValidateUser(email, password);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

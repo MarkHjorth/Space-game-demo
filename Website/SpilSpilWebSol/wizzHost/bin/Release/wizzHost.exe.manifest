@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WCFwizzGames.dll" size="4608">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WCFwizzGames.dll" size="5120">
       <assemblyIdentity name="WCFwizzGames" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>K8M+/P6ccLQgLeAJuW/QiLZX7r/o2weBsgENJ2GTpFg=</dsig:DigestValue>
+        <dsig:DigestValue>OfFOwhex3mJpRAIPDdgaZhn2+m8VI7EwKiJppfCOGsE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5N597xrlr3zo9PsubtntGwYEu7qAdLjtbe8AQoBTCvM=</dsig:DigestValue>
+        <dsig:DigestValue>LR0KeW4OF07oZnB+MtTPvZTtA+kg1HwjzY9Ws8PYf/A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,17 +73,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>coXJENAKkPXBLoWwj7OoqL1I1RX3R/ZAUu0Vz+c7cUY=</dsig:DigestValue>
+        <dsig:DigestValue>Kud1ilkKkJMX4yFR+Tgkg/DtM6y4t12WBqnZDp7khYw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="wizzHost.exe.config" size="1392">
+  <file name="wizzHost.exe.config" size="1398">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>8sFJ9Xj7zlvwabI2bfe0Ym74nrJLB5F/WU3PzjatJLo=</dsig:DigestValue>
+      <dsig:DigestValue>eZPoVvk8+sFXY4xYGXQpksLDAjasWx3RInpkIicywPA=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

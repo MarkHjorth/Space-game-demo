@@ -15,17 +15,11 @@ namespace wizzAppServer.DBmanager
             return context.Users.Where(x => x.Email == email).FirstOrDefault();
         }
 
-        public string ValidateUser(string mail, string password)
-        {
-            return context.Users.Where(x => x.Email == mail).FirstOrDefault().Name;
-        }
-
         public string CreateUser(string name, string mail, string password)
         {
             try
             {
                 User user = new User();
-                //user.Id = 0;
                 user.Name = name;
                 user.Email = mail;
                 user.Password = Encrypt(password);
@@ -34,19 +28,53 @@ namespace wizzAppServer.DBmanager
                 context.SubmitChanges();
                 return user.Name;
             }
-            catch(Exception ex)
-            {
-                return ex.ToString();
-            }
+            catch (Exception ex) { throw ex; }
         }
 
-        private string Encrypt(string password)
+        public string ValidateUser(string mail, string password)
         {
-            //var sha = new SHA1CryptoServiceProvider();
-            //byte[] data = Encoding.ASCII.GetBytes(password);
-            //byte[] bytes = sha.ComputeHash(data);
-            //string pass = bytes.ToString();
-            return password;
+            try
+            {
+                User u = GetUser(mail);
+                bool validUser = ComparePass(password, u);
+
+                if (validUser)
+                {
+                    return u.Name;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        private bool ComparePass(string pass, User us)
+        {
+            try
+            {
+                string cryptPass = Encrypt(pass);
+
+                if (us.Password == cryptPass)
+                {
+                    return true;
+                }
+
+                return false;
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        private string Encrypt(string p)
+        {
+            try
+            {
+                string crypted;
+                crypted = p.GetHashCode().ToString();
+                return crypted;
+            }
+            catch (Exception ex){throw ex;}
         }
     }
 }

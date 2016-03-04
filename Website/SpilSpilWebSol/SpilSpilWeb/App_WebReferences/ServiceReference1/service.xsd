@@ -15,21 +15,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ValidateUser">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="mail" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ValidateUserResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ValidateUserResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="CreateUser">
     <xs:complexType>
       <xs:sequence>
@@ -46,15 +31,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="TestConnection">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="TestConnectionResponse">
+  <xs:element name="ValidateUser">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="TestConnectionResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="mail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateUserResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

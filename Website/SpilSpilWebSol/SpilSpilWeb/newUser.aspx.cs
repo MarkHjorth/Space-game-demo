@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -24,11 +25,15 @@ public partial class newUser : System.Web.UI.Page
             string uName = name.Text;
             string uEmail = email.Text;
             string uPass = pass.Text;
-            string works = uha.CreateUser(uName, uEmail, uPass);
-
-            //Response.Redirect("/tba.aspx");
-
-            Response.Redirect(("~/Default.aspx/?text=" + works));
+            try
+            {
+                string username = uha.CreateUser(uName, uEmail, uPass);
+                FormsAuthentication.RedirectFromLoginPage(username, true);
+            }
+            catch (Exception ex)
+            {
+                Response.Redirect("/Error.aspx");
+            }
         }
     }
 }

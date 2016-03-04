@@ -9,49 +9,47 @@ using ServiceReference1;
 /// </summary>
 public class userHandler
 {
+    //private static wizzService service = new wizzService();
     private IwizzService service = new IwizzServiceClient();
-    
-    public userHandler()
-    {
-        //
-        // TODO: Add constructor logic here
-        //
-    }
 
-    private string getUser(string email)
+    public userHandler()
+    {}
+
+    private ServiceReference1.User GetUser(string email)
     {
         try
         {
-
-            return null;
+            return service.GetUserWeb(email);
         }
-        catch
+        catch(Exception ex)
         {
-
-            return null;
+            throw ex;
         }
     }
 
     public string validateUser(string mail, string pass)
     {
-        //try
-        //{
-        //    User curUser = getUser(mail);
-
-        //    if(curUser.Password == pass)
-        //    {
-        //        return curUser.Name;
-        //    }
-        //}
-        //catch
-        //{
-        //    return null;
-        //}
-        return null;
+        try
+        {
+            return service.ValidateUser(mail, pass);
+        }
+        catch(Exception ex)
+        {
+            throw ex;
+        }
     }
 
     public string CreateUser(string name, string mail, string password)
     {
-        return service.CreateUser(name, mail, password);
+
+        try
+        {
+            return service.CreateUser(name, mail, password);
+        }
+        catch (Exception ex)
+        {
+
+            throw ex;
+        }
     }
 }

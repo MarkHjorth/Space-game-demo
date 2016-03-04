@@ -16,14 +16,26 @@ namespace wizzAppServer
             return userCtrl.GetUser(email);
         }
 
-        public string ValidateUser(string mail, string password)
-        {
-            return userCtrl.ValidateUser(mail, password);
-        }
-
         public string CreateUser(string name, string mail, string password)
         {
-            return userCtrl.CreateUser(name, mail, password);
+            try
+            {
+                return userCtrl.CreateUser(name, mail, password);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public string ValidateUser(string mail, string password)
+        {
+            try
+            {
+                return userCtrl.ValidateUser(mail, password);
+            }
+            catch (Exception ex) { throw ex; }
         }
     }
 }

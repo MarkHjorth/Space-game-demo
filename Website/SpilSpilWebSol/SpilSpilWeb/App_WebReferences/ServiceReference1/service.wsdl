@@ -13,55 +13,36 @@
   <wsdl:message name="IwizzService_GetUserWeb_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserWebResponse" />
   </wsdl:message>
-  <wsdl:message name="IwizzService_ValidateUser_InputMessage">
-    <wsdl:part name="parameters" element="tns:ValidateUser" />
-  </wsdl:message>
-  <wsdl:message name="IwizzService_ValidateUser_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
-  </wsdl:message>
   <wsdl:message name="IwizzService_CreateUser_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateUser" />
   </wsdl:message>
   <wsdl:message name="IwizzService_CreateUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateUserResponse" />
   </wsdl:message>
-  <wsdl:message name="IwizzService_TestConnection_InputMessage">
-    <wsdl:part name="parameters" element="tns:TestConnection" />
+  <wsdl:message name="IwizzService_ValidateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUser" />
   </wsdl:message>
-  <wsdl:message name="IwizzService_TestConnection_OutputMessage">
-    <wsdl:part name="parameters" element="tns:TestConnectionResponse" />
+  <wsdl:message name="IwizzService_ValidateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
   </wsdl:message>
   <wsdl:portType name="IwizzService">
     <wsdl:operation name="GetUserWeb">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/GetUserWeb" message="tns:IwizzService_GetUserWeb_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/GetUserWebResponse" message="tns:IwizzService_GetUserWeb_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ValidateUser">
-      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/ValidateUser" message="tns:IwizzService_ValidateUser_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/ValidateUserResponse" message="tns:IwizzService_ValidateUser_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="CreateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/CreateUser" message="tns:IwizzService_CreateUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/CreateUserResponse" message="tns:IwizzService_CreateUser_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="TestConnection">
-      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/TestConnection" message="tns:IwizzService_TestConnection_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/TestConnectionResponse" message="tns:IwizzService_TestConnection_OutputMessage" />
+    <wsdl:operation name="ValidateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/ValidateUser" message="tns:IwizzService_ValidateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/ValidateUserResponse" message="tns:IwizzService_ValidateUser_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IwizzService" type="tns:IwizzService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetUserWeb">
       <soap:operation soapAction="http://tempuri.org/IwizzService/GetUserWeb" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ValidateUser">
-      <soap:operation soapAction="http://tempuri.org/IwizzService/ValidateUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -78,8 +59,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="TestConnection">
-      <soap:operation soapAction="http://tempuri.org/IwizzService/TestConnection" style="document" />
+    <wsdl:operation name="ValidateUser">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/ValidateUser" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -90,7 +71,7 @@
   </wsdl:binding>
   <wsdl:service name="wizzService">
     <wsdl:port name="BasicHttpBinding_IwizzService" binding="tns:BasicHttpBinding_IwizzService">
-      <soap:address location="http://localhost:8733/WCFwizzGames/" />
+      <soap:address location="http://178.157.216.170:8733/WCFwizzGames/" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

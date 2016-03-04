@@ -16,12 +16,9 @@ namespace WCF_wizzGames
         User GetUserWeb(string email);
 
         [OperationContract]
-        string ValidateUser(string mail, string password);
-
-        [OperationContract]
         string CreateUser(string name, string mail, string password);
 
         [OperationContract]
-        bool TestConnection();
+        string ValidateUser(string mail, string password);
     }
 }
