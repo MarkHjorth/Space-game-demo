@@ -10,6 +10,11 @@ namespace wizzAppServer.DBmanager
 {
     class UserCtrl : BaseDB
     {
+        public User GetUserName(string name)
+        {
+            return context.Users.Where(x => x.Name == name).FirstOrDefault();
+        }
+
         public User GetUser(string email)
         {
             return context.Users.Where(x => x.Email == email).FirstOrDefault();
@@ -75,6 +80,50 @@ namespace wizzAppServer.DBmanager
                 return crypted;
             }
             catch (Exception ex){throw ex;}
+        }
+
+        public bool IsUserNameFree(string name)
+        {
+            return (GetUserName(name) == null);
+        }
+
+        public bool EmailFree(string mail)
+        {
+            return (GetUser(mail) == null);
+        }
+
+        public bool SaveDevDescriptions(string mark, string dave)
+        {
+            try
+            {
+                Description descMark = context.Descriptions.Where(x => x.Name == "Mark").FirstOrDefault();
+                descMark.Description1 = mark;
+                descMark.LastUpdated = DateTime.Now;
+
+                Description descDave = context.Descriptions.Where(x => x.Name == "David").FirstOrDefault();
+                descDave.Description1 = dave;
+                descDave.LastUpdated = DateTime.Now;
+
+                context.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public string GetDevDescription(string name)
+        {
+            try
+            {
+                Description des = context.Descriptions.Where(x => x.Name == name).FirstOrDefault();
+                return des.Description1;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

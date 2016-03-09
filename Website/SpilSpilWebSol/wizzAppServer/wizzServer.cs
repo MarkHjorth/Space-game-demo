@@ -24,7 +24,6 @@ namespace wizzAppServer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -36,6 +35,34 @@ namespace wizzAppServer
                 return userCtrl.ValidateUser(mail, password);
             }
             catch (Exception ex) { throw ex; }
+        }
+
+        public bool IsUserNameFree(string name)
+        {
+            return userCtrl.IsUserNameFree(name);
+        }
+
+        public bool EmailFree(string mail)
+        {
+            return userCtrl.EmailFree(mail);
+        }
+
+        public bool SaveDevDescriptions(string mark, string dave)
+        {
+            try
+            {
+                userCtrl.SaveDevDescriptions(mark, dave);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public string GetDevDescription(string name)
+        {
+            return userCtrl.GetDevDescription(name);
         }
     }
 }

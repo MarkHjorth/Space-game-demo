@@ -47,5 +47,33 @@ namespace WCF_wizzGames
                 throw ex;
             }
         }
+
+        public bool IsUserNameFree(string name)
+        {
+            return iws.IsUserNameFree(name);
+        }
+
+        public bool EmailFree(string mail)
+        {
+            return iws.EmailFree(mail);
+        }
+
+        public bool SaveDevDescriptions(string mark, string dave)
+        {
+            try
+            {
+                iws.SaveDevDescriptions(mark, dave);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public string GetDevDescription(string name)
+        {
+            return iws.GetDevDescription(name);
+        }
     }
 }

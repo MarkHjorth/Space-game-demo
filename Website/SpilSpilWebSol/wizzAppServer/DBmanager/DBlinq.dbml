@@ -7,6 +7,28 @@
       <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DateCreated" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Association Name="User_Session" Member="Sessions" ThisKey="Id" OtherKey="userId" Type="Session" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Descriptions" Member="Descriptions">
+    <Type Name="Description">
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Description" Member="Description1" Type="System.String" DbType="NVarChar(1024) NOT NULL" CanBeNull="false" />
+      <Column Name="LastUpdated" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sessions" Member="Sessions">
+    <Type Name="Session">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="identifyer" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="startTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="stopTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="shotsFired" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="shotsHit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="kills" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="deaths" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="User_Session" Member="User" ThisKey="userId" OtherKey="Id" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

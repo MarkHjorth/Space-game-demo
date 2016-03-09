@@ -9,7 +9,6 @@ using ServiceReference1;
 /// </summary>
 public class userHandler
 {
-    //private static wizzService service = new wizzService();
     private IwizzService service = new IwizzServiceClient();
 
     public userHandler()
@@ -51,5 +50,15 @@ public class userHandler
 
             throw ex;
         }
+    }
+
+    public bool IsUserNameFree(string name)
+    {
+        return service.IsUserNameFree(name);
+    }
+
+    public bool EmailFree(string mail)
+    {
+        return service.EmailFree(mail);
     }
 }

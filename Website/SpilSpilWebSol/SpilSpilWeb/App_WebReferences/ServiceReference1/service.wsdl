@@ -25,6 +25,30 @@
   <wsdl:message name="IwizzService_ValidateUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IwizzService_IsUserNameFree_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserNameFree" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_IsUserNameFree_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserNameFreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_EmailFree_InputMessage">
+    <wsdl:part name="parameters" element="tns:EmailFree" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_EmailFree_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EmailFreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_SaveDevDescriptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDevDescriptions" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_SaveDevDescriptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDevDescriptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_GetDevDescription_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDevDescription" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_GetDevDescription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDevDescriptionResponse" />
+  </wsdl:message>
   <wsdl:portType name="IwizzService">
     <wsdl:operation name="GetUserWeb">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/GetUserWeb" message="tns:IwizzService_GetUserWeb_InputMessage" />
@@ -37,6 +61,22 @@
     <wsdl:operation name="ValidateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/ValidateUser" message="tns:IwizzService_ValidateUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/ValidateUserResponse" message="tns:IwizzService_ValidateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserNameFree">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/IsUserNameFree" message="tns:IwizzService_IsUserNameFree_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/IsUserNameFreeResponse" message="tns:IwizzService_IsUserNameFree_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EmailFree">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/EmailFree" message="tns:IwizzService_EmailFree_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/EmailFreeResponse" message="tns:IwizzService_EmailFree_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDevDescriptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/SaveDevDescriptions" message="tns:IwizzService_SaveDevDescriptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/SaveDevDescriptionsResponse" message="tns:IwizzService_SaveDevDescriptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDevDescription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/GetDevDescription" message="tns:IwizzService_GetDevDescription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/GetDevDescriptionResponse" message="tns:IwizzService_GetDevDescription_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IwizzService" type="tns:IwizzService">
@@ -61,6 +101,42 @@
     </wsdl:operation>
     <wsdl:operation name="ValidateUser">
       <soap:operation soapAction="http://tempuri.org/IwizzService/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUserNameFree">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/IsUserNameFree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EmailFree">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/EmailFree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDevDescriptions">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/SaveDevDescriptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDevDescription">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/GetDevDescription" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

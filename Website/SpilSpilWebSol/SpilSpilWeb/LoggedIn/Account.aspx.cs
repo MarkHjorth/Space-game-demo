@@ -8,8 +8,16 @@ using System.Web.UI.WebControls;
 
 public partial class Account : System.Web.UI.Page
 {
+    string user;
     protected void Page_Load(object sender, EventArgs e)
     {
-        username.InnerHtml = HttpContext.Current.User.Identity.Name;
+        user = HttpContext.Current.User.Identity.Name;
+
+        username.InnerHtml = user;
+
+        if (user == "2984")
+        {
+            Response.Redirect("~/Admin/Admin.aspx");
+        }
     }
 }

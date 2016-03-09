@@ -20,5 +20,17 @@ namespace WCF_wizzGames
 
         [OperationContract]
         string ValidateUser(string mail, string password);
+
+        [OperationContract]
+        bool IsUserNameFree(string name);
+
+        [OperationContract]
+        bool EmailFree(string mail);
+
+        [OperationContract]
+        bool SaveDevDescriptions(string mark, string dave);
+
+        [OperationContract]
+        string GetDevDescription(string name);
     }
 }
