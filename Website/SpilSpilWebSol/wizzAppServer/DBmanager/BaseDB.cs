@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace wizzAppServer.DBmanager
 {
-    class BaseDB
+    public class BaseDB
     {
         protected DBlinqDataContext context = null;
 

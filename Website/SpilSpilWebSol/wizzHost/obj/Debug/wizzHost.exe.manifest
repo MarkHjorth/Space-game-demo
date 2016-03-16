@@ -42,48 +42,48 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WCFwizzGames.dll" size="5120">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WCFwizzGames.dll" size="5632">
       <assemblyIdentity name="WCFwizzGames" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>a56rc9zduZqp7rVKQKhA4RUgW9luW/cZTZFcYC2tpO8=</dsig:DigestValue>
+        <dsig:DigestValue>fEtHNHvQ8kj/InIuNAYcH5wOLKN5j4PNaoHxLJRCUOs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzAppServer.dll" size="11776">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzAppServer.dll" size="23040">
       <assemblyIdentity name="wizzAppServer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2+3OOtkQa+9deRTAlAwyRfcBwYQ+V7nDm89R+Y96BVU=</dsig:DigestValue>
+        <dsig:DigestValue>zP/vz3t1uhT1Skc5UvEUXgYVM8oPK44M3/pnvAyGDhE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzHost.exe" size="6600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzHost.exe" size="7112">
       <assemblyIdentity name="wizzHost" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ftmcHZyiWVx7z251k29w1MWn65qIhZr4GF/MELoXHDo=</dsig:DigestValue>
+        <dsig:DigestValue>K5h6Y8CFzFDvC8LaG/bZcpSqDKnrvb+weCiY9Ecmyss=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="wizzHost.exe.config" size="1392">
+  <file name="wizzHost.exe.config" size="1398">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>8sFJ9Xj7zlvwabI2bfe0Ym74nrJLB5F/WU3PzjatJLo=</dsig:DigestValue>
+      <dsig:DigestValue>eZPoVvk8+sFXY4xYGXQpksLDAjasWx3RInpkIicywPA=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

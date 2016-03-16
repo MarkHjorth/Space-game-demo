@@ -20,6 +20,7 @@ namespace wizzHost
                 Console.WriteLine("The service is ready.");
                 Console.WriteLine("Press the Enter key to terminate service.");
                 Console.ReadLine();
+                serviceHost.Close();
             }
         }
 

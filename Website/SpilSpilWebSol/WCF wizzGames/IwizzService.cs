@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using wizzAppServer.DBmanager;
+using wizzAppServer.Models;
 
 namespace WCF_wizzGames
 {
@@ -32,5 +33,11 @@ namespace WCF_wizzGames
 
         [OperationContract]
         string GetDevDescription(string name);
+
+        [OperationContract]
+        List<PlayerStats> GetAllStats();
+
+        [OperationContract]
+        PlayerStats GetUserStats(string name);
     }
 }

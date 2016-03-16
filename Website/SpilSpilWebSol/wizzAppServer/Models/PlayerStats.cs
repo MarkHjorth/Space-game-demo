@@ -3,26 +3,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace wizzAppServer.Models
 {
-    class PlayerStats
+    [DataContract]
+    public class PlayerStats
     {
+        [DataMember]
         public int PlayerID { get; set; }
+
+        [DataMember]
         public string PlayerName { get; set; }
-        public int PlayTime { get; set; }
-        public int LvLReached { get; set; }
-        public int ShotsFired { get; set; }
-        public int ShotsHit { get; set; }
-        public int Accuracy { get; set; }
-        public int Kills { get; set; }
-        public int Deaths { get; set; }
-        public int Kdr { get; set; }
-        public int SpareProp { get; set; }
+
+        [DataMember]
+        public TimeSpan PlayTime { get; set; }
+
+        [DataMember]
+        public double LvLReached { get; set; }
+
+        [DataMember]
+        public double ShotsFired { get; set; }
+
+        [DataMember]
+        public double ShotsHit { get; set; }
+
+        [DataMember]
+        public double Accuracy { get; set; }
+
+        [DataMember]
+        public double Kills { get; set; }
+
+        [DataMember]
+        public double Deaths { get; set; }
+
+        [DataMember]
+        public double Kdr { get; set; }
+
+        public PlayerStats()
+        {}
 
         public PlayerStats(int id)
         {
             PlayerID = id;
+        }
+
+        public PlayerStats(string name)
+        {
+            PlayerName = name;
+        }
+
+        public PlayerStats(int id, string name)
+        {
+            PlayerID = id;
+            PlayerName = name;
         }
     }
 }

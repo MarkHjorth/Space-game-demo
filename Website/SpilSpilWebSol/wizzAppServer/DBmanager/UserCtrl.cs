@@ -10,14 +10,27 @@ namespace wizzAppServer.DBmanager
 {
     class UserCtrl : BaseDB
     {
-        public User GetUserName(string name)
+        public User GetUserByName(string name)
         {
             return context.Users.Where(x => x.Name == name).FirstOrDefault();
         }
 
-        public User GetUser(string email)
+        public User GetUserByEmail(string email)
         {
             return context.Users.Where(x => x.Email == email).FirstOrDefault();
+        }
+
+        public List<User> GetAllUsers()
+        {
+            try
+            {
+                List<User> allUsers = context.Users.ToList();
+                return allUsers;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public string CreateUser(string name, string mail, string password)
@@ -40,7 +53,7 @@ namespace wizzAppServer.DBmanager
         {
             try
             {
-                User u = GetUser(mail);
+                User u = GetUserByEmail(mail);
                 bool validUser = ComparePass(password, u);
 
                 if (validUser)
@@ -84,12 +97,12 @@ namespace wizzAppServer.DBmanager
 
         public bool IsUserNameFree(string name)
         {
-            return (GetUserName(name) == null);
+            return (GetUserByName(name) == null);
         }
 
         public bool EmailFree(string mail)
         {
-            return (GetUser(mail) == null);
+            return (GetUserByEmail(mail) == null);
         }
 
         public bool SaveDevDescriptions(string mark, string dave)

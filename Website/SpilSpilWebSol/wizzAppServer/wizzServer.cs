@@ -4,16 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using wizzAppServer.DBmanager;
+using wizzAppServer.Models;
 
 namespace wizzAppServer
 {
     public class wizzServer : IwizzAppServer
     {
         private UserCtrl userCtrl = new UserCtrl();
+        private StatsCtrl statsCtrl = new StatsCtrl();
 
         public User GetUser(string email)
         {
-            return userCtrl.GetUser(email);
+            return userCtrl.GetUserByEmail(email);
         }
 
         public string CreateUser(string name, string mail, string password)
@@ -63,6 +65,33 @@ namespace wizzAppServer
         public string GetDevDescription(string name)
         {
             return userCtrl.GetDevDescription(name);
+        }
+
+        public List<PlayerStats> GetAllStats()
+        {
+            List<PlayerStats> allStats = new List<PlayerStats>();
+
+            try
+            {
+                allStats = statsCtrl.GetAllStats();
+                return allStats;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public PlayerStats GetUserStats(string name)
+        {
+            try
+            {
+                return statsCtrl.GetUserStats(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

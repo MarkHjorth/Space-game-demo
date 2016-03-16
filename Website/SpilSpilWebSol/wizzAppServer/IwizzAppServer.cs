@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using wizzAppServer.DBmanager;
+using wizzAppServer.Models;
 
 namespace wizzAppServer
 {
@@ -16,5 +17,7 @@ namespace wizzAppServer
         bool EmailFree(string email);
         bool SaveDevDescriptions(string mark, string dave);
         string GetDevDescription(string name);
+        List<PlayerStats> GetAllStats();
+        PlayerStats GetUserStats(string name);
     }
 }

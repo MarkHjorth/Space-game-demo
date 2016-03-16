@@ -14,7 +14,7 @@ public partial class Account : System.Web.UI.Page
         user = HttpContext.Current.User.Identity.Name;
 
         username.InnerHtml = user;
-
+        
         if (user == "2984")
         {
             Response.Redirect("~/Admin/Admin.aspx");

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/wizzAppServer.DBmanager" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/wizzAppServer.DBmanager" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sessions" nillable="true" type="tns:ArrayOfSession" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Session" nillable="true" type="tns:Session" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSession" nillable="true" type="tns:ArrayOfSession" />
+  <xs:complexType name="Session">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="deaths" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="identifyer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="kills" type="xs:int" />
+      <xs:element minOccurs="0" name="shotsFired" type="xs:int" />
+      <xs:element minOccurs="0" name="shotsHit" type="xs:int" />
+      <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="stopTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="userId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Session" nillable="true" type="tns:Session" />
+</xs:schema>

@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using wizzAppServer;
 using wizzAppServer.DBmanager;
+using wizzAppServer.Models;
 
 namespace WCF_wizzGames
 {
@@ -73,7 +74,38 @@ namespace WCF_wizzGames
 
         public string GetDevDescription(string name)
         {
-            return iws.GetDevDescription(name);
+            try
+            {
+                return iws.GetDevDescription(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<PlayerStats> GetAllStats()
+        {
+            try
+            {
+                return iws.GetAllStats();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public PlayerStats GetUserStats(string name)
+        {
+            try
+            {
+                return iws.GetUserStats(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }
