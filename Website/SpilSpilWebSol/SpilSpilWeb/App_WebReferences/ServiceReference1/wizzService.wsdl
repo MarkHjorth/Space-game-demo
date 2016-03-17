@@ -4,15 +4,21 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/wizzAppServer.DBmanager" />
-      <xsd:import schemaLocation="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" />
+      <xsd:import schemaLocation="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" />
+      <xsd:import schemaLocation="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/wizzAppServer.DBmanager" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IwizzService_GetUserWeb_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserWeb" />
+  <wsdl:message name="IwizzService_GetUserByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByEmail" />
   </wsdl:message>
-  <wsdl:message name="IwizzService_GetUserWeb_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetUserWebResponse" />
+  <wsdl:message name="IwizzService_GetUserByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_GetUserByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByName" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_GetUserByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByNameResponse" />
   </wsdl:message>
   <wsdl:message name="IwizzService_CreateUser_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateUser" />
@@ -63,9 +69,13 @@
     <wsdl:part name="parameters" element="tns:GetUserStatsResponse" />
   </wsdl:message>
   <wsdl:portType name="IwizzService">
-    <wsdl:operation name="GetUserWeb">
-      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/GetUserWeb" message="tns:IwizzService_GetUserWeb_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/GetUserWebResponse" message="tns:IwizzService_GetUserWeb_OutputMessage" />
+    <wsdl:operation name="GetUserByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/GetUserByEmail" message="tns:IwizzService_GetUserByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/GetUserByEmailResponse" message="tns:IwizzService_GetUserByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/GetUserByName" message="tns:IwizzService_GetUserByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/GetUserByNameResponse" message="tns:IwizzService_GetUserByName_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CreateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/CreateUser" message="tns:IwizzService_CreateUser_InputMessage" />
@@ -102,8 +112,17 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IwizzService" type="tns:IwizzService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetUserWeb">
-      <soap:operation soapAction="http://tempuri.org/IwizzService/GetUserWeb" style="document" />
+    <wsdl:operation name="GetUserByEmail">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/GetUserByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByName">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/GetUserByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

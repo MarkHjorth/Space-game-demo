@@ -14,7 +14,10 @@ namespace WCF_wizzGames
     public interface IwizzService
     {
         [OperationContract]
-        User GetUserWeb(string email);
+        UserModel GetUserByEmail(string email);
+
+        [OperationContract]
+        UserModel GetUserByName(string name);
 
         [OperationContract]
         string CreateUser(string name, string mail, string password);

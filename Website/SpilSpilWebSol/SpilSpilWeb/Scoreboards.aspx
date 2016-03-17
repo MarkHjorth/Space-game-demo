@@ -7,7 +7,6 @@
         <div class="row account-wall padding">
             <h2>Global Scoreboards</h2>
             <p>Here you can see the scores of all 2984 players. </p>
-            
             <asp:Table ID="aspTable" runat="server" Width="100%" class="table table-striped table-bordered">
             </asp:Table>
         </div>

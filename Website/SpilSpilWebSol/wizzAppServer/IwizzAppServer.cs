@@ -10,7 +10,8 @@ namespace wizzAppServer
 {
     public interface IwizzAppServer
     {
-        User GetUser(string email);
+        UserModel GetUserByEmail(string email);
+        UserModel GetUserByName(string name);
         string ValidateUser(string mail, string password);
         string CreateUser(string name, string mail, string password);
         bool IsUserNameFree(string name);

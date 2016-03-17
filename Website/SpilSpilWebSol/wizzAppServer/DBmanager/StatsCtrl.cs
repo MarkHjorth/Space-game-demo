@@ -21,14 +21,14 @@ namespace wizzAppServer.DBmanager
             try
             {
                 List<PlayerStats> allStats = new List<PlayerStats>();
-                List<User> users = new List<User>();
+                List<UserModel> users = new List<UserModel>();
                 PlayerStats ps = new PlayerStats();
 
                 users = uctrl.GetAllUsers();
 
-                foreach (User u in users)
+                foreach (UserModel um in users)
                 {
-                    ps = GetUserStats(u.Name);
+                    ps = GetUserStats(um.Name);
                     allStats.Add(ps);
                 }
                 allStats.OrderByDescending(stat => stat.LvLReached);

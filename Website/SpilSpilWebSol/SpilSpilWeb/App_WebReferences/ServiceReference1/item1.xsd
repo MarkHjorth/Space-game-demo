@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/wizzAppServer.DBmanager" />
-  <xs:import schemaLocation="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" />
-  <xs:element name="GetUserWeb">
+  <xs:import schemaLocation="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" />
+  <xs:element name="GetUserByEmail">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetUserWebResponse">
+  <xs:element name="GetUserByEmailResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/wizzAppServer.DBmanager" minOccurs="0" name="GetUserWebResult" nillable="true" type="q1:User" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetUserByEmailResult" nillable="true" type="q1:UserModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserByName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserByNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetUserByNameResult" nillable="true" type="q2:UserModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -112,7 +125,7 @@
   <xs:element name="GetAllStatsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetAllStatsResult" nillable="true" type="q2:ArrayOfPlayerStats" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetAllStatsResult" nillable="true" type="q3:ArrayOfPlayerStats" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -126,7 +139,7 @@
   <xs:element name="GetUserStatsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetUserStatsResult" nillable="true" type="q3:PlayerStats" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetUserStatsResult" nillable="true" type="q4:PlayerStats" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

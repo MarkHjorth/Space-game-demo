@@ -18,9 +18,14 @@ namespace WCF_wizzGames
         public wizzService()
         { }
 
-        public User GetUserWeb(string email)
+        public UserModel GetUserByEmail(string email)
         {
-            return iws.GetUser(email);
+            return iws.GetUserByEmail(email);
+        }
+
+        public UserModel GetUserByName(string name)
+        {
+            return iws.GetUserByName(name);
         }
 
         public string CreateUser(string name, string mail, string password)

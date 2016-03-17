@@ -19,6 +19,81 @@ public class StatsHandler
 
     public List<TableRow> GetAllStats()
     {
+        List<PlayerStats> allStats = GetServiceStats();
+        List<TableRow> tableList = new List<TableRow>();
+        List<TableHeaderCell> thcl = GetTableHeaderRow(allStats);
+        TableHeaderRow thr = new TableHeaderRow();
+
+        thr.Cells.AddRange(thcl.ToArray());
+        tableList.Add(thr);
+
+        IEnumerable<PlayerStats> ordered = allStats.OrderByDescending(stat => stat.LvLReached);
+
+        foreach (PlayerStats ps in ordered)
+        {
+            TableRow tr = new TableRow();
+            foreach (PropertyInfo pi in ps.GetType().GetProperties())
+            {
+                TableCell tc = new TableCell();
+                tc.Text = pi.GetValue(ps, null).ToString();
+                tr.Cells.Add(tc);
+            }
+            tableList.Add(tr);
+        }
+        return tableList;
+    }
+
+    public List<TableRow> GetAllStats(string toSortBy)
+    {
+        List<PlayerStats> allStats = GetServiceStats();
+
+        List<TableRow> tableList = new List<TableRow>();
+        List<TableHeaderCell> thcl = GetTableHeaderRow(allStats);
+        TableHeaderRow thr = new TableHeaderRow();
+
+        thr.Cells.AddRange(thcl.ToArray());
+        tableList.Add(thr);
+        IEnumerable<PlayerStats> ordered = null;
+
+        Object testX = null;
+        try
+        {
+            testX = allStats.First().GetType().GetProperty(toSortBy).GetValue(allStats.First(), null);
+        }
+        catch (Exception) { }
+
+        if (testX != null)
+        {
+            if (toSortBy == "PlayerID" || toSortBy == "PlayerName")
+            {
+                ordered = allStats.OrderBy(stat => stat.GetType().GetProperty(toSortBy).GetValue(stat, null));
+            }
+            else
+            {
+                ordered = allStats.OrderByDescending(stat => stat.GetType().GetProperty(toSortBy).GetValue(stat, null));
+            }
+        }
+        else
+        {
+            ordered = allStats.OrderByDescending(stat => stat.LvLReached);
+        }
+
+        foreach (PlayerStats ps in ordered)
+        {
+            TableRow tr = new TableRow();
+            foreach (PropertyInfo pi in ps.GetType().GetProperties())
+            {
+                TableCell tc = new TableCell();
+                tc.Text = pi.GetValue(ps, null).ToString();
+                tr.Cells.Add(tc);
+            }
+            tableList.Add(tr);
+        }
+        return tableList;
+    }
+
+    private List<PlayerStats> GetServiceStats()
+    {
         List<PlayerStats> allStats = new List<PlayerStats>();
         try
         {
@@ -43,33 +118,28 @@ public class StatsHandler
         {
             throw ex;
         }
-        List<TableRow> tableList = new List<TableRow>();
+        return allStats;
+    }
+    
+    private List<TableHeaderCell> GetTableHeaderRow(List<PlayerStats> allStats)
+    {
         List<TableHeaderCell> thcl = new List<TableHeaderCell>();
-        TableHeaderRow thr = new TableHeaderRow();
 
         foreach (PropertyInfo pi in allStats.First().GetType().GetProperties())
         {
             TableHeaderCell thc = new TableHeaderCell();
-            thc.Text = pi.Name;
+
+            HyperLink hl = new HyperLink()
+            {
+                Text = pi.Name,
+                NavigateUrl = "?sortBy=" + pi.Name,
+                CssClass = "thickbox",
+                ToolTip = "Sort by " + pi.Name
+            };
+            thc.Controls.Add(hl);
             thcl.Add(thc);
         }
-        thr.Cells.AddRange(thcl.ToArray());
-        tableList.Add(thr);
-
-        IEnumerable<PlayerStats> ordered = allStats.OrderByDescending(stat => stat.LvLReached);
-
-        foreach (PlayerStats ps in ordered)
-        {
-            TableRow tr = new TableRow();
-            foreach (PropertyInfo pi in ps.GetType().GetProperties())
-            {
-                TableCell tc = new TableCell();
-                tc.Text = pi.GetValue(ps, null).ToString();
-                tr.Cells.Add(tc);
-            }
-            tableList.Add(tr);
-        }
-        return tableList;
+        return thcl;
     }
 
     public List<TableRow> GetPlayerStats(string name)

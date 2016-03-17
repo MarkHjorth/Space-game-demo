@@ -52,6 +52,7 @@
     <Compile Include="DBmanager\UserCtrl.cs" />
     <Compile Include="IwizzAppServer.cs" />
     <Compile Include="Models\PlayerStats.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

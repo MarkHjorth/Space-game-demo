@@ -49,19 +49,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1md3tymdNc6dHk1YPBaJ6uKh+pHkdjv/sHWyfNYpf/o=</dsig:DigestValue>
+        <dsig:DigestValue>PlM82U68HKcI9XF1IUqiM29lLgltWY166RLzJ8Uhv4Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzAppServer.dll" size="21504">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzAppServer.dll" size="22528">
       <assemblyIdentity name="wizzAppServer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PcROdLIjgoutQcDf2mHUJE3dDKjXndgF7X+J2XEk+Kw=</dsig:DigestValue>
+        <dsig:DigestValue>bqh4f9ICngghb2zs8LB5Gwe+daAG2iL8+0oJky7qavg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,17 +73,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sDvjVl9JtmqY2oOTM+fzNioJdz7vM4HunISxQ1cdpJA=</dsig:DigestValue>
+        <dsig:DigestValue>aMrkMjp3rbuXZZH7AOsi+Z52Lo6Wddv9PMgle6WXe9M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="wizzHost.exe.config" size="1398">
+  <file name="wizzHost.exe.config" size="1476">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>eZPoVvk8+sFXY4xYGXQpksLDAjasWx3RInpkIicywPA=</dsig:DigestValue>
+      <dsig:DigestValue>4vj64A3bSmWDyVkLeVAre7GV7R2CZ4GdAKYgnxbyb48=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

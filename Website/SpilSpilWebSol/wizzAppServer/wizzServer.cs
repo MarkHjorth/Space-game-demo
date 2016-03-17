@@ -13,9 +13,14 @@ namespace wizzAppServer
         private UserCtrl userCtrl = new UserCtrl();
         private StatsCtrl statsCtrl = new StatsCtrl();
 
-        public User GetUser(string email)
+        public UserModel GetUserByEmail(string email)
         {
             return userCtrl.GetUserByEmail(email);
+        }
+
+        public UserModel GetUserByName(string name)
+        {
+            return userCtrl.GetUserByName(name);
         }
 
         public string CreateUser(string name, string mail, string password)

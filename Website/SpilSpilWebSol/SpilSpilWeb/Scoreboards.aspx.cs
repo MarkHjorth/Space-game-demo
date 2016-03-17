@@ -11,7 +11,13 @@ public partial class Scoreboards : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        aspTable.Rows.AddRange(sh.GetAllStats().ToArray());
-        //aspTable.Visible = true;
+        if(Request.QueryString["sortBy"] != null)
+        {
+            aspTable.Rows.AddRange(sh.GetAllStats(Request.QueryString["sortBy"]).ToArray());
+        }
+        else
+        {
+            aspTable.Rows.AddRange(sh.GetAllStats().ToArray());
+        }
     }
 }

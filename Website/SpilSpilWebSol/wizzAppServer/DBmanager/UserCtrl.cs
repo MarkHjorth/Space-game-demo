@@ -5,26 +5,36 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using wizzAppServer.Models;
 
 namespace wizzAppServer.DBmanager
 {
     class UserCtrl : BaseDB
     {
-        public User GetUserByName(string name)
+        public UserModel GetUserByName(string name)
         {
-            return context.Users.Where(x => x.Name == name).FirstOrDefault();
+            User u = context.Users.Where(x => x.Name == name).FirstOrDefault();
+            UserModel um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions);
+            return um;
         }
 
-        public User GetUserByEmail(string email)
+        public UserModel GetUserByEmail(string email)
         {
-            return context.Users.Where(x => x.Email == email).FirstOrDefault();
+            User u = context.Users.Where(x => x.Email == email).FirstOrDefault();
+            UserModel um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions);
+            return um;
         }
 
-        public List<User> GetAllUsers()
+        public List<UserModel> GetAllUsers()
         {
             try
             {
-                List<User> allUsers = context.Users.ToList();
+                List<User> users = context.Users.ToList();
+                List<UserModel> allUsers = new List<UserModel>();
+                foreach (User u in users)
+                {
+                    allUsers.Add(new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions));
+                }
                 return allUsers;
             }
             catch (Exception ex)
@@ -53,7 +63,7 @@ namespace wizzAppServer.DBmanager
         {
             try
             {
-                User u = GetUserByEmail(mail);
+                UserModel u = GetUserByEmail(mail);
                 bool validUser = ComparePass(password, u);
 
                 if (validUser)
@@ -68,7 +78,7 @@ namespace wizzAppServer.DBmanager
             catch (Exception ex) { throw ex; }
         }
 
-        private bool ComparePass(string pass, User us)
+        private bool ComparePass(string pass, UserModel us)
         {
             try
             {

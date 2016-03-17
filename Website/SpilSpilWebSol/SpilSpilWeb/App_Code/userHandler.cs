@@ -14,16 +14,46 @@ public class userHandler
     public userHandler()
     {}
 
-    private ServiceReference1.User GetUser(string email)
+    private WebUser GetUserByEmail(string email)
     {
+        WebUser wu = new WebUser();
         try
         {
-            return service.GetUserWeb(email);
+            UserModel um = service.GetUserByName(email);
+
+            wu.Id = um.Id;
+            wu.Name = um.Name;
+            wu.Email = um.Email;
+            wu.Password = um.Password;
+            wu.DateCreated = um.DateCreated;
+
+            return wu;
         }
         catch(Exception ex)
         {
             throw ex;
         }
+    }
+
+    public WebUser GetUserByName(string name)
+    {
+        WebUser wu = new WebUser();
+        try
+        {
+            UserModel um = service.GetUserByName(name);
+            wu.Id = um.Id;
+            wu.Name = um.Name;
+            wu.Email = um.Email;
+            wu.Password = um.Password;
+            wu.DateCreated = um.DateCreated;
+
+            return wu;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        
     }
 
     public string validateUser(string mail, string pass)
