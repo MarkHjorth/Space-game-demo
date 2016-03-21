@@ -1,6 +1,0 @@
-language: csharp
-osx_image: xcode61
-install:
-- "./Unity/Shooter3D/Scripts/install.sh"
-script:
-- "./Unity/Shooter3D/Scripts/build.sh"
