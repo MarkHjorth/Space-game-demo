@@ -1,6 +1,6 @@
 language: csharp
 osx_image: xcode61
 install:
-- ./Unity/New Unity Project/Scripts/install.sh
+- "./Unity/New Unity Project/Scripts/install.sh"
 script:
-- ./Unity/New Unity Project/Scripts/build.sh
+- "./Unity/New Unity Project/Scripts/build.sh"
