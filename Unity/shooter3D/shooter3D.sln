@@ -1,6 +1,5 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{A4050E49-DE40-FF4F-B078-70FCAB053EA8}") = "shooter3D", "Assembly-CSharp-firstpass.csproj", "{FB2E05F3-31D1-604A-6AAA-B2211E659642}"
 EndProject
 Project("{A4050E49-DE40-FF4F-B078-70FCAB053EA8}") = "shooter3D", "Assembly-CSharp.csproj", "{C71C9A32-9179-49B6-014C-6FAD36EB116D}"
@@ -25,9 +24,6 @@ Global
 		{D94A58FF-67CC-0C85-C132-FEA40D5A2510}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D94A58FF-67CC-0C85-C132-FEA40D5A2510}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D94A58FF-67CC-0C85-C132-FEA40D5A2510}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
