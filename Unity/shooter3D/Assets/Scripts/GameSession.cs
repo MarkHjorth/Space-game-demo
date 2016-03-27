@@ -13,7 +13,7 @@ public class GameSession : MonoBehaviour {
     {
         startTime = System.DateTime.Now;
         stopTime = System.DateTime.Now;
-        identifyer = Hash128.Parse(startTime.ToString() + userID.ToString() + Input.mousePosition.ToString()).ToString();
+        identifyer = Hash128.Parse(userID.ToString() + startTime.ToString() + Input.mousePosition.ToString()).ToString();
     }
 
     public void SetUserID(int userId)

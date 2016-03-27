@@ -8,11 +8,13 @@ public class Player : MonoBehaviour {
     public float fireRate;
     private float nextFire;
     private float precision = 5.125f;
+    private GameController gameController;
 
 	void Start ()
 	{
         nextFire = Time.time;
         fireRate = 0.1f;
+        gameController = (GameController) GameObject.FindGameObjectWithTag("GameController").GetComponent(typeof(GameController));
 	}
 
 	void FixedUpdate()
@@ -34,6 +36,7 @@ public class Player : MonoBehaviour {
             spawnPoint.y = (spawnPoint.y + 0.5f);
             spawnPoint.x = (spawnPoint.x * 1.5f);
             Instantiate(Bullet, bulletSpawnPoint.position, ang);
+            gameController.ShotsFired();
         }
 	}
 }

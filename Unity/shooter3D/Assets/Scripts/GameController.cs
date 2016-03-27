@@ -21,4 +21,17 @@ public class GameController : MonoBehaviour {
 	void Update () {
 	
 	}
+    
+    public void ShotsHit()
+    {
+        stats.ShotsHit++;
+    }
+    public void Kills()
+    {
+        stats.Kills++;
+    }
+    public void ShotsFired()
+    {
+        stats.ShotsFired++;
+    }
 }

@@ -11,13 +11,14 @@ public class SmoothFollow : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        pos = new Vector3(target.transform.position.x + xOffset, height, target.transform.position.z + zOffset);
+        pos = new Vector3(target.transform.position.x + xOffset, target.transform.position.y + height, target.transform.position.z + zOffset);
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         pos.x = target.transform.position.x + xOffset;
+        pos.y = target.transform.position.y + height;
         pos.z = target.transform.position.z + zOffset;
         transform.position = pos;
 	}

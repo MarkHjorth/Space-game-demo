@@ -18,11 +18,18 @@ public class BulletScript : MonoBehaviour {
 	}
     
     void OnParticleCollision(GameObject other) {
-        Rigidbody body = other.GetComponent<Rigidbody>();
+        
+        var name = other.gameObject;
+        var enemy = (Enemy) other.GetComponent(typeof(Enemy));
+        enemy.isHit(1);
+        
+        /*Rigidbody body = other.GetComponent<Rigidbody>();
         if (body) {
             Vector3 direction = other.transform.position - transform.position;
             direction = direction.normalized;
             body.AddForce(direction * 5);
-        }
+        }*/
+        
+        
     }
 }
