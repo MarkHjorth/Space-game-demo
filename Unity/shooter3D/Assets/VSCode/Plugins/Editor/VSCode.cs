@@ -35,7 +35,7 @@ namespace dotBunny.Unity
         /// <summary>
         /// Download URL for Unity Debbuger
         /// </summary>
-        public const string UnityDebuggerURL = "https://raw.githubusercontent.com/dotBunny/VSCode-Test/master/Downloads/unity-debug-101.vsix";
+        public const string UnityDebuggerURL = "https://unity.gallery.vsassets.io/_apis/public/gallery/publisher/Unity/extension/unity-debug/1.0.1/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
 
         #region Properties
 
@@ -253,7 +253,7 @@ namespace dotBunny.Unity
                 
                 // Add Update Check
                 DateTime targetDate = LastUpdate.AddDays(UpdateTime);
-                if (DateTime.Now >= targetDate && AutomaticUpdates)
+                if (DateTime.Now >= targetDate)
                 {
                     CheckForUpdate();
                 }
