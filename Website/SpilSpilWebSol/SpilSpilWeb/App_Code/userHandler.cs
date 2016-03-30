@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ServiceReference1;
+using System.IO;
 
 /// <summary>
 /// Summary description for userHandler
@@ -12,7 +13,7 @@ public class userHandler
     private IwizzService service = new IwizzServiceClient();
 
     public userHandler()
-    {}
+    { }
 
     private WebUser GetUserByEmail(string email)
     {
@@ -29,7 +30,7 @@ public class userHandler
 
             return wu;
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             throw ex;
         }
@@ -40,13 +41,8 @@ public class userHandler
         WebUser wu = new WebUser();
         try
         {
-            UserModel um;
-            using (IwizzServiceClient cl = new IwizzServiceClient())
-            {
-                um = cl.GetUserByName(name);
-            }
+            UserModel um = service.GetUserByName(name);
 
-            //UserModel um2 = service.GetUserByName(name);
             wu.Id = um.Id;
             wu.Name = um.Name;
             wu.Email = um.Email;
@@ -59,7 +55,7 @@ public class userHandler
         {
             throw ex;
         }
-        
+
     }
 
     public string validateUser(string mail, string pass)
@@ -68,7 +64,7 @@ public class userHandler
         {
             return service.ValidateUser(mail, pass);
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             throw ex;
         }

@@ -27,6 +27,5 @@ public class NewsHandler
         {
             throw ex;
         }
-        return false;
     }
 }

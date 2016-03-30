@@ -18,10 +18,9 @@ public partial class mpDeafuæt : System.Web.UI.MasterPage
             addClass = controlTitle.Attributes["class"];
             controlTitle.Attributes["class"] += " active";
         }
-        catch (Exception ex)
-        {
-            
-        }
+        catch (Exception)
+        {}
+
         Page.Title = Page.Title + " - wizzGames";
 
         if(HttpContext.Current.User.Identity.Name != "")

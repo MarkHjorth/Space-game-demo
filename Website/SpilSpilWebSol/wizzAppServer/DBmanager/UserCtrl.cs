@@ -14,10 +14,22 @@ namespace wizzAppServer.DBmanager
         //Gets the user with 'name' from DB and returns a 'UserModel', based on the info
         public UserModel GetUserByName(string name)
         {
+            User u = null;
             try
             {
-                User u = context.Users.Where(x => x.Name == name).FirstOrDefault();
-                UserModel um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions);
+                u = context.Users.Where(x => x.Name == name).FirstOrDefault();
+            }
+            catch (Exception)
+            { }
+
+            UserModel um = null;
+            try
+            {
+                if (u != null)
+                {
+                    um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions.ToList());
+                }
+
                 return um;
             }
             catch (Exception ex)
@@ -32,11 +44,12 @@ namespace wizzAppServer.DBmanager
             try
             {
                 User u = context.Users.Where(x => x.Email == email).FirstOrDefault();
-                UserModel um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions);
+                UserModel um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions.ToList());
                 return um;
             }
             catch (Exception ex)
             {
+                return null;
                 throw ex;
             }
         }
@@ -50,7 +63,7 @@ namespace wizzAppServer.DBmanager
                 List<UserModel> allUsers = new List<UserModel>();
                 foreach (User u in users)
                 {
-                    allUsers.Add(new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions));
+                    allUsers.Add(new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions.ToList()));
                 }
                 return allUsers;
             }
@@ -123,7 +136,7 @@ namespace wizzAppServer.DBmanager
                 crypted = p.GetHashCode().ToString();
                 return crypted;
             }
-            catch (Exception ex){throw ex;}
+            catch (Exception ex) { throw ex; }
         }
 
         //Checks if the username 'name' exists in the database. Returns true if username is FREE

@@ -109,7 +109,7 @@
                                 <li runat="server" id="Home"><a href="/Default.aspx">Home</a></li>
                                 <li runat="server" id="Scoreboards"><a href="/scoreboards.aspx">Scoreboards</a></li>
                                 <li runat="server" id="MyStats"><a href="/LoggedIn/Account.aspx">My Account</a></li>
-                                <li runat="server" id="Download"><a href="/tba.aspx">Download 2984</a></li>
+                                <li runat="server" id="Download"><a href="/Download.aspx">Download 2984</a></li>
                                 <li runat="server" id="About"><a href="/About2984.aspx">2984</a></li>
                                 <li runat="server" id="Contact"><a href="/AboutwizzGames.aspx">About wizzGames</a></li>
                             </ul>
@@ -147,7 +147,7 @@
                                 <h2 class="footer-wid-title">Usefull Links</h2>
                                 <ul class="break-list">
                                     <li><a href="/LoggedIn/Account.aspx">My account</a></li>
-                                    <li><a href="#">Contact devs</a></li>
+                                    <li><a href="/tba.aspx">Contact devs</a></li>
                                     <li><a href="/Default.aspx">Front page</a></li>
                                 </ul>
                             </div>
@@ -187,7 +187,7 @@
                                 <a href="https://www.facebook.com/groups/1664422403836900/" target="_blank"><i class="fa fa-facebook"></i></a>
                                 <a href="https://twitter.com/WizzGamesTweet" target="_blank"><i class="fa fa-twitter"></i></a>
                                 <a href="https://www.instagram.com/wizzgamesinsta/" target="_blank"><i class="fa fa-instagram"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                                <a href="/tba.aspx" target="_blank"><i class="fa fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>

@@ -21,12 +21,11 @@
     <MetadataSource Address="http://178.157.216.170:8733/WCFwizzGames/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="058479e5-9562-4273-8c20-cbae9fc12274" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd1" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="4b3a4ef9-dc08-465a-a722-4587ddf0bfd1" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd0" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="0ac38cf0-891e-4954-a455-4a646a083f62" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd3" />
-    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="bda67668-1481-4c50-8527-41391d2d7a13" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd2" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="1c2c89a0-5a50-4b64-9d9c-2aaa7b0bf036" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?disco" />
     <MetadataFile FileName="wizzService.wsdl" MetadataType="Wsdl" ID="92608976-5026-4961-93ec-f2d48bfb0cf6" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="058479e5-9562-4273-8c20-cbae9fc12274" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd1" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="1c2c89a0-5a50-4b64-9d9c-2aaa7b0bf036" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?disco" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="4b3a4ef9-dc08-465a-a722-4587ddf0bfd1" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd0" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="bda67668-1481-4c50-8527-41391d2d7a13" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -62,7 +62,7 @@ public partial class newUser : System.Web.UI.Page
                 string username = uha.CreateUser(uName, uEmail, uPass);
                 FormsAuthentication.RedirectFromLoginPage(username, true);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Response.Redirect("/Error.aspx");
             }

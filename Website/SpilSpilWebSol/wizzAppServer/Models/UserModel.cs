@@ -23,16 +23,16 @@ namespace wizzAppServer.Models
         [DataMember]
         public string Password { get; set; }
         [DataMember]
-        public EntitySet<Session> Sessions { get; set; }
+        public List<PlayerSession> Sessions { get; set; }
         
-        public UserModel(int id, string name, string email, string password, DateTime dateCreated, EntitySet<Session> sessions)
+        public UserModel(int id, string name, string email, string password, DateTime dateCreated, List<Session> sessions)
         {
             this.Id = id;
             this.Name = name;
             this.Email = email;
             this.Password = password;
             this.DateCreated = dateCreated;
-            this.Sessions = sessions;
+            this.Sessions = sessions.ToPlayerSession();
         }
     }
 }
