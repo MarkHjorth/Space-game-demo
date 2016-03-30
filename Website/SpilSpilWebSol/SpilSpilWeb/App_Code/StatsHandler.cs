@@ -12,6 +12,7 @@ using System.Web.UI.WebControls;
 public class StatsHandler
 {
     private IwizzServiceClient service = new IwizzServiceClient();
+    string[] exclude = { };
 
     public StatsHandler()
     {
@@ -21,22 +22,27 @@ public class StatsHandler
     {
         List<PlayerStats> allStats = GetServiceStats();
         List<TableRow> tableList = new List<TableRow>();
-        List<TableHeaderCell> thcl = GetTableHeaderRow(allStats);
+
+        exclude = new string[] { "PlayerID" };
+        List<TableHeaderCell> thcl = GetTableHeaderRow(allStats.First(), exclude);
         TableHeaderRow thr = new TableHeaderRow();
 
         thr.Cells.AddRange(thcl.ToArray());
         tableList.Add(thr);
 
-        IEnumerable<PlayerStats> ordered = allStats.OrderByDescending(stat => stat.LvLReached);
+        IEnumerable<PlayerStats> ordered = allStats.OrderByDescending(stat => stat.LvL);
 
         foreach (PlayerStats ps in ordered)
         {
             TableRow tr = new TableRow();
             foreach (PropertyInfo pi in ps.GetType().GetProperties())
             {
-                TableCell tc = new TableCell();
-                tc.Text = pi.GetValue(ps, null).ToString();
-                tr.Cells.Add(tc);
+                if (!exclude.Contains(pi.Name))
+                {
+                    TableCell tc = new TableCell();
+                    tc.Text = pi.GetValue(ps, null).ToString();
+                    tr.Cells.Add(tc);
+                }
             }
             tableList.Add(tr);
         }
@@ -48,7 +54,8 @@ public class StatsHandler
         List<PlayerStats> allStats = GetServiceStats();
 
         List<TableRow> tableList = new List<TableRow>();
-        List<TableHeaderCell> thcl = GetTableHeaderRow(allStats);
+        exclude = new string[] { "PlayerID"};
+        List<TableHeaderCell> thcl = GetTableHeaderRow(allStats.First(), exclude);
         TableHeaderRow thr = new TableHeaderRow();
 
         thr.Cells.AddRange(thcl.ToArray());
@@ -64,7 +71,7 @@ public class StatsHandler
 
         if (testX != null)
         {
-            if (toSortBy == "PlayerID" || toSortBy == "PlayerName")
+            if (toSortBy == "PlayerID" || toSortBy == "Player")
             {
                 ordered = allStats.OrderBy(stat => stat.GetType().GetProperty(toSortBy).GetValue(stat, null));
             }
@@ -75,7 +82,7 @@ public class StatsHandler
         }
         else
         {
-            ordered = allStats.OrderByDescending(stat => stat.LvLReached);
+            ordered = allStats.OrderByDescending(stat => stat.LvL);
         }
 
         foreach (PlayerStats ps in ordered)
@@ -83,9 +90,12 @@ public class StatsHandler
             TableRow tr = new TableRow();
             foreach (PropertyInfo pi in ps.GetType().GetProperties())
             {
-                TableCell tc = new TableCell();
-                tc.Text = pi.GetValue(ps, null).ToString();
-                tr.Cells.Add(tc);
+                if (!exclude.Contains(pi.Name))
+                {
+                    TableCell tc = new TableCell();
+                    tc.Text = pi.GetValue(ps, null).ToString();
+                    tr.Cells.Add(tc);
+                }
             }
             tableList.Add(tr);
         }
@@ -102,11 +112,11 @@ public class StatsHandler
                 .Select(s => new PlayerStats()
                 {
                     PlayerID = s.PlayerID,
-                    PlayerName = s.PlayerName,
+                    Player = s.PlayerName,
                     PlayTime = s.PlayTime,
-                    LvLReached = s.LvLReached,
-                    ShotsFired = s.ShotsFired,
-                    ShotsHit = s.ShotsHit,
+                    LvL = s.LvLReached,
+                    Shots = s.ShotsFired,
+                    Hits = s.ShotsHit,
                     Accuracy = s.Accuracy,
                     Kills = s.Kills,
                     Deaths = s.Deaths,
@@ -120,54 +130,116 @@ public class StatsHandler
         }
         return allStats;
     }
-    
-    private List<TableHeaderCell> GetTableHeaderRow(List<PlayerStats> allStats)
+
+    private List<TableHeaderCell> GetTableHeaderRow(Object stat, string[] args)
     {
         List<TableHeaderCell> thcl = new List<TableHeaderCell>();
 
-        foreach (PropertyInfo pi in allStats.First().GetType().GetProperties())
+        foreach (PropertyInfo pi in stat.GetType().GetProperties())
         {
-            TableHeaderCell thc = new TableHeaderCell();
-
-            HyperLink hl = new HyperLink()
+            if (!args.Contains(pi.Name))
             {
-                Text = pi.Name,
-                NavigateUrl = "?sortBy=" + pi.Name,
-                CssClass = "thickbox",
-                ToolTip = "Sort by " + pi.Name
-            };
-            thc.Controls.Add(hl);
-            thcl.Add(thc);
+                TableHeaderCell thc = new TableHeaderCell();
+
+                HyperLink hl = new HyperLink()
+                {
+                    Text = pi.Name,
+                    NavigateUrl = "?sortBy=" + pi.Name,
+                    CssClass = "thickbox",
+                    ToolTip = "Sort by " + pi.Name
+                };
+                thc.Controls.Add(hl);
+                thcl.Add(thc);
+            }
         }
         return thcl;
     }
 
     public List<TableRow> GetPlayerStats(string name)
     {
-        ServiceReference1.PlayerStats ps = service.GetUserStats(name);
+        ServiceReference1.PlayerStats sps = service.GetUserStats(name);
         List<TableRow> tableList = new List<TableRow>();
-
-        List<TableHeaderCell> thcl = new List<TableHeaderCell>();
+        PlayerStats ps = ConvertToWeb(sps);
+        exclude = new string[] { "PlayerID" };
+        List<TableHeaderCell> thcl = GetTableHeaderRow(ps, exclude);
         TableHeaderRow thr = new TableHeaderRow();
-        foreach (PropertyInfo pi in ps.GetType().GetProperties())
-        {
-            TableHeaderCell thc = new TableHeaderCell();
-            thc.Text = pi.Name;
-            thcl.Add(thc);
-        }
+
         thr.Cells.AddRange(thcl.ToArray());
         tableList.Add(thr);
 
         TableRow tr = new TableRow();
         foreach (PropertyInfo pi in ps.GetType().GetProperties())
         {
-            TableCell tc = new TableCell();
-            tc.Text = pi.GetValue(ps, null).ToString();
-            tr.Cells.Add(tc);
+            if (!exclude.Contains(pi.Name))
+            {
+                TableCell tc = new TableCell();
+                tc.Text = pi.GetValue(ps, null).ToString();
+                tr.Cells.Add(tc);
+            }
         }
         tableList.Add(tr);
 
         return tableList;
+    }
+
+    public List<TableRow> GetUserSessions(string name)
+    {
+        List<PlayerSession> psl = GetServiceSessions(name);
+        List<TableRow> tableList = new List<TableRow>();
+
+        exclude = new string[] { "Id", "UserId", "Identifyer" };
+        List<TableHeaderCell> thcl = GetTableHeaderRow(psl.First(), exclude);
+        TableHeaderRow thr = new TableHeaderRow();
+
+        thr.Cells.AddRange(thcl.ToArray());
+        tableList.Add(thr);
+
+        foreach (PlayerSession plSe in psl)
+        {
+            TableRow tr = new TableRow();
+            foreach (PropertyInfo pi in plSe.GetType().GetProperties())
+            {
+                if (!exclude.Contains(pi.Name))
+                {
+                    TableCell tc = new TableCell();
+
+                    tc.Text = pi.GetValue(plSe, null).ToString();
+                    tr.Cells.Add(tc);
+                }
+            }
+            tableList.Add(tr);
+        }
+        return tableList;
+    }
+
+    private List<PlayerSession> GetServiceSessions(string name)
+    {
+        List<PlayerSession> playerSessions = new List<PlayerSession>();
+        try
+        {
+            playerSessions = service
+                .GetUserSessions(name)
+                .Select(s => new PlayerSession()
+                {
+                    Id = s.Id,
+                    UserId = s.UserId,
+                    Identifyer = s.Identifyer,
+                    StartTime = s.StartTime,
+                    StopTime = s.StopTime,
+                    PlayTime = s.PlayTime,
+                    Shots = s.ShotsFired,
+                    Hits = s.ShotsHit,
+                    Kills = s.Kills,
+                    Deaths = s.Deaths,
+                    Kdr = s.Kdr
+                })
+                .ToList();
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        return playerSessions;
     }
 
     private PlayerStats ConvertToWeb(ServiceReference1.PlayerStats sps)

@@ -91,8 +91,8 @@
   <xs:element name="SaveDevDescriptions">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="mark" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="dave" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="who" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="desc" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -140,6 +140,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetUserStatsResult" nillable="true" type="q4:PlayerStats" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserSessions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserSessionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetUserSessionsResult" nillable="true" type="q5:ArrayOfPlayerSession" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

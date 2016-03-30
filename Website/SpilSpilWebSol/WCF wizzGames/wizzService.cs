@@ -10,7 +10,6 @@ using wizzAppServer.Models;
 
 namespace WCF_wizzGames
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class wizzService : IwizzService
     {
         private IwizzAppServer iws = new wizzServer();
@@ -18,16 +17,33 @@ namespace WCF_wizzGames
         public wizzService()
         { }
 
+        //Gets the user with 'email'
         public UserModel GetUserByEmail(string email)
         {
-            return iws.GetUserByEmail(email);
+            try
+            {
+                return iws.GetUserByEmail(email);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
+        //Gets the user with 'name'
         public UserModel GetUserByName(string name)
         {
-            return iws.GetUserByName(name);
+            try
+            {
+                return iws.GetUserByName(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
+        //Creates a user with 'name', 'mail' and 'password'
         public string CreateUser(string name, string mail, string password)
         {
             try
@@ -41,6 +57,7 @@ namespace WCF_wizzGames
             }
         }
 
+        //Validates user credentials
         public string ValidateUser(string email, string password)
         {
             try
@@ -54,21 +71,38 @@ namespace WCF_wizzGames
             }
         }
 
+        //Checks if username if free
         public bool IsUserNameFree(string name)
-        {
-            return iws.IsUserNameFree(name);
-        }
-
-        public bool EmailFree(string mail)
-        {
-            return iws.EmailFree(mail);
-        }
-
-        public bool SaveDevDescriptions(string mark, string dave)
         {
             try
             {
-                iws.SaveDevDescriptions(mark, dave);
+                return iws.IsUserNameFree(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //Checks if email if free
+        public bool EmailFree(string mail)
+        {
+            try
+            {
+                return iws.EmailFree(mail);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //Saves description of Dev or game
+        public bool SaveDevDescriptions(string who, string desc)
+        {
+            try
+            {
+                iws.SaveDevDescriptions(who, desc);
                 return true;
             }
             catch (Exception ex)
@@ -77,6 +111,7 @@ namespace WCF_wizzGames
             }
         }
 
+        //Gets description of dev or game
         public string GetDevDescription(string name)
         {
             try
@@ -89,6 +124,7 @@ namespace WCF_wizzGames
             }
         }
 
+        //Gets all game stats
         public List<PlayerStats> GetAllStats()
         {
             try
@@ -101,11 +137,25 @@ namespace WCF_wizzGames
             }
         }
 
+        //Get user stats
         public PlayerStats GetUserStats(string name)
         {
             try
             {
                 return iws.GetUserStats(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //Gets all users sessions
+        public List<PlayerSession> GetUserSessions(string name)
+        {
+            try
+            {
+                return iws.GetUserSessions(name);
             }
             catch (Exception ex)
             {

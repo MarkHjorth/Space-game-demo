@@ -40,7 +40,13 @@ public class userHandler
         WebUser wu = new WebUser();
         try
         {
-            UserModel um = service.GetUserByName(name);
+            UserModel um;
+            using (IwizzServiceClient cl = new IwizzServiceClient())
+            {
+                um = cl.GetUserByName(name);
+            }
+
+            //UserModel um2 = service.GetUserByName(name);
             wu.Id = um.Id;
             wu.Name = um.Name;
             wu.Email = um.Email;

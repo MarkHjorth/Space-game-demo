@@ -23,7 +23,7 @@
       <Column Name="userId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="identifyer" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
       <Column Name="startTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="stopTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="stopTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="shotsFired" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="shotsHit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="kills" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

@@ -49,19 +49,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PlM82U68HKcI9XF1IUqiM29lLgltWY166RLzJ8Uhv4Q=</dsig:DigestValue>
+        <dsig:DigestValue>8xpEga/7fivgR+Pzb2rBl1hx4Glh8f0Bo5fIuJXZkJU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzAppServer.dll" size="22528">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzAppServer.dll" size="24576">
       <assemblyIdentity name="wizzAppServer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bqh4f9ICngghb2zs8LB5Gwe+daAG2iL8+0oJky7qavg=</dsig:DigestValue>
+        <dsig:DigestValue>zRXzxVrtmLCKq/SvJhc+IIVAgCRxCtioRFfyaPiFWRg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aMrkMjp3rbuXZZH7AOsi+Z52Lo6Wddv9PMgle6WXe9M=</dsig:DigestValue>
+        <dsig:DigestValue>QIY2kVab3sm4RQVIOa6h9RXDh29umf0unxcFM+vgrYE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

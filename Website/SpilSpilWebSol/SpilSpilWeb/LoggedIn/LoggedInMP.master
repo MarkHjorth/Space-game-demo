@@ -5,10 +5,10 @@
         <div class="col-md-12">
             <div class="user-menu usermenu">
                 <ul>
-                    <li><a href="#"><i class="fa fa-table"></i>My Stats</a></li>
+                    <li><a href="/LoggedIn/PersonalStats.aspx"><i class="fa fa-table"></i>My Stats</a></li>
                     <li><a href="/LoggedIn/Account.aspx"><i class="fa fa-user"></i>Account info</a></li>
-                    <%--<li><a href="cart.html"><i class="fa fa-user"></i>My Cart</a></li>--%>
-                    <%--<li><a href="checkout.html"><i class="fa fa-user"></i>Checkout</a></li>--%>
+                    <%--<li><a href="cart.html"><i class="fa fa-user"></i>Extra menu item 1</a></li>--%>
+                    <%--<li><a href="checkout.html"><i class="fa fa-user"></i>Extra menu item 2</a></li>--%>
                     <li><a href="/LoggedIn/LogOut.aspx"><i class="fa fa-sign-out"></i>Log Out</a></li>
                 </ul>
             </div>

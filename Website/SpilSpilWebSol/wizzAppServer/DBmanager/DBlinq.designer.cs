@@ -406,7 +406,7 @@ namespace wizzAppServer.DBmanager
 		
 		private System.DateTime _startTime;
 		
-		private System.Nullable<System.DateTime> _stopTime;
+		private System.DateTime _stopTime;
 		
 		private int _shotsFired;
 		
@@ -430,7 +430,7 @@ namespace wizzAppServer.DBmanager
     partial void OnidentifyerChanged();
     partial void OnstartTimeChanging(System.DateTime value);
     partial void OnstartTimeChanged();
-    partial void OnstopTimeChanging(System.Nullable<System.DateTime> value);
+    partial void OnstopTimeChanging(System.DateTime value);
     partial void OnstopTimeChanged();
     partial void OnshotsFiredChanging(int value);
     partial void OnshotsFiredChanged();
@@ -532,8 +532,8 @@ namespace wizzAppServer.DBmanager
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stopTime", DbType="DateTime")]
-		public System.Nullable<System.DateTime> stopTime
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stopTime", DbType="DateTime NOT NULL")]
+		public System.DateTime stopTime
 		{
 			get
 			{

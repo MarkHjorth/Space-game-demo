@@ -9,7 +9,8 @@ using wizzAppServer.Models;
 
 namespace WCF_wizzGames
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
+    // All methods commented in implementation
+
     [ServiceContract]
     public interface IwizzService
     {
@@ -32,7 +33,7 @@ namespace WCF_wizzGames
         bool EmailFree(string mail);
 
         [OperationContract]
-        bool SaveDevDescriptions(string mark, string dave);
+        bool SaveDevDescriptions(string who, string desc);
 
         [OperationContract]
         string GetDevDescription(string name);
@@ -42,5 +43,8 @@ namespace WCF_wizzGames
 
         [OperationContract]
         PlayerStats GetUserStats(string name);
+
+        [OperationContract]
+        List<PlayerSession> GetUserSessions(string name);
     }
 }

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ctrls\MailCtrl.cs" />
     <Compile Include="DBmanager\BaseDB.cs" />
     <Compile Include="DBmanager\DBlinq.designer.cs">
       <AutoGen>True</AutoGen>
@@ -51,6 +52,7 @@
     <Compile Include="DBmanager\StatsCtrl.cs" />
     <Compile Include="DBmanager\UserCtrl.cs" />
     <Compile Include="IwizzAppServer.cs" />
+    <Compile Include="Models\PlayerSession.cs" />
     <Compile Include="Models\PlayerStats.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

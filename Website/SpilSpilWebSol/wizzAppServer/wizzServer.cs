@@ -13,16 +13,33 @@ namespace wizzAppServer
         private UserCtrl userCtrl = new UserCtrl();
         private StatsCtrl statsCtrl = new StatsCtrl();
 
+        //Gets the user with 'email'
         public UserModel GetUserByEmail(string email)
         {
-            return userCtrl.GetUserByEmail(email);
+            try
+            {
+                return userCtrl.GetUserByEmail(email);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
+        //Gets the user with 'name'
         public UserModel GetUserByName(string name)
         {
-            return userCtrl.GetUserByName(name);
+            try
+            {
+                return userCtrl.GetUserByName(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
+        //Creates user with 'name', 'email' and 'password'
         public string CreateUser(string name, string mail, string password)
         {
             try
@@ -35,6 +52,7 @@ namespace wizzAppServer
             }
         }
 
+        //Validates the user credentials on login
         public string ValidateUser(string mail, string password)
         {
             try
@@ -44,21 +62,38 @@ namespace wizzAppServer
             catch (Exception ex) { throw ex; }
         }
 
+        //Checks if username is free
         public bool IsUserNameFree(string name)
-        {
-            return userCtrl.IsUserNameFree(name);
-        }
-
-        public bool EmailFree(string mail)
-        {
-            return userCtrl.EmailFree(mail);
-        }
-
-        public bool SaveDevDescriptions(string mark, string dave)
         {
             try
             {
-                userCtrl.SaveDevDescriptions(mark, dave);
+                return userCtrl.IsUserNameFree(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //Checks if the email is free
+        public bool EmailFree(string mail)
+        {
+            try
+            {
+                return userCtrl.EmailFree(mail);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //Saves description of Dev or the game
+        public bool SaveDevDescriptions(string who, string desc)
+        {
+            try
+            {
+                userCtrl.SaveDevDescriptions(who, desc);
                 return true;
             }
             catch (Exception ex)
@@ -67,11 +102,20 @@ namespace wizzAppServer
             }
         }
 
+        //Gets description of dev or game
         public string GetDevDescription(string name)
         {
-            return userCtrl.GetDevDescription(name);
+            try
+            {
+                return userCtrl.GetDevDescription(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
+        //Gets all the stats for the game. 
         public List<PlayerStats> GetAllStats()
         {
             List<PlayerStats> allStats = new List<PlayerStats>();
@@ -87,11 +131,25 @@ namespace wizzAppServer
             }
         }
 
+        //Gets the stats for a user
         public PlayerStats GetUserStats(string name)
         {
             try
             {
                 return statsCtrl.GetUserStats(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //Gets all sessions for a user
+        public List<PlayerSession> GetUserSessions(string name)
+        {
+            try
+            {
+                return statsCtrl.GetUserSessions(name);
             }
             catch (Exception ex)
             {

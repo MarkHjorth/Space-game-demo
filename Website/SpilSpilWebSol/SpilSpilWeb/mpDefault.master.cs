@@ -37,9 +37,13 @@ public partial class mpDeafuæt : System.Web.UI.MasterPage
         FormsAuthentication.SignOut();
     }
 
-    protected void newsSignUp()
+    protected void SignUp()
     {
-        string s = emailAddress.Value;
+        NewsHandler nh = new NewsHandler();
+
+        string email = emailAddress.Value;
+        nh.RegisterEmail(email);
+
         Response.Redirect("tba.aspx");
     }
 }

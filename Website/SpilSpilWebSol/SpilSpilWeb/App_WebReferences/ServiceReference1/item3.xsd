@@ -34,4 +34,27 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PlayerStats" nillable="true" type="tns:PlayerStats" />
+  <xs:complexType name="ArrayOfPlayerSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayerSession" nillable="true" type="tns:PlayerSession" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayerSession" nillable="true" type="tns:ArrayOfPlayerSession" />
+  <xs:complexType name="PlayerSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accuracy" type="xs:double" />
+      <xs:element minOccurs="0" name="Deaths" type="xs:double" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Identifyer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kdr" type="xs:double" />
+      <xs:element minOccurs="0" name="Kills" type="xs:double" />
+      <xs:element minOccurs="0" name="PlayTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="ShotsFired" type="xs:double" />
+      <xs:element minOccurs="0" name="ShotsHit" type="xs:double" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StopTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayerSession" nillable="true" type="tns:PlayerSession" />
 </xs:schema>

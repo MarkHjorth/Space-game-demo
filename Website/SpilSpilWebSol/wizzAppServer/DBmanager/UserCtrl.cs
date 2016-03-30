@@ -11,20 +11,37 @@ namespace wizzAppServer.DBmanager
 {
     class UserCtrl : BaseDB
     {
+        //Gets the user with 'name' from DB and returns a 'UserModel', based on the info
         public UserModel GetUserByName(string name)
         {
-            User u = context.Users.Where(x => x.Name == name).FirstOrDefault();
-            UserModel um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions);
-            return um;
+            try
+            {
+                User u = context.Users.Where(x => x.Name == name).FirstOrDefault();
+                UserModel um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions);
+                return um;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
+        //Gets the user with 'email' from DB and returns a 'UserModel', based on the info
         public UserModel GetUserByEmail(string email)
         {
-            User u = context.Users.Where(x => x.Email == email).FirstOrDefault();
-            UserModel um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions);
-            return um;
+            try
+            {
+                User u = context.Users.Where(x => x.Email == email).FirstOrDefault();
+                UserModel um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions);
+                return um;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
+        //Gets all users from DB and returns a list of 'UserModel' based on the info
         public List<UserModel> GetAllUsers()
         {
             try
@@ -43,6 +60,7 @@ namespace wizzAppServer.DBmanager
             }
         }
 
+        //Creates a 'User' with 'name', 'mail' and 'password'. Saves to DB and returns users name
         public string CreateUser(string name, string mail, string password)
         {
             try
@@ -59,6 +77,7 @@ namespace wizzAppServer.DBmanager
             catch (Exception ex) { throw ex; }
         }
 
+        //Checks if the user with 'mail' and 'password' is valid. Returns user name
         public string ValidateUser(string mail, string password)
         {
             try
@@ -78,6 +97,7 @@ namespace wizzAppServer.DBmanager
             catch (Exception ex) { throw ex; }
         }
 
+        //Compares the given password, 'pass' and the password from the 'UserModel', 'us'. Returns bool
         private bool ComparePass(string pass, UserModel us)
         {
             try
@@ -94,6 +114,7 @@ namespace wizzAppServer.DBmanager
             catch (Exception ex) { throw ex; }
         }
 
+        //Encrypts the given password 'p' with 'HetHash'. Returns encrypted password
         private string Encrypt(string p)
         {
             try
@@ -105,28 +126,26 @@ namespace wizzAppServer.DBmanager
             catch (Exception ex){throw ex;}
         }
 
+        //Checks if the username 'name' exists in the database. Returns true if username is FREE
         public bool IsUserNameFree(string name)
         {
             return (GetUserByName(name) == null);
         }
 
+        //Checks if the email 'mail' exists in the database. Returns true if email is FREE
         public bool EmailFree(string mail)
         {
             return (GetUserByEmail(mail) == null);
         }
 
-        public bool SaveDevDescriptions(string mark, string dave)
+        //Saves a description, 'desc', of a person og the game, 'who' to DB. Returns true if works
+        public bool SaveDevDescriptions(string who, string desc)
         {
             try
             {
-                Description descMark = context.Descriptions.Where(x => x.Name == "Mark").FirstOrDefault();
-                descMark.Description1 = mark;
-                descMark.LastUpdated = DateTime.Now;
-
-                Description descDave = context.Descriptions.Where(x => x.Name == "David").FirstOrDefault();
-                descDave.Description1 = dave;
-                descDave.LastUpdated = DateTime.Now;
-
+                Description description = context.Descriptions.Where(x => x.Name == who).FirstOrDefault();
+                description.Description1 = desc;
+                description.LastUpdated = DateTime.Now;
                 context.SubmitChanges();
                 return true;
             }
@@ -136,6 +155,7 @@ namespace wizzAppServer.DBmanager
             }
         }
 
+        //Gets and returns the description of 'name', from DB
         public string GetDevDescription(string name)
         {
             try

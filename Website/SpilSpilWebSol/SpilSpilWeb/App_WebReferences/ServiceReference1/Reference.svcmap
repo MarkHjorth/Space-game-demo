@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3b409553-5f4f-40d7-b571-16f7a61efeb9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c1ca06fe-92c6-40fa-bd85-0b4559ab5e8e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -21,12 +21,12 @@
     <MetadataSource Address="http://178.157.216.170:8733/WCFwizzGames/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="b19fa5f8-97c4-4f4a-aee1-1e2cc18bb145" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd1" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="33b4d6e4-65f1-4627-993c-0d640fe45b21" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd0" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="9e807a60-472f-4dfc-ba67-f93590451513" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd3" />
-    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="447f4423-b0cf-475e-a096-c860633fe009" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd2" />
-    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="70ae7bf1-f3e9-4ff1-91ed-ff75c3d1b942" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?disco" />
-    <MetadataFile FileName="wizzService.wsdl" MetadataType="Wsdl" ID="3fa97a58-cd36-4479-9548-aae5b9c19699" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="058479e5-9562-4273-8c20-cbae9fc12274" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd1" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="4b3a4ef9-dc08-465a-a722-4587ddf0bfd1" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd0" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="0ac38cf0-891e-4954-a455-4a646a083f62" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd3" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="bda67668-1481-4c50-8527-41391d2d7a13" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd2" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="1c2c89a0-5a50-4b64-9d9c-2aaa7b0bf036" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?disco" />
+    <MetadataFile FileName="wizzService.wsdl" MetadataType="Wsdl" ID="92608976-5026-4961-93ec-f2d48bfb0cf6" SourceId="1" SourceUrl="http://178.157.216.170:8733/WCFwizzGames/?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

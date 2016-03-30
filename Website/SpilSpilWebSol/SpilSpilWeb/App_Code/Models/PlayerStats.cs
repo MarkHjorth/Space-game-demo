@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 public class PlayerStats
 {
     public int PlayerID { get; set; }
-    public string PlayerName { get; set; }
+    public string Player { get; set; }
     public TimeSpan PlayTime { get; set; }
-    public double LvLReached { get; set; }
-    public double ShotsFired { get; set; }
-    public double ShotsHit { get; set; }
+    public double LvL { get; set; }
+    public double Shots { get; set; }
+    public double Hits { get; set; }
     public double Accuracy { get; set; }
     public double Kills { get; set; }
     public double Deaths { get; set; }
@@ -21,11 +21,11 @@ public class PlayerStats
     public PlayerStats(int id, string name, TimeSpan ts, double lvl, double shots, double hits, double acc, double kills, double deaths, double kdr)
     {
         PlayerID = id;
-        PlayerName = name;
+        Player = name;
         PlayTime = ts;
-        LvLReached = lvl;
-        ShotsFired = shots;
-        ShotsHit = hits;
+        LvL = lvl;
+        Shots = shots;
+        Hits = hits;
         Accuracy = acc;
         Kills = kills;
         Deaths = deaths;
