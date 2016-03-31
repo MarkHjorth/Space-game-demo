@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>spilSpillet</title>
-    <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>wizzGames</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
     <!-- Vores styles -->
     <link href="/css/login.css" rel='stylesheet' type='text/css' />
@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="/css/owl.carousel.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/responsive.css">
+
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -104,9 +107,9 @@
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li runat="server" id="Home"><a href="/Default.aspx">Home</a></li>
-                                <li runat="server" id="Scoreboards"><a href="/tba.aspx">Scoreboards</a></li>
-                                <li runat="server" id="MyStats"><a href="/tba.aspx">My Stats</a></li>
-                                <li runat="server" id="Download"><a href="/tba.aspx">Download 2984</a></li>
+                                <li runat="server" id="Scoreboards"><a href="/scoreboards.aspx">Scoreboards</a></li>
+                                <li runat="server" id="MyStats"><a href="/LoggedIn/Account.aspx">My Account</a></li>
+                                <li runat="server" id="Download"><a href="/Download.aspx">Download 2984</a></li>
                                 <li runat="server" id="About"><a href="/About2984.aspx">2984</a></li>
                                 <li runat="server" id="Contact"><a href="/AboutwizzGames.aspx">About wizzGames</a></li>
                             </ul>
@@ -134,7 +137,7 @@
                                     web site, the game, a lot of database stuff and maybe even
                                     mobile applications.
                                     <br />
-                                    Read more about us on the <a href="/tba.aspx">About</a> page!
+                                    Read more about us on the <a href="/AboutwizzGames.aspx">About</a> page!
                                 </p>
                             </div>
                         </div>
@@ -144,8 +147,7 @@
                                 <h2 class="footer-wid-title">Usefull Links</h2>
                                 <ul class="break-list">
                                     <li><a href="/LoggedIn/Account.aspx">My account</a></li>
-                                    <li><a href="#">My Statistics</a></li>
-                                    <li><a href="#">Contact devs</a></li>
+                                    <li><a href="/tba.aspx">Contact devs</a></li>
                                     <li><a href="/Default.aspx">Front page</a></li>
                                 </ul>
                             </div>
@@ -156,7 +158,7 @@
                                 <h2 class="footer-wid-title">Newsletter</h2>
                                 <p>
                                     Sign up here to sell your soul to the dark lords of the universe. 
-                                    Also, you will get news and updates in your email inbox..
+                                    Also, you may get news and updates in your email inbox..
                                 </p>
                                 <div class="newsletter-form">
                                     <form method="post">
@@ -185,7 +187,7 @@
                                 <a href="https://www.facebook.com/groups/1664422403836900/" target="_blank"><i class="fa fa-facebook"></i></a>
                                 <a href="https://twitter.com/WizzGamesTweet" target="_blank"><i class="fa fa-twitter"></i></a>
                                 <a href="https://www.instagram.com/wizzgamesinsta/" target="_blank"><i class="fa fa-instagram"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                                <a href="/tba.aspx" target="_blank"><i class="fa fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
@@ -200,14 +202,17 @@
             <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
             <!-- jQuery sticky menu -->
-            <script src="js/owl.carousel.min.js"></script>
-            <script src="js/jquery.sticky.js"></script>
+            <script src="/js/owl.carousel.min.js"></script>
+            <script src="/js/jquery.sticky.js"></script>
 
             <!-- jQuery easing -->
-            <script src="js/jquery.easing.1.3.min.js"></script>
+            <script src="/js/jquery.easing.1.3.min.js"></script>
 
             <!-- Main Script -->
-            <script src="js/main.js"></script>
+            <script src="/js/main.js"></script>
+
+            <%-- AJAX script --%>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         </div>
     </div>
 </body>

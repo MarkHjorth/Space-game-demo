@@ -2,47 +2,95 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ServiceReference1;
+using System.IO;
 
 /// <summary>
 /// Summary description for userHandler
 /// </summary>
 public class userHandler
 {
-    public userHandler()
-    {
-        //
-        // TODO: Add constructor logic here
-        //
-    }
+    private IwizzService service = new IwizzServiceClient();
 
-    private string getUser(string email)
+    public userHandler()
+    { }
+
+    private WebUser GetUserByEmail(string email)
     {
+        WebUser wu = new WebUser();
         try
         {
-            return null;
-        }
-        catch
-        {
+            UserModel um = service.GetUserByName(email);
 
-            return null;
+            wu.Id = um.Id;
+            wu.Name = um.Name;
+            wu.Email = um.Email;
+            wu.Password = um.Password;
+            wu.DateCreated = um.DateCreated;
+
+            return wu;
         }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+
+    public WebUser GetUserByName(string name)
+    {
+        WebUser wu = new WebUser();
+        try
+        {
+            UserModel um = service.GetUserByName(name);
+
+            wu.Id = um.Id;
+            wu.Name = um.Name;
+            wu.Email = um.Email;
+            wu.Password = um.Password;
+            wu.DateCreated = um.DateCreated;
+
+            return wu;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+
     }
 
     public string validateUser(string mail, string pass)
     {
-        //try
-        //{
-        //    User curUser = getUser(mail);
+        try
+        {
+            return service.ValidateUser(mail, pass);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
 
-        //    if(curUser.Password == pass)
-        //    {
-        //        return curUser.Name;
-        //    }
-        //}
-        //catch
-        //{
-        //    return null;
-        //}
-        return null;
+    public string CreateUser(string name, string mail, string password)
+    {
+
+        try
+        {
+            return service.CreateUser(name, mail, password);
+        }
+        catch (Exception ex)
+        {
+
+            throw ex;
+        }
+    }
+
+    public bool IsUserNameFree(string name)
+    {
+        return service.IsUserNameFree(name);
+    }
+
+    public bool EmailFree(string mail)
+    {
+        return service.EmailFree(mail);
     }
 }

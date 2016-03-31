@@ -48,3 +48,16 @@
 .aboutUs {
     margin: 0 auto;
 }
+
+.padding {
+    padding: 2em;
+}
+
+.usermenu {
+    margin: 1em;
+    background-color: ghostwhite;
+}
+
+.administration {
+    margin-top: 5em;
+}

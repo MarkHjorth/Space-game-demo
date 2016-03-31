@@ -18,10 +18,9 @@ public partial class mpDeafuæt : System.Web.UI.MasterPage
             addClass = controlTitle.Attributes["class"];
             controlTitle.Attributes["class"] += " active";
         }
-        catch (Exception ex)
-        {
-            
-        }
+        catch (Exception)
+        {}
+
         Page.Title = Page.Title + " - wizzGames";
 
         if(HttpContext.Current.User.Identity.Name != "")
@@ -37,9 +36,13 @@ public partial class mpDeafuæt : System.Web.UI.MasterPage
         FormsAuthentication.SignOut();
     }
 
-    protected void newsSignUp()
+    protected void SignUp()
     {
-        string s = emailAddress.Value;
+        NewsHandler nh = new NewsHandler();
+
+        string email = emailAddress.Value;
+        nh.RegisterEmail(email);
+
         Response.Redirect("tba.aspx");
     }
 }

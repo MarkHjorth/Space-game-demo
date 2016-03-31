@@ -5,19 +5,46 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using wizzAppServer.DBmanager;
+using wizzAppServer.Models;
 
 namespace WCF_wizzGames
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
+    // All methods commented in implementation
+
     [ServiceContract]
     public interface IwizzService
     {
         [OperationContract]
-        User GetUserWeb(string email);
+        UserModel GetUserByEmail(string email);
+
+        [OperationContract]
+        UserModel GetUserByName(string name);
+
+        [OperationContract]
+        string CreateUser(string name, string mail, string password);
 
         [OperationContract]
         string ValidateUser(string mail, string password);
 
-        // TODO: Add your service operations here
+        [OperationContract]
+        bool IsUserNameFree(string name);
+
+        [OperationContract]
+        bool EmailFree(string mail);
+
+        [OperationContract]
+        bool SaveDevDescriptions(string who, string desc);
+
+        [OperationContract]
+        string GetDevDescription(string name);
+
+        [OperationContract]
+        List<PlayerStats> GetAllStats();
+
+        [OperationContract]
+        PlayerStats GetUserStats(string name);
+
+        [OperationContract]
+        List<PlayerSession> GetUserSessions(string name);
     }
 }

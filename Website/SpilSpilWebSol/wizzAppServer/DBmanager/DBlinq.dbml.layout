@@ -2,11 +2,30 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DBlinq">
   <DataContextMoniker Name="/DBlinqDataContext" />
   <nestedChildShapes>
-    <classShape Id="6ca3b39c-e586-4de2-a80c-22fec70a3e96" absoluteBounds="2.375, 1.25, 2, 1.7708968098958331">
+    <classShape Id="6ca3b39c-e586-4de2-a80c-22fec70a3e96" absoluteBounds="2.875, 2.125, 2, 1.7708968098958331">
       <DataClassMoniker Name="/DBlinqDataContext/User" />
       <nestedChildShapes>
-        <elementListCompartment Id="0ab44faf-6216-4618-94e4-5c762d90900e" absoluteBounds="2.39, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0ab44faf-6216-4618-94e4-5c762d90900e" absoluteBounds="2.89, 2.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="04a8488f-6167-4c4f-acb7-43a59d5ed7ae" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DBlinqDataContext/Description" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20107e41-e8d5-4001-8845-3131369b2e2b" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3d3d7f23-1a37-4a91-b099-fd41d80be179" absoluteBounds="0.5, 2.125, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DBlinqDataContext/Session" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e96ea35-7e11-4971-a207-01fa8e4deb00" absoluteBounds="0.51500000000000012, 2.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 3.01044840494792); (2.5 : 3.01044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DBlinqDataContext/User/User_Session" />
+      <nodes>
+        <classShapeMoniker Id="6ca3b39c-e586-4de2-a80c-22fec70a3e96" />
+        <classShapeMoniker Id="3d3d7f23-1a37-4a91-b099-fd41d80be179" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -1,0 +1,24 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/mpDefault.master" AutoEventWireup="true" CodeFile="LoggedInMP.master.cs" Inherits="LoggedIn_LoggedInMP" %>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Panel runat="server" ID="panelMain">
+        <div class="col-md-12">
+            <div class="user-menu usermenu">
+                <ul>
+                    <li><a href="/LoggedIn/PersonalStats.aspx"><i class="fa fa-table"></i>My Stats</a></li>
+                    <li><a href="/LoggedIn/Account.aspx"><i class="fa fa-user"></i>Account info</a></li>
+                    <%--<li><a href="cart.html"><i class="fa fa-user"></i>Extra menu item 1</a></li>--%>
+                    <%--<li><a href="checkout.html"><i class="fa fa-user"></i>Extra menu item 2</a></li>--%>
+                    <li><a href="/LoggedIn/LogOut.aspx"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+        <asp:Panel runat="server" ID="panel1">
+            <asp:ContentPlaceHolder ID="ChildContent1" runat="server" />
+        </asp:Panel>
+        <asp:Panel runat="server" ID="panel2">
+            <asp:ContentPlaceHolder ID="ChildContent2" runat="server" />
+        </asp:Panel>
+        <br />
+    </asp:Panel>
+</asp:Content>

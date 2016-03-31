@@ -8,3 +8,7 @@ C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Debug\wizzHost.csprojResolveAssemblyReference.cache
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Debug\wizzHost.exe
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Debug\wizzHost.pdb
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Debug\wizzHost.exe.manifest
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Debug\wizzHost.application
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Debug\wizzHost.exe.manifest
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Debug\wizzHost.application
