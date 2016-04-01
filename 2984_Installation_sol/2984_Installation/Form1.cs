@@ -58,7 +58,12 @@ namespace _2984_Installation
 
         private void downloadDataFolder()
         {
-            
+            //Directory.CreateDirectory(path + "\\wizzGames");
+            //saveDest = (path + "\\wizzGames\\2984\\");
+            //using (var client = new WebClient())
+            //{
+            //    client.DownloadFile("http://38.media.tumblr.com/81333094b16b087f3d51b2ab85147d27/tumblr_inline_o4b4piHMVG1s3v8a5_500.gif", saveDest);
+            //}
         }
 
         private void createShortcut()
