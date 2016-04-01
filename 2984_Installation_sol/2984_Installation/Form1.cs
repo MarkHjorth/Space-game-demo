@@ -50,7 +50,7 @@ namespace _2984_Installation
         {
             Directory.CreateDirectory(path + "\\wizzGames");
             saveDest = (path + "\\wizzGames\\2984.gif");
-            using (var client = new WebClient())
+            using (WebClient client = new WebClient())
             {
                 client.DownloadFile("http://38.media.tumblr.com/81333094b16b087f3d51b2ab85147d27/tumblr_inline_o4b4piHMVG1s3v8a5_500.gif", saveDest);
             }
@@ -58,12 +58,12 @@ namespace _2984_Installation
 
         private void downloadDataFolder()
         {
-            //Directory.CreateDirectory(path + "\\wizzGames");
-            //saveDest = (path + "\\wizzGames\\2984\\");
-            //using (var client = new WebClient())
-            //{
-            //    client.DownloadFile("http://38.media.tumblr.com/81333094b16b087f3d51b2ab85147d27/tumblr_inline_o4b4piHMVG1s3v8a5_500.gif", saveDest);
-            //}
+            Directory.CreateDirectory(path + "\\wizzGames");
+            saveDest = (path + "\\wizzGames\\2984\\");
+            using (WebClient client = new WebClient())
+            {
+                client.DownloadFile("http://38.media.tumblr.com/81333094b16b087f3d51b2ab85147d27/", saveDest);
+            }
         }
 
         private void createShortcut()
