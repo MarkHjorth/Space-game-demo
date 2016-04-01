@@ -22,7 +22,9 @@ namespace WCF_wizzGames
         {
             try
             {
-                return iws.GetUserByEmail(email);
+                UserModel um = iws.GetUserByEmail(email);
+                um.Password = "This is not a password";
+                return um;
             }
             catch (Exception ex)
             {
@@ -35,7 +37,9 @@ namespace WCF_wizzGames
         {
             try
             {
-                return iws.GetUserByName(name);
+                UserModel um = iws.GetUserByName(name);
+                um.Password = "This is not a password";
+                return um;
             }
             catch (Exception ex)
             {
@@ -48,11 +52,17 @@ namespace WCF_wizzGames
         {
             try
             {
-                return iws.CreateUser(name, mail, password);
+                if(iws.CreateUser(name, mail, password) != null)
+                {
+                    return iws.CreateUser(name, mail, password);
+                }
+                else
+                {
+                    throw new NullReferenceException();
+                }
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IWshRuntimeLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,11 +17,12 @@ namespace _2984_Installation
     public partial class install_window : Form
     {
         string path;
+        string saveDest;
 
         public install_window()
         {
             InitializeComponent();
-            path = Directory.GetCurrentDirectory();
+            path = @"C:\Program Files (x86)";
             txtbx_installfolder.Text = path;
         }
 
@@ -37,6 +39,9 @@ namespace _2984_Installation
         {
             downloadExe();
             downloadDataFolder();
+            bool shortcut = chkBx_dskShrt.Checked;
+            createShortcut();
+
             MessageBox.Show("Installation has finished");
             launch();
         }
@@ -44,7 +49,7 @@ namespace _2984_Installation
         private void downloadExe()
         {
             Directory.CreateDirectory(path + "\\wizzGames");
-            string saveDest = (path + "\\wizzGames\\2984.exe");
+            saveDest = (path + "\\wizzGames\\2984.gif");
             using (var client = new WebClient())
             {
                 client.DownloadFile("http://38.media.tumblr.com/81333094b16b087f3d51b2ab85147d27/tumblr_inline_o4b4piHMVG1s3v8a5_500.gif", saveDest);
@@ -53,12 +58,23 @@ namespace _2984_Installation
 
         private void downloadDataFolder()
         {
+            
+        }
 
+        private void createShortcut()
+        {
+            WshShell shell = new WshShell();
+            string desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            desktop = (desktop + "\\");
+            IWshShortcut shortcut = shell.CreateShortcut(desktop + "2984.lnk");
+            shortcut.TargetPath = saveDest;
+            shortcut.Description = "Launch 2984!";
+            shortcut.Save();
         }
 
         private void launch()
         {
-            Process.Start(path + "\\wizzGames\\2984.exe");
+            Process.Start(path + "\\wizzGames\\2984.gif");
         }
     }
 }

@@ -83,9 +83,19 @@ namespace wizzAppServer.DBmanager
                 user.Email = mail;
                 user.Password = Encrypt(password);
                 user.DateCreated = DateTime.Now;
-                context.Users.InsertOnSubmit(user);
-                context.SubmitChanges();
-                return user.Name;
+
+                if(IsUserNameFree(name) && EmailFree(mail))
+                {
+                    context.Users.InsertOnSubmit(user);
+                    context.SubmitChanges();
+                    return user.Name;
+                }
+                else
+                {
+                    user = null;
+
+                    return null;
+                }
             }
             catch (Exception ex) { throw ex; }
         }

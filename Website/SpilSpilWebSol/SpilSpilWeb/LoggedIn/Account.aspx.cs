@@ -44,10 +44,10 @@ public partial class Account : System.Web.UI.Page
             throw ex;
         }
 
-        userID.Value = wu.Id.ToString();
-        userNAME.Value = wu.Name;
-        userEMAIL.Value = wu.Email;
+        userID.InnerHtml = wu.Id.ToString();
+        userNAME.InnerHtml = wu.Name;
+        userEMAIL.InnerHtml = wu.Email;
         userPASSWORD.Value = wu.Password;
-        userSINCE.Value = wu.DateCreated.ToString();
+        userSINCE.InnerHtml = wu.DateCreated.ToString();
     }
 }

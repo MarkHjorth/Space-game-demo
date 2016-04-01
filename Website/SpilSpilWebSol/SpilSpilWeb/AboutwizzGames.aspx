@@ -10,7 +10,7 @@
                 </h1>
                 <div class="col-lg-2 center-block">
                 </div>
-                <p class="col-lg-8 center-block">
+                <p id="aboutwizzGames" runat="server" class="col-lg-8 center-block">
                     wizzGames is the name of our 4th semester project group. We are in the process of making a 2D top-down space-shooter game, a website and a lot of server/database/WCF connections, to handle most of our logic, regarding the user administration and global statistics.
                     <br />
                     The goal is to have a playable game, a website with global statistics, as well as a login system with the individual player’s statistics, and an IOS app where players can log in and see global and personal statistics.

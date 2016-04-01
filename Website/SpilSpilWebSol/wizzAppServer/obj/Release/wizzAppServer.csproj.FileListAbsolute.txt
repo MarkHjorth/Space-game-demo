@@ -3,3 +3,4 @@ C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\bin\Release\wizzAppServer.pdb
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\obj\Release\wizzAppServer.dll
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\obj\Release\wizzAppServer.pdb
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\obj\Release\wizzAppServer.csprojResolveAssemblyReference.cache

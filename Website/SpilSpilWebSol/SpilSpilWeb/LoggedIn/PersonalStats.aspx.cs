@@ -12,8 +12,20 @@ public partial class LoggedIn_PersonalStats : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string playerName = HttpContext.Current.User.Identity.Name;
-        stats.Rows.AddRange(sh.GetPlayerStats(playerName).ToArray());
+        try
+        {
+            stats.Rows.AddRange(sh.GetPlayerStats(playerName).ToArray());
 
-        sessions.Rows.AddRange(sh.GetUserSessions(playerName).ToArray());
+            sessions.Rows.AddRange(sh.GetUserSessions(playerName).ToArray());
+        }
+        catch (Exception)
+        {
+            TableRow tr = new TableRow();
+            TableCell tc = new TableCell();
+            tc.Text = "There seems to be no sessions to show!";
+            tr.Cells.Add(tc);
+            sessions.Rows.Add(tr);
+            return;
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.lbl_title = new System.Windows.Forms.Label();
             this.lbl_destFold = new System.Windows.Forms.Label();
             this.btn_install = new System.Windows.Forms.Button();
+            this.chkBx_dskShrt = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btn_browse
@@ -74,7 +75,7 @@
             // btn_install
             // 
             this.btn_install.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_install.Location = new System.Drawing.Point(12, 119);
+            this.btn_install.Location = new System.Drawing.Point(12, 146);
             this.btn_install.Name = "btn_install";
             this.btn_install.Size = new System.Drawing.Size(384, 65);
             this.btn_install.TabIndex = 4;
@@ -82,11 +83,22 @@
             this.btn_install.UseVisualStyleBackColor = true;
             this.btn_install.Click += new System.EventHandler(this.btn_install_Click);
             // 
+            // chkBx_dskShrt
+            // 
+            this.chkBx_dskShrt.AutoSize = true;
+            this.chkBx_dskShrt.Location = new System.Drawing.Point(16, 110);
+            this.chkBx_dskShrt.Name = "chkBx_dskShrt";
+            this.chkBx_dskShrt.Size = new System.Drawing.Size(139, 17);
+            this.chkBx_dskShrt.TabIndex = 5;
+            this.chkBx_dskShrt.Text = "Create desktop shortcut";
+            this.chkBx_dskShrt.UseVisualStyleBackColor = true;
+            // 
             // install_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 223);
+            this.Controls.Add(this.chkBx_dskShrt);
             this.Controls.Add(this.btn_install);
             this.Controls.Add(this.lbl_destFold);
             this.Controls.Add(this.lbl_title);
@@ -106,6 +118,7 @@
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Label lbl_destFold;
         private System.Windows.Forms.Button btn_install;
+        private System.Windows.Forms.CheckBox chkBx_dskShrt;
     }
 }
 

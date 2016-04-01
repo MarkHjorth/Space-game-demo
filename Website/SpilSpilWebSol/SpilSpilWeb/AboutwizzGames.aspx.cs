@@ -13,5 +13,7 @@ public partial class About_wizzGames : System.Web.UI.Page
     {
         aboutMark.InnerText = admin.GetDevDescription("Mark");
         aboutDave.InnerHtml = admin.GetDevDescription("David");
+        aboutwizzGames.InnerHtml = admin.GetDevDescription("wizzGames");
+        return;
     }
 }

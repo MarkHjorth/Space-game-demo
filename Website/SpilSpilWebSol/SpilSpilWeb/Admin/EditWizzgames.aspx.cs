@@ -14,13 +14,16 @@ public partial class Admin_EditWizzgames : System.Web.UI.Page
     {
         markDesc.TextMode = TextBoxMode.MultiLine;
         daveDesc.TextMode = TextBoxMode.MultiLine;
+        wizzDesc.TextMode = TextBoxMode.MultiLine;
         markDesc.Rows = 10;
         daveDesc.Rows = 10;
+        wizzDesc.Rows = 10;
 
         if (!IsPostBack)
         {
             markDesc.Text = service.GetDevDescription("Mark");
             daveDesc.Text = service.GetDevDescription("David");
+            wizzDesc.Text = service.GetDevDescription("wizzGames");
         }
     }
 
@@ -28,5 +31,6 @@ public partial class Admin_EditWizzgames : System.Web.UI.Page
     {
         service.SaveDevDescriptions("Mark", markDesc.Text);
         service.SaveDevDescriptions("David", daveDesc.Text);
+        service.SaveDevDescriptions("wizzGames", wizzDesc.Text);
     }
 }

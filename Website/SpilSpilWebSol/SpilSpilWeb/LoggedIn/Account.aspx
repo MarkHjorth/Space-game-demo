@@ -7,16 +7,14 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1 account-wall">
                 <h1 id="uName" runat="server">..</h1>
-                <div class="col-lg-6">
+                <div class="col-lg-8">
                     <table class="table">
                         <tr>
                             <td>
                                 <h4>User ID: </h4>
                             </td>
                             <td>
-                                <h5>
-                                    <input type="text" value="id" readonly="true" id="userID" runat="server"/>
-                                </h5>
+                                <h5 id="userID" runat="server" />
                             </td>
                         </tr>
                         <tr>
@@ -24,9 +22,7 @@
                                 <h4>Username: </h4>
                             </td>
                             <td>
-                                <h5>
-                                    <input type="text" value="name" readonly="true" id="userNAME" runat="server" />
-                                </h5>
+                                <h5 id="userNAME" runat="server" />
                             </td>
                         </tr>
                         <tr>
@@ -34,9 +30,7 @@
                                 <h4>Email: </h4>
                             </td>
                             <td>
-                                <h5>
-                                    <input type="text" value="email" id="userEMAIL" runat="server" />
-                                </h5>
+                                <h5 id="userEMAIL" runat="server" />
                             </td>
                             <td>
                                 <h5>
@@ -50,7 +44,7 @@
                             </td>
                             <td>
                                 <h5>
-                                    <input type="password" value="pass" id="userPASSWORD" runat="server" />
+                                    <input type="password" value="" placeholder="Old password" id="userPASSWORD" runat="server" />
                                 </h5>
                             </td>
                             <td>
@@ -64,9 +58,7 @@
                                 <h4>Member since: </h4>
                             </td>
                             <td>
-                                <h5>
-                                    <input type="text" value="member since" readonly="true" id="userSINCE" runat="server" />
-                                </h5>
+                                <h5 id="userSINCE" runat="server" />
                             </td>
                         </tr>
                         <tr id="save">

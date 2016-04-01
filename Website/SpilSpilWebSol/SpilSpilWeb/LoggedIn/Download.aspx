@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-lg-6">
                     <h3><i class="fa fa-apple"></i> For Mac</h3>
-                    <a href="https://github.com/DarkShadow93/Specialisering2014/raw/master/Unity/shooter3D/Builds/2984_mac.zip" target="_blank"><i class="fa fa-download fa-5x"></i></a>
+                    <a href="https://github.com/DarkShadow93/Specialisering2014/raw/master/Unity/shooter3D/Builds/2984_mac.zip" target="_blank" onclick="window.open('http://www.google.com');"><i class="fa fa-download fa-5x"></i></a>
                 </div>
             </div>
 
