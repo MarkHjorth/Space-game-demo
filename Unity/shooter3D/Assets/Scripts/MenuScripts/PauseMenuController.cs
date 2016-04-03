@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 public class PauseMenuController : MonoBehaviour {
 
     private PauseController pauseController;
+    private GameController gameController;
 
 	void Start ()
     {
         pauseController = (PauseController)GetComponentInParent<PauseController>();
+        gameController = (GameController) GameObject.FindGameObjectWithTag("GameController").GetComponent(typeof(GameController));
 	
 	}
 
     public void exitToMain()
     {
         Time.timeScale = 1f;
+        gameController.saveStats();
         SceneManager.LoadScene("Scenes/MainMenu");
     }
 

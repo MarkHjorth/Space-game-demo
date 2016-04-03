@@ -39,17 +39,16 @@ public class Stats : MonoBehaviour
         Deaths = 0;
         GameSession = gameObject.AddComponent<GameSession>() as GameSession;
         dbController = gameObject.AddComponent<DatabaseController>() as DatabaseController;
-        GameSession.SetUserID(1008);
 	}
 
     void OnApplicationQuit()
     {
-        GameSession.Stop();
         SaveStats();
     }
 
-    void SaveStats()
+    public void SaveStats()
     {
+        GameSession.Stop();
         dbController.SaveStats(GameSession, this);
     }
 }

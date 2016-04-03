@@ -34,4 +34,8 @@ public class GameController : MonoBehaviour {
     {
         stats.ShotsFired++;
     }
+    public void saveStats()
+    {
+        stats.SaveStats();
+    }
 }

@@ -19,7 +19,6 @@ public class BulletScript : MonoBehaviour {
     
     void OnParticleCollision(GameObject other) {
         
-        var name = other.gameObject;
         var enemy = (Enemy) other.GetComponent(typeof(Enemy));
         enemy.isHit(1);
         
