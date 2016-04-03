@@ -44,6 +44,9 @@ public class PauseController : MonoBehaviour {
         }
     }
 
+
+//Remove the below methods!!
+
     public void exitToMain()
     {
         SceneManager.LoadScene("Scenes/MainMenu");

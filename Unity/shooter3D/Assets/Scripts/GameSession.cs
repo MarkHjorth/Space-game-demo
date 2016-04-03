@@ -11,6 +11,7 @@ public class GameSession : MonoBehaviour {
 
     void Start()
     {
+        SetUserID(PlayerPrefs.GetInt("UserID", 0));
         startTime = System.DateTime.Now;
         stopTime = System.DateTime.Now;
         identifyer = Hash128.Parse(userID.ToString() + startTime.ToString() + Input.mousePosition.ToString()).ToString();
@@ -18,7 +19,10 @@ public class GameSession : MonoBehaviour {
 
     public void SetUserID(int userId)
     {
-        this.userID = userId;
+        if(userId > 1000)
+        {
+            this.userID = userId;
+        }
     }
 
     public void Stop()

@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour {
 
     public void die()
     {
-        var ang = transform.rotation;
+        //var ang = transform.rotation;
         //Instantiate(corpse, transform.position, ang);
         gameController.Kills();
         Destroy(gameObject);
