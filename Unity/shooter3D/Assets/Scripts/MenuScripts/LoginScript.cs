@@ -8,10 +8,12 @@ using System.Web.Security;
 public class LoginScript : MonoBehaviour {
 
     public static wizzService service;
+    private UserModel userModel = null;
     private string username;
     private string password;
     public InputField input_user;
     public InputField input_pass;
+    public Button newUserButton;
     public Text errormessage;
     public Text loginText;
 
@@ -20,10 +22,8 @@ public class LoginScript : MonoBehaviour {
         service = new wizzService();
         if(PlayerPrefs.HasKey("Username"))
         {
-            errormessage.text = "Logged in as " + PlayerPrefs.GetString("Username", "N/A");
-            input_user.interactable = false;
-            input_pass.interactable = false;
-            loginText.text = "Sign out";
+            errormessage.text = "Logged in as " + PlayerPrefs.GetString("Username", "robot overlord");
+            isSignedIn(true);
         }
         else
         {
@@ -45,27 +45,23 @@ public class LoginScript : MonoBehaviour {
     {
         username = input_user.text;
         password = input_pass.text;
-        string loginName = "No user found!";
         
         if(!PlayerPrefs.HasKey("Username"))
         {
             try
             {
-                loginName = service.ValidateUser(username, password);
+                userModel = service.ValidateUserCred(username, password);
 
-                if (loginName.Equals("No user found!"))
+                if (userModel == null)
                 {
                     errormessage.text = "Email or password incorrect!";
-                    input_user.text = "";
                     input_pass.text = "";
                 }
                 else
                 {
-                    PlayerPrefs.SetString("Username", loginName);
-                    errormessage.text = ("Welcome " + loginName);
-                    loginText.text = "Sign out";
-                    input_user.interactable = false;
-                    input_pass.interactable = false;
+                    setUserData(userModel);
+                    errormessage.text = ("Welcome " + PlayerPrefs.GetString("Username", "robot overlord"));
+                    isSignedIn(true);
                 }
             }
             catch (System.Exception ex)
@@ -75,10 +71,38 @@ public class LoginScript : MonoBehaviour {
         }
         else
         {
-            PlayerPrefs.DeleteKey("Username");
-            errormessage.text = "";
-            input_user.interactable = true;
-            input_pass.interactable = true;
+            deleteUserData();
+            isSignedIn(false);
+            errormessage.text = "Successfully signed out";
         }
     }
+    void isSignedIn(bool signedIn)
+    {
+        input_user.interactable = !signedIn;
+        input_pass.interactable = !signedIn;
+        newUserButton.interactable = !signedIn;
+        if(signedIn)
+        {
+            loginText.text = "Sign out";
+        } 
+        else
+        {
+            loginText.text = "Sign in";
+        }
+    }
+    
+    void deleteUserData()
+    {
+        PlayerPrefs.DeleteKey("Username");
+        PlayerPrefs.DeleteKey("Usermail");
+        PlayerPrefs.DeleteKey("Userid");
+    }
+    void setUserData(UserModel userModel)
+    {
+        
+        PlayerPrefs.SetString("Username", userModel.Name);
+        PlayerPrefs.SetString("Usermail", userModel.Email);
+        PlayerPrefs.SetInt("Userid", userModel.Id);
+    }
+    
 }

@@ -11,7 +11,7 @@ public class GameSession : MonoBehaviour {
 
     void Start()
     {
-        SetUserID(PlayerPrefs.GetInt("UserID", 0));
+        SetUserID(PlayerPrefs.GetInt("Userid", 0));
         startTime = System.DateTime.Now;
         stopTime = System.DateTime.Now;
         identifyer = Hash128.Parse(userID.ToString() + startTime.ToString() + Input.mousePosition.ToString()).ToString();

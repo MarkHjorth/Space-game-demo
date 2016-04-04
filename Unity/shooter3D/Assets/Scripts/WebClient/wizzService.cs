@@ -36,6 +36,8 @@ public partial class wizzService : System.Web.Services.Protocols.SoapHttpClientP
     
     private System.Threading.SendOrPostCallback ValidateUserOperationCompleted;
     
+    private System.Threading.SendOrPostCallback ValidateUserCredOperationCompleted;
+    
     private System.Threading.SendOrPostCallback IsUserNameFreeOperationCompleted;
     
     private System.Threading.SendOrPostCallback EmailFreeOperationCompleted;
@@ -66,6 +68,9 @@ public partial class wizzService : System.Web.Services.Protocols.SoapHttpClientP
     
     /// CodeRemarks
     public event ValidateUserCompletedEventHandler ValidateUserCompleted;
+    
+    /// CodeRemarks
+    public event ValidateUserCredCompletedEventHandler ValidateUserCredCompleted;
     
     /// CodeRemarks
     public event IsUserNameFreeCompletedEventHandler IsUserNameFreeCompleted;
@@ -211,6 +216,38 @@ public partial class wizzService : System.Web.Services.Protocols.SoapHttpClientP
         if ((this.ValidateUserCompleted != null)) {
             System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
             this.ValidateUserCompleted(this, new ValidateUserCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+        }
+    }
+    
+    /// CodeRemarks
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IwizzService/ValidateUserCred", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+    public UserModel ValidateUserCred([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string email, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string password) {
+        object[] results = this.Invoke("ValidateUserCred", new object[] {
+                    email,
+                    password});
+        return ((UserModel)(results[0]));
+    }
+    
+    /// CodeRemarks
+    public void ValidateUserCredAsync(string email, string password) {
+        this.ValidateUserCredAsync(email, password, null);
+    }
+    
+    /// CodeRemarks
+    public void ValidateUserCredAsync(string email, string password, object userState) {
+        if ((this.ValidateUserCredOperationCompleted == null)) {
+            this.ValidateUserCredOperationCompleted = new System.Threading.SendOrPostCallback(this.OnValidateUserCredOperationCompleted);
+        }
+        this.InvokeAsync("ValidateUserCred", new object[] {
+                    email,
+                    password}, this.ValidateUserCredOperationCompleted, userState);
+    }
+    
+    private void OnValidateUserCredOperationCompleted(object arg) {
+        if ((this.ValidateUserCredCompleted != null)) {
+            System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+            this.ValidateUserCredCompleted(this, new ValidateUserCredCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
         }
     }
     
@@ -1163,6 +1200,32 @@ public partial class ValidateUserCompletedEventArgs : System.ComponentModel.Asyn
         get {
             this.RaiseExceptionIfNecessary();
             return ((string)(this.results[0]));
+        }
+    }
+}
+
+/// CodeRemarks
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "0.0.0.0")]
+public delegate void ValidateUserCredCompletedEventHandler(object sender, ValidateUserCredCompletedEventArgs e);
+
+/// CodeRemarks
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "0.0.0.0")]
+[System.Diagnostics.DebuggerStepThroughAttribute()]
+[System.ComponentModel.DesignerCategoryAttribute("code")]
+public partial class ValidateUserCredCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    
+    private object[] results;
+    
+    internal ValidateUserCredCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+            base(exception, cancelled, userState) {
+        this.results = results;
+    }
+    
+    /// CodeRemarks
+    public UserModel Result {
+        get {
+            this.RaiseExceptionIfNecessary();
+            return ((UserModel)(this.results[0]));
         }
     }
 }
