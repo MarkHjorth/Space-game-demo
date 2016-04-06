@@ -31,6 +31,12 @@
   <wsdl:message name="IwizzService_ValidateUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IwizzService_ValidateUserCred_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserCred" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_ValidateUserCred_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserCredResponse" />
+  </wsdl:message>
   <wsdl:message name="IwizzService_IsUserNameFree_InputMessage">
     <wsdl:part name="parameters" element="tns:IsUserNameFree" />
   </wsdl:message>
@@ -89,6 +95,10 @@
     <wsdl:operation name="ValidateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/ValidateUser" message="tns:IwizzService_ValidateUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/ValidateUserResponse" message="tns:IwizzService_ValidateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUserCred">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/ValidateUserCred" message="tns:IwizzService_ValidateUserCred_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/ValidateUserCredResponse" message="tns:IwizzService_ValidateUserCred_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="IsUserNameFree">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/IsUserNameFree" message="tns:IwizzService_IsUserNameFree_InputMessage" />
@@ -150,6 +160,15 @@
     </wsdl:operation>
     <wsdl:operation name="ValidateUser">
       <soap:operation soapAction="http://tempuri.org/IwizzService/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUserCred">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/ValidateUserCred" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -157,19 +157,9 @@
                         </div>
 
                         <div class="col-md-4 col-sm-6">
-                            <div class="footer-newsletter">
-                                <h2 class="footer-wid-title">Newsletter</h2>
-                                <p>
-                                    Sign up here to sell your soul to the dark lords of the universe. 
-                                    Also, you may get news and updates in your email inbox..
-                                </p>
-                                <div class="newsletter-form">
-                                    <form method="post">
-                                        <input type="text" id="emailAddress" placeholder="Type your email" required runat="server" />
-                                        <input type="submit" value="Subscribe" />
-                                    </form>
-                                </div>
-                            </div>
+                            <p>
+                                Insert fanzy stuff here
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -216,6 +206,13 @@
 
             <%-- AJAX script --%>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+            <script type="text/javascript">
+                function changeLink() {
+                    var mail = document.getElementById("emailAddress").value;
+                    document.getElementById("submit").href = ("/subscribe?email=" + mail);
+                }
+            </script>
         </div>
     </div>
 </body>

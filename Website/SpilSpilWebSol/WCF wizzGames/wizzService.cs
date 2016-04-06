@@ -67,7 +67,7 @@ namespace WCF_wizzGames
             }
         }
 
-        //Validates user credentials
+        //Validates user credentials, return user name
         public string ValidateUser(string email, string password)
         {
             try
@@ -75,10 +75,18 @@ namespace WCF_wizzGames
                 return iws.ValidateUser(email, password);
             }
             catch (Exception ex)
-            {
+            { throw ex; }
+        }
 
-                throw ex;
+        //Validates user credentials, return user
+        public UserModel ValidateUserCred(string email, string password)
+        {
+            try
+            {
+                return iws.ValidateUserCred(email, password);
             }
+            catch (Exception ex)
+            { throw ex; }
         }
 
         //Checks if username if free

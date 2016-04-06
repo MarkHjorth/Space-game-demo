@@ -40,14 +40,4 @@ public partial class mpDeafult : System.Web.UI.MasterPage
     {
         FormsAuthentication.SignOut();
     }
-
-    protected void SignUp()
-    {
-        NewsHandler nh = new NewsHandler();
-
-        string email = emailAddress.Value;
-        nh.RegisterEmail(email);
-
-        Response.Redirect("tba.aspx");
-    }
 }

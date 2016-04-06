@@ -15,6 +15,7 @@ namespace wizzAppServer
         UserModel GetUserByEmail(string email);
         UserModel GetUserByName(string name);
         string ValidateUser(string mail, string password);
+        UserModel ValidateUserCred(string mail, string password);
         string CreateUser(string name, string mail, string password);
         bool IsUserNameFree(string name);
         bool EmailFree(string email);

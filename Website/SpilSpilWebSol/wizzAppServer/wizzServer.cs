@@ -62,6 +62,15 @@ namespace wizzAppServer
             catch (Exception ex) { throw ex; }
         }
 
+        public UserModel ValidateUserCred(string mail, string password)
+        {
+            try
+            {
+                return userCtrl.ValidateUserCred(mail, password);
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
         //Checks if username is free
         public bool IsUserNameFree(string name)
         {

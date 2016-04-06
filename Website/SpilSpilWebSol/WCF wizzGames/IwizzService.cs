@@ -27,6 +27,9 @@ namespace WCF_wizzGames
         string ValidateUser(string mail, string password);
 
         [OperationContract]
+        UserModel ValidateUserCred(string email, string password);
+
+        [OperationContract]
         bool IsUserNameFree(string name);
 
         [OperationContract]

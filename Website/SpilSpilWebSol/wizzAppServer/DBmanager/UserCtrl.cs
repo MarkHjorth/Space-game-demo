@@ -27,7 +27,7 @@ namespace wizzAppServer.DBmanager
             {
                 if (u != null)
                 {
-                    um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions.ToList());
+                    um = u.ToUserModel();
                 }
 
                 return um;
@@ -44,7 +44,7 @@ namespace wizzAppServer.DBmanager
             try
             {
                 User u = context.Users.Where(x => x.Email == email).FirstOrDefault();
-                UserModel um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions.ToList());
+                UserModel um = u.ToUserModel();
                 return um;
             }
             catch (Exception ex)
@@ -63,7 +63,7 @@ namespace wizzAppServer.DBmanager
                 List<UserModel> allUsers = new List<UserModel>();
                 foreach (User u in users)
                 {
-                    allUsers.Add(new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions.ToList()));
+                    allUsers.Add(u.ToUserModel());
                 }
                 return allUsers;
             }
@@ -111,6 +111,26 @@ namespace wizzAppServer.DBmanager
                 if (validUser)
                 {
                     return u.Name;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        //Checks if the user with 'mail' and 'password' is valid. Returns user
+        public UserModel ValidateUserCred(string mail, string password)
+        {
+            try
+            {
+                UserModel u = GetUserByEmail(mail);
+                bool validUser = ComparePass(password, u);
+
+                if (validUser)
+                {
+                    return u;
                 }
                 else
                 {

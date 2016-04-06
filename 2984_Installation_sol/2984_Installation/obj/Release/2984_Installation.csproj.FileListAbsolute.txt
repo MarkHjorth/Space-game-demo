@@ -1,0 +1,10 @@
+C:\Users\David\Documents\Specialisering2014\2984_Installation_sol\2984_Installation\bin\Release\2984_Installation.exe.config
+C:\Users\David\Documents\Specialisering2014\2984_Installation_sol\2984_Installation\obj\Release\Interop.IWshRuntimeLibrary.dll
+C:\Users\David\Documents\Specialisering2014\2984_Installation_sol\2984_Installation\obj\Release\2984_Installation.csproj.ResolveComReference.cache
+C:\Users\David\Documents\Specialisering2014\2984_Installation_sol\2984_Installation\bin\Release\2984_Installation.exe
+C:\Users\David\Documents\Specialisering2014\2984_Installation_sol\2984_Installation\bin\Release\2984_Installation.pdb
+C:\Users\David\Documents\Specialisering2014\2984_Installation_sol\2984_Installation\obj\Release\_2984_Installation.install_window.resources
+C:\Users\David\Documents\Specialisering2014\2984_Installation_sol\2984_Installation\obj\Release\_2984_Installation.Properties.Resources.resources
+C:\Users\David\Documents\Specialisering2014\2984_Installation_sol\2984_Installation\obj\Release\2984_Installation.csproj.GenerateResource.Cache
+C:\Users\David\Documents\Specialisering2014\2984_Installation_sol\2984_Installation\obj\Release\2984_Installation.exe
+C:\Users\David\Documents\Specialisering2014\2984_Installation_sol\2984_Installation\obj\Release\2984_Installation.pdb

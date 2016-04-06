@@ -34,6 +34,9 @@
             this.lbl_destFold = new System.Windows.Forms.Label();
             this.btn_install = new System.Windows.Forms.Button();
             this.chkBx_dskShrt = new System.Windows.Forms.CheckBox();
+            this.lbl_status = new System.Windows.Forms.Label();
+            this.progBar = new System.Windows.Forms.ProgressBar();
+            this.chkBx_Launch = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btn_browse
@@ -75,7 +78,7 @@
             // btn_install
             // 
             this.btn_install.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_install.Location = new System.Drawing.Point(12, 146);
+            this.btn_install.Location = new System.Drawing.Point(12, 132);
             this.btn_install.Name = "btn_install";
             this.btn_install.Size = new System.Drawing.Size(384, 65);
             this.btn_install.TabIndex = 4;
@@ -86,24 +89,54 @@
             // chkBx_dskShrt
             // 
             this.chkBx_dskShrt.AutoSize = true;
-            this.chkBx_dskShrt.Location = new System.Drawing.Point(16, 110);
+            this.chkBx_dskShrt.Location = new System.Drawing.Point(16, 109);
             this.chkBx_dskShrt.Name = "chkBx_dskShrt";
             this.chkBx_dskShrt.Size = new System.Drawing.Size(139, 17);
             this.chkBx_dskShrt.TabIndex = 5;
             this.chkBx_dskShrt.Text = "Create desktop shortcut";
             this.chkBx_dskShrt.UseVisualStyleBackColor = true;
             // 
+            // lbl_status
+            // 
+            this.lbl_status.AutoSize = true;
+            this.lbl_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_status.Location = new System.Drawing.Point(152, 139);
+            this.lbl_status.Name = "lbl_status";
+            this.lbl_status.Size = new System.Drawing.Size(92, 31);
+            this.lbl_status.TabIndex = 6;
+            this.lbl_status.Text = "Status";
+            // 
+            // progBar
+            // 
+            this.progBar.Location = new System.Drawing.Point(13, 173);
+            this.progBar.Name = "progBar";
+            this.progBar.Size = new System.Drawing.Size(383, 23);
+            this.progBar.TabIndex = 7;
+            // 
+            // chkBx_Launch
+            // 
+            this.chkBx_Launch.AutoSize = true;
+            this.chkBx_Launch.Location = new System.Drawing.Point(171, 109);
+            this.chkBx_Launch.Name = "chkBx_Launch";
+            this.chkBx_Launch.Size = new System.Drawing.Size(144, 17);
+            this.chkBx_Launch.TabIndex = 8;
+            this.chkBx_Launch.Text = "Launch game after install";
+            this.chkBx_Launch.UseVisualStyleBackColor = true;
+            // 
             // install_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 223);
+            this.ClientSize = new System.Drawing.Size(408, 207);
+            this.Controls.Add(this.chkBx_Launch);
             this.Controls.Add(this.chkBx_dskShrt);
             this.Controls.Add(this.btn_install);
             this.Controls.Add(this.lbl_destFold);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.txtbx_installfolder);
             this.Controls.Add(this.btn_browse);
+            this.Controls.Add(this.lbl_status);
+            this.Controls.Add(this.progBar);
             this.Name = "install_window";
             this.Text = "2984 Installation";
             this.ResumeLayout(false);
@@ -119,6 +152,9 @@
         private System.Windows.Forms.Label lbl_destFold;
         private System.Windows.Forms.Button btn_install;
         private System.Windows.Forms.CheckBox chkBx_dskShrt;
+        private System.Windows.Forms.Label lbl_status;
+        private System.Windows.Forms.ProgressBar progBar;
+        private System.Windows.Forms.CheckBox chkBx_Launch;
     }
 }
 

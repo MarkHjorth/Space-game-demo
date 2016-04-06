@@ -28,3 +28,6 @@
 03-03-2016 16:00:38 - Failed login attempt with user "" from IP: ::1
 03-03-2016 16:00:55 - Failed login attempt with user "" from IP: ::1
 03-03-2016 16:01:01 - Failed login attempt with user "" from IP: ::1
+06-04-2016 12:00:55 - Failed login attempt with user "" from IP: ::1
+06-04-2016 12:02:35 - Failed login attempt with user "" from IP: ::1
+06-04-2016 12:04:48 - Failed login attempt with user "" from IP: ::1

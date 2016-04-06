@@ -12,7 +12,7 @@
                         <input id="honneyPot" type="text" class="hidden" runat="server" />
                         <input id="email" type="text" class="form-control center-block" placeholder="Email" runat="server" required autofocus />
                         <input id="password" type="password" class="form-control center-block" placeholder="Password" runat="server" required />
-                        <asp:button id="btn" text="Sign in" class="btn btn-lg btn-primary btn-block center-block" type="submit" runat="server" OnClick="btn_login_click"></asp:button>
+                        <asp:button id="btn" ClientIDMode="Static" text="Sign in" class="btn btn-lg btn-primary btn-block center-block" type="submit" runat="server" OnClick="btn_login_click"></asp:button>
                         <a href="newUser.aspx" class="pull-left new-account">Create an account </a>
                         <a href="tba.aspx" class="pull-right need-help">Forgot password</a>
                         <span class="clearfix"></span>
