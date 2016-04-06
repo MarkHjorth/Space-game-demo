@@ -49,6 +49,9 @@ public class Stats : MonoBehaviour
     public void SaveStats()
     {
         GameSession.Stop();
-        dbController.SaveStats(GameSession, this);
+        if(PlayerPrefs.HasKey("Userid"))
+        {
+            dbController.SaveStats(GameSession, this);
+        }
     }
 }
