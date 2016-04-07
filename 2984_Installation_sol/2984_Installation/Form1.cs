@@ -89,7 +89,7 @@ namespace _2984_Installation
             // when the download completes.
             client.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadFileCallback2);
             
-            Uri uri = new Uri("http://46.101.132.22/pages/download.php?ref=1&ext=zip&k=38917bf963");
+            Uri uri = new Uri("http://46.101.132.22/pages/download.php?ref=8&ext=zip&k=99354e9945");
             client.DownloadFileAsync(uri, zipPath);
 
             while(!downloadComplete)
@@ -153,14 +153,14 @@ namespace _2984_Installation
             string desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
             desktop = (desktop + "\\");
             IWshShortcut shortcut = shell.CreateShortcut(desktop + "2984.lnk");
-            shortcut.TargetPath = (savePath + "2984_win.exe");
+            shortcut.TargetPath = (savePath + "2984.exe");
             shortcut.Description = "Launch 2984!";
             shortcut.Save();
         }
 
         private void launch()
         {
-            Process.Start(savePath + "2984_win.exe");
+            Process.Start(savePath + "2984.exe");
         }
 
         private void center()
