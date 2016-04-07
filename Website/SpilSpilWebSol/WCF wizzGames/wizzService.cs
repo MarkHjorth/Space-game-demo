@@ -180,5 +180,10 @@ namespace WCF_wizzGames
                 throw ex;
             }
         }
+
+        public void SaveSession(int userId, string identifyer, DateTime startTime, DateTime endTime, int fired, int hits, int kills, int deaths)
+        {
+            iws.SaveSession(userId, identifyer, startTime, endTime, fired, hits, kills, deaths);
+        }
     }
 }

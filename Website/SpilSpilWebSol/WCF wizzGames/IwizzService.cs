@@ -49,5 +49,8 @@ namespace WCF_wizzGames
 
         [OperationContract]
         List<PlayerSession> GetUserSessions(string name);
+
+        [OperationContract]
+        void SaveSession(int userId, string identifyer, DateTime startTime, DateTime endTime, int fired, int hits, int kills, int deaths);
     }
 }

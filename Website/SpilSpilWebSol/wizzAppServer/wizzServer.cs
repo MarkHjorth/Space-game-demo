@@ -165,5 +165,10 @@ namespace wizzAppServer
                 throw ex;
             }
         }
+
+        public void SaveSession(int userId, string identifyer, DateTime startTime, DateTime endTime, int fired, int hits, int kills, int deaths)
+        {
+            statsCtrl.SaveSession(userId, identifyer, startTime, endTime, fired, hits, kills, deaths);
+        }
     }
 }

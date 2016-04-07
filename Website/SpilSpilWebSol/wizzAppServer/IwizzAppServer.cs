@@ -24,5 +24,6 @@ namespace wizzAppServer
         List<PlayerStats> GetAllStats();
         PlayerStats GetUserStats(string name);
         List<PlayerSession> GetUserSessions(string name);
+        void SaveSession(int userId, string identifyer, DateTime startTime, DateTime endTime, int fired, int hits, int kills, int deaths);
     }
 }
