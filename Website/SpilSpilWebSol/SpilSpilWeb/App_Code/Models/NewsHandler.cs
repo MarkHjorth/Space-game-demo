@@ -20,8 +20,20 @@ public class NewsHandler
     {
         try
         {
-            //service.AddNewsSubscriber(mail);
+            service.AddNewsSubscriber(mail);
             return true;
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
+
+    public bool ValidateEmail(string validation, string email)
+    {
+        try
+        {
+            return service.ValidateEmail(validation, email);
         }
         catch (Exception ex)
         {

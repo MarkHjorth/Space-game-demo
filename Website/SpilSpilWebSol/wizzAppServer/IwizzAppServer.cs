@@ -25,5 +25,7 @@ namespace wizzAppServer
         PlayerStats GetUserStats(string name);
         List<PlayerSession> GetUserSessions(string name);
         void SaveSession(int userId, string identifyer, DateTime startTime, DateTime endTime, int fired, int hits, int kills, int deaths);
+        bool AddNewsSubscriber(string mail);
+        bool ValidateEmail(string validation, string email);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using wizzAppServer.Ctrls;
 using wizzAppServer.DBmanager;
 using wizzAppServer.Models;
 
@@ -12,6 +13,7 @@ namespace wizzAppServer
     {
         private UserCtrl userCtrl = new UserCtrl();
         private StatsCtrl statsCtrl = new StatsCtrl();
+        private MailCtrl mc = new MailCtrl();
 
         //Gets the user with 'email'
         public UserModel GetUserByEmail(string email)
@@ -169,6 +171,16 @@ namespace wizzAppServer
         public void SaveSession(int userId, string identifyer, DateTime startTime, DateTime endTime, int fired, int hits, int kills, int deaths)
         {
             statsCtrl.SaveSession(userId, identifyer, startTime, endTime, fired, hits, kills, deaths);
+        }
+
+        public bool AddNewsSubscriber(string mail)
+        {
+            return mc.AddNewsSubscriber(mail);
+        }
+
+        public bool ValidateEmail(string validation, string email)
+        {
+            return mc.ValidateEmail(validation, email);
         }
     }
 }

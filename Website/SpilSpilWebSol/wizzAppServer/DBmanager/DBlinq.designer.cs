@@ -39,6 +39,9 @@ namespace wizzAppServer.DBmanager
     partial void InsertSession(Session instance);
     partial void UpdateSession(Session instance);
     partial void DeleteSession(Session instance);
+    partial void InsertEmailSubscriber(EmailSubscriber instance);
+    partial void UpdateEmailSubscriber(EmailSubscriber instance);
+    partial void DeleteEmailSubscriber(EmailSubscriber instance);
     #endregion
 		
 		public DBlinqDataContext() : 
@@ -94,6 +97,14 @@ namespace wizzAppServer.DBmanager
 				return this.GetTable<Session>();
 			}
 		}
+		
+		public System.Data.Linq.Table<EmailSubscriber> EmailSubscribers
+		{
+			get
+			{
+				return this.GetTable<EmailSubscriber>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
@@ -114,6 +125,8 @@ namespace wizzAppServer.DBmanager
 		
 		private EntitySet<Session> _Sessions;
 		
+		private EntitySet<EmailSubscriber> _EmailSubscribers;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -133,6 +146,7 @@ namespace wizzAppServer.DBmanager
 		public User()
 		{
 			this._Sessions = new EntitySet<Session>(new Action<Session>(this.attach_Sessions), new Action<Session>(this.detach_Sessions));
+			this._EmailSubscribers = new EntitySet<EmailSubscriber>(new Action<EmailSubscriber>(this.attach_EmailSubscribers), new Action<EmailSubscriber>(this.detach_EmailSubscribers));
 			OnCreated();
 		}
 		
@@ -249,6 +263,19 @@ namespace wizzAppServer.DBmanager
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_EmailSubscriber", Storage="_EmailSubscribers", ThisKey="Id", OtherKey="userId")]
+		public EntitySet<EmailSubscriber> EmailSubscribers
+		{
+			get
+			{
+				return this._EmailSubscribers;
+			}
+			set
+			{
+				this._EmailSubscribers.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -276,6 +303,18 @@ namespace wizzAppServer.DBmanager
 		}
 		
 		private void detach_Sessions(Session entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+		
+		private void attach_EmailSubscribers(EmailSubscriber entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_EmailSubscribers(EmailSubscriber entity)
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
@@ -660,6 +699,229 @@ namespace wizzAppServer.DBmanager
 					else
 					{
 						this._userId = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.EmailSubscribers")]
+	public partial class EmailSubscriber : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<int> _userId;
+		
+		private string _emailAddress;
+		
+		private string _validationCode;
+		
+		private bool _addressValidated;
+		
+		private System.Nullable<System.DateTime> _dateSubscribed;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnuserIdChanging(System.Nullable<int> value);
+    partial void OnuserIdChanged();
+    partial void OnemailAddressChanging(string value);
+    partial void OnemailAddressChanged();
+    partial void OnvalidationCodeChanging(string value);
+    partial void OnvalidationCodeChanged();
+    partial void OnaddressValidatedChanging(bool value);
+    partial void OnaddressValidatedChanged();
+    partial void OndateSubscribedChanging(System.Nullable<System.DateTime> value);
+    partial void OndateSubscribedChanged();
+    #endregion
+		
+		public EmailSubscriber()
+		{
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userId", DbType="Int")]
+		public System.Nullable<int> userId
+		{
+			get
+			{
+				return this._userId;
+			}
+			set
+			{
+				if ((this._userId != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnuserIdChanging(value);
+					this.SendPropertyChanging();
+					this._userId = value;
+					this.SendPropertyChanged("userId");
+					this.OnuserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_emailAddress", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string emailAddress
+		{
+			get
+			{
+				return this._emailAddress;
+			}
+			set
+			{
+				if ((this._emailAddress != value))
+				{
+					this.OnemailAddressChanging(value);
+					this.SendPropertyChanging();
+					this._emailAddress = value;
+					this.SendPropertyChanged("emailAddress");
+					this.OnemailAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_validationCode", DbType="NVarChar(128)")]
+		public string validationCode
+		{
+			get
+			{
+				return this._validationCode;
+			}
+			set
+			{
+				if ((this._validationCode != value))
+				{
+					this.OnvalidationCodeChanging(value);
+					this.SendPropertyChanging();
+					this._validationCode = value;
+					this.SendPropertyChanged("validationCode");
+					this.OnvalidationCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_addressValidated", DbType="Bit NOT NULL")]
+		public bool addressValidated
+		{
+			get
+			{
+				return this._addressValidated;
+			}
+			set
+			{
+				if ((this._addressValidated != value))
+				{
+					this.OnaddressValidatedChanging(value);
+					this.SendPropertyChanging();
+					this._addressValidated = value;
+					this.SendPropertyChanged("addressValidated");
+					this.OnaddressValidatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateSubscribed", DbType="DateTime")]
+		public System.Nullable<System.DateTime> dateSubscribed
+		{
+			get
+			{
+				return this._dateSubscribed;
+			}
+			set
+			{
+				if ((this._dateSubscribed != value))
+				{
+					this.OndateSubscribedChanging(value);
+					this.SendPropertyChanging();
+					this._dateSubscribed = value;
+					this.SendPropertyChanged("dateSubscribed");
+					this.OndateSubscribedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_EmailSubscriber", Storage="_User", ThisKey="userId", OtherKey="Id", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.EmailSubscribers.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.EmailSubscribers.Add(this);
+						this._userId = value.Id;
+					}
+					else
+					{
+						this._userId = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("User");
 				}

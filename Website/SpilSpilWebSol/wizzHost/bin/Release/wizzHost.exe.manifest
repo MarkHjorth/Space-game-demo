@@ -42,26 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WCFwizzGames.dll" size="6144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WCFwizzGames.dll" size="6656">
       <assemblyIdentity name="WCFwizzGames" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RkMVMM1ZICLtf4UdtUXLenGrYxVnFnfCFkQYdOn6NTo=</dsig:DigestValue>
+        <dsig:DigestValue>bqWx9WfzTp7YVVkUte/Y0i2nYCsrbHyZeogltkZJ7Do=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzAppServer.dll" size="26112">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzAppServer.dll" size="32256">
       <assemblyIdentity name="wizzAppServer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KnXD/RuWPvAB0e/bPTH6E8RXbRahqqvnjG5ZWGhurZE=</dsig:DigestValue>
+        <dsig:DigestValue>aael+hWW1YsEYCFfL2I+4zd4jUmTTq0q+2MkEP+yA5Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xaHWdVmevpgtwCTXwD2MZAHPuw4oKu97UjEuC52DDGw=</dsig:DigestValue>
+        <dsig:DigestValue>iU1KI7r4FHZ8q32MYU7X6WHDoINJndUC3R9cHerkmIA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

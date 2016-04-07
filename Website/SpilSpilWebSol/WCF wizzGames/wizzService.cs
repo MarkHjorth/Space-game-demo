@@ -185,5 +185,15 @@ namespace WCF_wizzGames
         {
             iws.SaveSession(userId, identifyer, startTime, endTime, fired, hits, kills, deaths);
         }
+
+        public bool AddNewsSubscriber(string mail)
+        {
+            return iws.AddNewsSubscriber(mail);
+        }
+
+        public bool ValidateEmail(string validation, string email)
+        {
+            return iws.ValidateEmail(validation, email);
+        }
     }
 }

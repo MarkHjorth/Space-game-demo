@@ -10,25 +10,24 @@
                 <h2>Latest versions</h2>
                 <div class="col-lg-6">
                     <h3><i class="fa fa-windows"></i> For Windows</h3>
-                    <a href="https://github.com/DarkShadow93/Specialisering2014/raw/master/Unity/shooter3D/Builds/2984_win.zip" target="_blank"><i class="fa fa-download fa-5x"></i></a>
+                    <a href="../Downloads/2984_Installation.exe" type="application/octet-stream" target="_blank"><i class="fa fa-download fa-5x"></i></a>
                 </div>
                 <div class="col-lg-6">
                     <h3><i class="fa fa-apple"></i> For Mac</h3>
-                    <a href="https://github.com/DarkShadow93/Specialisering2014/raw/master/Unity/shooter3D/Builds/2984_mac.zip" target="_blank" onclick="window.open('http://www.google.com');"><i class="fa fa-download fa-5x"></i></a>
+                    <a href="http://46.101.132.22/pages/download.php?ref=7&ext=zip&k=48c0d9b176" target="_blank"><i class="fa fa-download fa-5x"></i></a>
                 </div>
             </div>
 
             <div class="col-sm-6 col-md-12 center-block text-center account-wall">
                 <h2>Older versions</h2>
-                <p>No older versions found..</p>
-                <%--<div class="col-lg-6">
+                <div class="col-lg-6">
                     <h3><i class="fa fa-windows"></i> For Windows</h3>
-                    <a href="#" target="_blank"><i class="fa fa-download fa-5x"></i></a>
+                    <a href="http://46.101.132.22/?c=2&k=2a3f900a3d" target="_blank"><i class="fa fa-download fa-5x"></i></a>
                 </div>
                 <div class="col-lg-6">
                     <h3><i class="fa fa-apple"></i> For Mac</h3>
-                    <a href="#" target="_blank"><i class="fa fa-download fa-5x"></i></a>
-                </div>--%>
+                    <a href="http://46.101.132.22/?c=3&k=49a9181833" target="_blank"><i class="fa fa-download fa-5x"></i></a>
+                </div>
             </div>
         </div>
         <br />
