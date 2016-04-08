@@ -12,3 +12,5 @@ C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Release\wizzHost.application
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Release\wizzHost.exe
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Release\wizzHost.pdb
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\SendGridMail.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\SendGrid.SmtpApi.dll

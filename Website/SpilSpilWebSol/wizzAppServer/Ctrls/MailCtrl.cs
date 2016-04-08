@@ -1,46 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using wizzAppServer.DBmanager;
 using wizzAppServer.Models;
+using SendGrid;
 
 namespace wizzAppServer.Ctrls
 {
     class MailCtrl : BaseDB
     {
-        SmtpClient client = new SmtpClient();
+        Web transportWeb = new Web("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");
 
         public MailCtrl()
-        {
-            client.Port = 25;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            client.UseDefaultCredentials = false;
-            client.Host = "mail.privateemail.com";
-        }
+        {}
 
         public bool AddNewsSubscriber(string mail)
         {
             EmailSubscriber sub = new EmailSubscriber();
             UserCtrl uc = new UserCtrl();
             UserModel um = null;
-            int userId = 0;
 
-            //try
-            //{
-            //    um = uc.GetUserByEmail(mail);
-            //    userId = um.Id;
-            //}
-            //catch(Exception ex)
-            //{
-            //    throw ex;
-            //}
-
-            if(um != null)
+            try
             {
-                sub.userId = userId;
+                um = uc.GetUserByEmail(mail);
+                if (um != null)
+                {
+                    sub.userId = um.Id;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
             
             sub.emailAddress = mail;
@@ -48,11 +42,19 @@ namespace wizzAppServer.Ctrls
             sub.addressValidated = false;
             sub.dateSubscribed = DateTime.Now;
 
-            context.EmailSubscribers.InsertOnSubmit(sub);
-            string[] param = { sub.validationCode };
             try
             {
-                SendMailParam(param, mail);
+                EmailSubscriber es = GetSubscriber(mail);
+
+                if(es != null)
+                {
+                    return false;
+                }
+                context.EmailSubscribers.InsertOnSubmit(sub);
+                context.SubmitChanges();
+                string linkExtention = sub.validationCode;
+
+                SendValidationEmail(linkExtention, mail);
                 return true;
             }
             catch (Exception ex)
@@ -71,8 +73,9 @@ namespace wizzAppServer.Ctrls
                 try
                 {
                     sub.addressValidated = true;
+                    context.SubmitChanges();
 
-                    string[] param = { "Welcome to the newsletter", "You email has been validated! You will now recieve news from wizzGames, regularly" };
+                    string[] param = { "wizzGames - validated email", "You email has been validated! You will now recieve news from wizzGames!" };
 
                     SendMailParam(param, email);
                 }
@@ -105,20 +108,25 @@ namespace wizzAppServer.Ctrls
         }
 
         //Sends email to everyone on the mailing list
-        public void SendMail()
+        public void SendNewsMail()
         {
-            //TODO: Implement sending mails:
-            //WARNING: Code below is conceptual!
             List<EmailSubscriber> subList = context.EmailSubscribers.ToList(); ;
 
-            foreach(EmailSubscriber sub in subList)
+            SendGridMessage mail = new SendGridMessage();
+
+            foreach (EmailSubscriber sub in subList)
             {
-                MailMessage mail = new MailMessage("info@wizzgames.me", sub.emailAddress);
-                
-                mail.Subject = "";
-                mail.Body = "";
-                client.Send(mail);
+                mail.AddTo(sub.emailAddress);
             }
+            mail.From = new MailAddress("info@wizzgames.me", "wizzGames News");
+            mail.Subject = "wizzGames info";
+            mail.Text = "wizzGames";
+
+            //TODO Add body generation
+
+            mail.EnableTemplateEngine("d2dee1f3-b0ef-4f27-9148-47c3304d5986");
+
+            transportWeb.DeliverAsync(mail);
         }
 
         /// <summary>
@@ -129,7 +137,7 @@ namespace wizzAppServer.Ctrls
         {
             try
             {
-                MailMessage mail = new MailMessage("info@wizzgames.me", email);
+                SendGridMessage mail = new SendGridMessage();
 
                 string subject = null;
                 string body = null;
@@ -141,22 +149,60 @@ namespace wizzAppServer.Ctrls
                 else if(param.Length == 1)
                 {
                     subject = param[0];
-                    body = "Hello Friend! \n\n" + "This message seems to be empty :O" + "\n\n Best regards \nwizzGames";
+                    body = " This message seems to be empty :O";
                 }
-                else if(param.Length > 1)
+                else if(param.Length == 2)
                 {
                     subject = param[0];
-                    body = "Hello Friend! \n\n" + param[1] + "\n\n Best regards \nwizzGames";
+                    body = param[1];
                 }
 
                 mail.Subject = subject;
-                mail.Body = body;
-
-                client.Send(mail);
+                mail.AddTo(email);
+                mail.From = new MailAddress("info@wizzgames.me", "wizzGames News");
+                mail.Text = "Hello Friend! \n\n" + body + "\n\n Best regards \nwizzGames";
+                
+                transportWeb.DeliverAsync(mail);
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        private void SendValidationEmail(string linkExt, string email)
+        {
+            try
+            {
+                SendGridMessage mail = new SendGridMessage();
+                string link = "http://wizzgames.me/Subscribe.aspx?code=" + linkExt + "&email=" + email;
+                mail.Subject = "wizzGames subscribtion";
+               
+                mail.AddTo(email);
+                mail.From = new MailAddress("info@wizzgames.me", "wizzGames News");
+                mail.Text = link;
+
+                mail.EnableTemplateEngine("d2dee1f3-b0ef-4f27-9148-47c3304d5986");
+
+                transportWeb.DeliverAsync(mail);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private EmailSubscriber GetSubscriber(string mail)
+        {
+            EmailSubscriber sub = null;
+            try
+            {
+                sub = context.EmailSubscribers.Where(x => x.emailAddress == mail).FirstOrDefault();
+                return sub;
+            }
+            catch
+            {
+                return null;
             }
         }
     }

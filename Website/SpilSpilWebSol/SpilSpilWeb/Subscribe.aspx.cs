@@ -9,13 +9,15 @@ public partial class Subscribe : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-    }
-
-    public void btn_subscribe_click(object sender, EventArgs e)
-    {
-        NewsHandler nh = new NewsHandler();
-        string valid = validationCode.Value;
+        bool validated = false;
+        string code = Request.QueryString["code"];
         string email = Request.QueryString["email"];
-        nh.ValidateEmail(valid, email);
+
+        if(code != null && email != null)
+        {
+            NewsHandler nh = new NewsHandler();
+            validated = nh.ValidateEmail(code, email);
+        }
+
     }
 }

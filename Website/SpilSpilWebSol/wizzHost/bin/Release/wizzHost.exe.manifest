@@ -42,6 +42,30 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SendGrid.SmtpApi.dll" size="11776">
+      <assemblyIdentity name="SendGrid.SmtpApi" version="1.3.1.0" publicKeyToken="2AE73662C35D80E4" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Tr8ONnroeHyYUh/ImDZ95pHEdqzsPre441NzOZKxmj0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SendGridMail.dll" size="30208">
+      <assemblyIdentity name="SendGridMail" version="6.3.4.0" publicKeyToken="4F047E93159395CA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>5Q2hK4AoXjz3EpsExnHN1pJOjQ5quhxyWCY4FSUwtck=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WCFwizzGames.dll" size="6656">
       <assemblyIdentity name="WCFwizzGames" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -49,19 +73,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bqWx9WfzTp7YVVkUte/Y0i2nYCsrbHyZeogltkZJ7Do=</dsig:DigestValue>
+        <dsig:DigestValue>T0t29OrrRBgeXhWjMInZDoafg+oxI27ASjpIa9yC428=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzAppServer.dll" size="32256">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzAppServer.dll" size="32768">
       <assemblyIdentity name="wizzAppServer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aael+hWW1YsEYCFfL2I+4zd4jUmTTq0q+2MkEP+yA5Q=</dsig:DigestValue>
+        <dsig:DigestValue>UBM2Bg2NyTiwPMvFV+fV7c4/huZb59Ipkhn4xxPpA+o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,17 +97,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>iU1KI7r4FHZ8q32MYU7X6WHDoINJndUC3R9cHerkmIA=</dsig:DigestValue>
+        <dsig:DigestValue>RMNHtMQAF9FKKwlYYjoNiF6J71G29T35M93SAG7zmZc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="wizzHost.exe.config" size="1476">
+  <file name="wizzHost.exe.config" size="1829">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4vj64A3bSmWDyVkLeVAre7GV7R2CZ4GdAKYgnxbyb48=</dsig:DigestValue>
+      <dsig:DigestValue>seFJHB4+ERt5+hBzgHyZe46Qw7iIwf+lqwoM2BEsLnk=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
