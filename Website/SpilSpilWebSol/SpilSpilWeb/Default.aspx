@@ -23,8 +23,8 @@
             <div class="col-lg-1"></div>
 
             <div class="footer-newsletter account-wall col-lg-5 text-center">
-                <h3 class="footer-wid-title">Newsletter</h3>
-                <p>
+                <h3 >Newsletter</h3>
+                <p class="newsInfo">
                     Sign up here to sell your soul to the dark lords of the universe. 
                     Also, you may get news and updates in your email inbox..
                 </p>

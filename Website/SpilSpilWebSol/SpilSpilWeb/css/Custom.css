@@ -79,3 +79,11 @@
         color: #fff;
         text-decoration: none;
     }
+
+#emailAddress {
+    width: 100%;
+}
+
+.newsInfo {
+    font-size: 1.7em;
+}
