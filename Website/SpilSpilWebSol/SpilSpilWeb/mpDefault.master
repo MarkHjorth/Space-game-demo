@@ -110,10 +110,11 @@
                             <ul class="nav navbar-nav">
                                 <li runat="server" id="Home"><a href="/Default.aspx">Home</a></li>
                                 <li runat="server" id="Scoreboards"><a href="/scoreboards.aspx">Scoreboards</a></li>
-                                <li runat="server" id="MyStats"><a href="/LoggedIn/Account.aspx">My Account</a></li>
+                                <li runat="server" id="Account"><a href="/LoggedIn/Account.aspx">My Account</a></li>
                                 <li runat="server" id="Download"><a href="/LoggedIn/Download.aspx">Download 2984</a></li>
                                 <li runat="server" id="About"><a href="/About2984.aspx">2984</a></li>
-                                <li runat="server" id="Contact"><a href="/AboutwizzGames.aspx">About wizzGames</a></li>
+                                <li runat="server" id="AboutWizz"><a href="/AboutwizzGames.aspx">About wizzGames</a></li>
+                                <li runat="server" id="Contact"><a href="/Contact.aspx">Contact wizzGames</a></li>
                             </ul>
                         </div>
                     </div>
