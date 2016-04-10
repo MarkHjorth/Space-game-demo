@@ -84,6 +84,22 @@
     width: 100%;
 }
 
+#guide {
+    /*83,5*/
+    display: none;
+    left: auto;
+    right: 29.5em;
+    top: 5.5em;
+    position: absolute;
+    z-index: 99999;
+    width: 23em;
+    padding: 1em;
+    background-color: #ffffff;
+    border: 1px solid #E6E5E6;
+    text-align:center;
+    border-radius: 2em;
+}
+
 .newsInfo {
     font-size: 1.7em;
 }

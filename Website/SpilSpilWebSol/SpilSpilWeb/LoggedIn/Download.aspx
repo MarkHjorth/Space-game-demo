@@ -19,18 +19,40 @@
             </div>
 
             <div class="col-sm-6 col-md-12 center-block text-center account-wall">
-                <h2>Older versions</h2>
+                <h2>Older versions <i id="installGuide" class="fa fa-info-circle center-block"></i></h2>
+                <br />
+                <div id="guide" style="display: none">
+                    <h5>Old versions are found at ResourceSpace as zip files.</h5>
+                    <p>
+                        To install an older version of the game, 
+                        simply download the zipped files, and unpack them to the desired location. 
+                    </p>
+                </div>
+                
                 <div class="col-lg-6">
                     <h3><i class="fa fa-windows"></i> For Windows</h3>
-                    <a href="http://46.101.132.22/?c=2&k=2a3f900a3d" target="_blank"><i class="fa fa-download fa-5x"></i></a>
+                    <a href="http://46.101.132.22/?c=2&k=2a3f900a3d" target="_blank"><i class="fa fa-external-link-square fa-5x"></i></a>
                 </div>
                 <div class="col-lg-6">
                     <h3><i class="fa fa-apple"></i> For Mac</h3>
-                    <a href="http://46.101.132.22/?c=3&k=49a9181833" target="_blank"><i class="fa fa-download fa-5x"></i></a>
+                    <a href="http://46.101.132.22/?c=3&k=49a9181833" target="_blank"><i class="fa fa-external-link-square fa-5x"></i></a>
                 </div>
             </div>
         </div>
         <br />
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#installGuide').hover(function () {
+                if ($('#guide').css('display') == 'block') {
+                    $('#guide').css('display', 'none');
+                } else {
+                    $('#guide').css('display', 'block');
+                }
+            });
+        });
+    </script>
+
 </asp:Content>
 
