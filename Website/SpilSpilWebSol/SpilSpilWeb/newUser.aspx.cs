@@ -23,7 +23,7 @@ public partial class newUser : System.Web.UI.Page
         {
             Response.Redirect("~/tba.aspx");
         }
-        else
+        else if(acceptTOS.Checked)
         {
             string uName = name.Text;
             string uEmail = email.Text;
@@ -62,6 +62,10 @@ public partial class newUser : System.Web.UI.Page
             {
                 Response.Redirect("/Error.aspx");
             }
+        }
+        else
+        {
+            Response.Write("<script>alert('You have to accept the terms to sign up!');</script>");
         }
     }
 
