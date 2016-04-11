@@ -97,6 +97,12 @@
   <wsdl:message name="IwizzService_ValidateEmail_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidateEmailResponse" />
   </wsdl:message>
+  <wsdl:message name="IwizzService_SendContactMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendContactMail" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_SendContactMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendContactMailResponse" />
+  </wsdl:message>
   <wsdl:portType name="IwizzService">
     <wsdl:operation name="GetUserByEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/GetUserByEmail" message="tns:IwizzService_GetUserByEmail_InputMessage" />
@@ -157,6 +163,10 @@
     <wsdl:operation name="ValidateEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/ValidateEmail" message="tns:IwizzService_ValidateEmail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/ValidateEmailResponse" message="tns:IwizzService_ValidateEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendContactMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/SendContactMail" message="tns:IwizzService_SendContactMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/SendContactMailResponse" message="tns:IwizzService_SendContactMail_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IwizzService" type="tns:IwizzService">
@@ -289,6 +299,15 @@
     </wsdl:operation>
     <wsdl:operation name="ValidateEmail">
       <soap:operation soapAction="http://tempuri.org/IwizzService/ValidateEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendContactMail">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/SendContactMail" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

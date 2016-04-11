@@ -37,6 +37,7 @@
             this.lbl_status = new System.Windows.Forms.Label();
             this.progBar = new System.Windows.Forms.ProgressBar();
             this.chkBx_Launch = new System.Windows.Forms.CheckBox();
+            this.btn_Cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_browse
@@ -78,7 +79,7 @@
             // btn_install
             // 
             this.btn_install.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_install.Location = new System.Drawing.Point(12, 132);
+            this.btn_install.Location = new System.Drawing.Point(16, 130);
             this.btn_install.Name = "btn_install";
             this.btn_install.Size = new System.Drawing.Size(384, 65);
             this.btn_install.TabIndex = 4;
@@ -123,6 +124,16 @@
             this.chkBx_Launch.Text = "Launch game after install";
             this.chkBx_Launch.UseVisualStyleBackColor = true;
             // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Location = new System.Drawing.Point(321, 144);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancel.TabIndex = 9;
+            this.btn_Cancel.Text = "Cancel";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
             // install_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,6 +148,7 @@
             this.Controls.Add(this.btn_browse);
             this.Controls.Add(this.lbl_status);
             this.Controls.Add(this.progBar);
+            this.Controls.Add(this.btn_Cancel);
             this.Name = "install_window";
             this.Text = "2984 Installation";
             this.ResumeLayout(false);
@@ -155,6 +167,7 @@
         private System.Windows.Forms.Label lbl_status;
         private System.Windows.Forms.ProgressBar progBar;
         private System.Windows.Forms.CheckBox chkBx_Launch;
+        private System.Windows.Forms.Button btn_Cancel;
     }
 }
 

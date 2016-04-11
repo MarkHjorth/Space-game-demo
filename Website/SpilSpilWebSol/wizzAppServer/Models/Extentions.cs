@@ -20,7 +20,7 @@ namespace wizzAppServer.Models
 
         public static UserModel ToUserModel(this DBmanager.User u)
         {
-            return new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions.ToList());
+            return new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions.ToList(), u.validated.Value);
         }
     }
 }

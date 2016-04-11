@@ -182,5 +182,10 @@ namespace wizzAppServer
         {
             return mc.ValidateEmail(validation, email);
         }
+
+        public bool SendContactMail(string uName, string uEmail, string uSubject, string uMessage)
+        {
+            return mc.SendContactMail(uName, uEmail, uSubject, uMessage);
+        }
     }
 }

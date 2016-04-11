@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using wizzAppServer.Models;
+using wizzAppServer.Ctrls;
 
 namespace wizzAppServer.DBmanager
 {
@@ -43,7 +44,8 @@ namespace wizzAppServer.DBmanager
         {
             try
             {
-                User u = context.Users.Where(x => x.Email == email).FirstOrDefault();
+                string lowEmail = email.ToLower();
+                User u = context.Users.Where(x => x.Email == lowEmail).FirstOrDefault();
                 UserModel um = u.ToUserModel();
                 return um;
             }
@@ -76,18 +78,21 @@ namespace wizzAppServer.DBmanager
         //Creates a 'User' with 'name', 'mail' and 'password'. Saves to DB and returns users name
         public string CreateUser(string name, string mail, string password)
         {
+            string lowMail = mail.ToLower();
             try
             {
                 User user = new User();
                 user.Name = name;
-                user.Email = mail;
+                user.Email = lowMail;
                 user.Password = Encrypt(password);
                 user.DateCreated = DateTime.Now;
 
-                if(IsUserNameFree(name) && EmailFree(mail))
+                if(IsUserNameFree(name) && EmailFree(lowMail))
                 {
                     context.Users.InsertOnSubmit(user);
                     context.SubmitChanges();
+                    MailCtrl mc = new MailCtrl();
+                    mc.NewUserSubscriber(lowMail);
                     return user.Name;
                 }
                 else
@@ -103,12 +108,14 @@ namespace wizzAppServer.DBmanager
         //Checks if the user with 'mail' and 'password' is valid. Returns user name
         public string ValidateUser(string mail, string password)
         {
+            string lowMail = mail.ToLower();
             try
             {
-                UserModel u = GetUserByEmail(mail);
-                bool validUser = ComparePass(password, u);
+                UserModel u = GetUserByEmail(lowMail);
+                bool passFif = ComparePass(password, u);
+                bool validUser = u.Validated;
 
-                if (validUser)
+                if (passFif && validUser)
                 {
                     return u.Name;
                 }
@@ -123,9 +130,10 @@ namespace wizzAppServer.DBmanager
         //Checks if the user with 'mail' and 'password' is valid. Returns user
         public UserModel ValidateUserCred(string mail, string password)
         {
+            string lowMail = mail.ToLower();
             try
             {
-                UserModel u = GetUserByEmail(mail);
+                UserModel u = GetUserByEmail(lowMail);
                 bool validUser = ComparePass(password, u);
 
                 if (validUser)

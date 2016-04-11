@@ -58,5 +58,8 @@ namespace WCF_wizzGames
 
         [OperationContract]
         bool ValidateEmail(string validation, string email);
+
+        [OperationContract]
+        bool SendContactMail(string uName, string uEmail, string uSubject, string uMessage);
     }
 }

@@ -24,8 +24,10 @@ namespace wizzAppServer.Models
         public string Password { get; set; }
         [DataMember]
         public List<PlayerSession> Sessions { get; set; }
-        
-        public UserModel(int id, string name, string email, string password, DateTime dateCreated, List<Session> sessions)
+        [DataMember]
+        public bool Validated { get; set; }
+
+        public UserModel(int id, string name, string email, string password, DateTime dateCreated, List<Session> sessions, bool Validated)
         {
             this.Id = id;
             this.Name = name;
@@ -33,6 +35,7 @@ namespace wizzAppServer.Models
             this.Password = password;
             this.DateCreated = dateCreated;
             this.Sessions = sessions.ToPlayerSession();
+            this.Validated = Validated;
         }
     }
 }

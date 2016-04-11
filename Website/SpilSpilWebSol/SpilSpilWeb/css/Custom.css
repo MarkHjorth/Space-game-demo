@@ -101,5 +101,11 @@
 }
 
 .newsInfo {
+    margin-bottom:0em;
+    margin-top: 0.5em;
     font-size: 1.7em;
+}
+
+.address {
+    font-size: 2em;
 }

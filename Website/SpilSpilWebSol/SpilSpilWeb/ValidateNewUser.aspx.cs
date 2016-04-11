@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Subscribe : System.Web.UI.Page
+public partial class ValidateNewUser : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -13,15 +13,16 @@ public partial class Subscribe : System.Web.UI.Page
         string code = Request.QueryString["code"];
         string email = Request.QueryString["email"];
 
-        if(code != null && email != null)
+        if (code != null && email != null)
         {
             NewsHandler nh = new NewsHandler();
             validated = nh.ValidateEmail(code, email);
         }
+
         if(validated)
         {
-            titl.InnerHtml = "Signed up";
-            txt.InnerHtml = "You have now signed up for the newsletter!";
+            titl.InnerHtml = "Sign up completed!";
+            txt.InnerHtml = "You have sucessfully signed up on wizzGames.me!";
         }
     }
 }

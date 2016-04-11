@@ -27,5 +27,6 @@ namespace wizzAppServer
         void SaveSession(int userId, string identifyer, DateTime startTime, DateTime endTime, int fired, int hits, int kills, int deaths);
         bool AddNewsSubscriber(string mail);
         bool ValidateEmail(string validation, string email);
+        bool SendContactMail(string uName, string uEmail, string uSubject, string uMessage);
     }
 }

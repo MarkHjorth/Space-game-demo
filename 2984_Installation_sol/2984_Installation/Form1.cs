@@ -18,6 +18,8 @@ namespace _2984_Installation
 {
     public partial class install_window : Form
     {
+        WebClient client = new WebClient();
+
         string path;
         string zipPath;
         string savePath;
@@ -72,6 +74,18 @@ namespace _2984_Installation
             Application.Exit();
         }
 
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                client.CancelAsync();
+                MessageBox.Show("Installation calcled!", "Cancled!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Application.Exit();
+            }
+            catch
+            {}
+        }
+
         private void downloadZip()
         {
             lbl_status.Text = "Downloading files";
@@ -80,7 +94,6 @@ namespace _2984_Installation
             
             Directory.CreateDirectory(path + "\\wizzGames");
             zipPath = (path + "\\wizzGames\\RS1_2984_win.zip");
-            WebClient client = new WebClient();
             
             // Specify a progress notification handler.
             client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadProgressCallback);
@@ -91,7 +104,7 @@ namespace _2984_Installation
             
             Uri uri = new Uri("http://46.101.132.22/pages/download.php?ref=8&ext=zip&k=99354e9945");
             client.DownloadFileAsync(uri, zipPath);
-
+            
             while(!downloadComplete)
             {
                 Application.DoEvents();

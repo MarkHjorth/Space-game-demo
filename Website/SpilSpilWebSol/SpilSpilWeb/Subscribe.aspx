@@ -7,8 +7,8 @@
         <div class="row center-block">
             <div class="col-lg-3"></div>
             <div class="center-block account-wall col-lg-6 text-center">
-                <h1>Subscribe to the newsletter</h1>
-                <p>An email was sent to the specified email address, with a link, to confirm your subscribtion</p>
+                <h1 id="titl" runat="server">Subscribe to the newsletter</h1>
+                <p id="txt" runat="server">An email was sent to the specified email address, with a link, to confirm your subscribtion</p>
             </div>
         </div>
     </div>

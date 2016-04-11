@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 public partial class newUser : System.Web.UI.Page
 {
     userHandler uha = new userHandler();
+    NewsHandler nh = new NewsHandler();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -50,6 +51,7 @@ public partial class newUser : System.Web.UI.Page
             try
             {
                 string username = uha.CreateUser(uName, uEmail, uPass);
+                nh.RegisterEmail(uEmail);
                 FormsAuthentication.RedirectFromLoginPage(username, true);
             }
             catch(FaultException fe)

@@ -195,5 +195,10 @@ namespace WCF_wizzGames
         {
             return iws.ValidateEmail(validation, email);
         }
+
+        public bool SendContactMail(string uName, string uEmail, string uSubject, string uMessage)
+        {
+            return iws.SendContactMail(uName, uEmail, uSubject, uMessage);
+        }
     }
 }

@@ -220,4 +220,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="SendContactMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uSubject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendContactMailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendContactMailResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
