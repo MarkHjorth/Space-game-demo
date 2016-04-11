@@ -4,7 +4,7 @@ using System.Collections;
 public class Stats : MonoBehaviour
 {
     public GameSession GameSession;
-    public DatabaseController dbController;
+    public ServiceController serviceController;
 
     public int ShotsFired
     {
@@ -38,7 +38,7 @@ public class Stats : MonoBehaviour
         Kills = 0;
         Deaths = 0;
         GameSession = gameObject.AddComponent<GameSession>() as GameSession;
-        dbController = gameObject.AddComponent<DatabaseController>() as DatabaseController;
+        serviceController = gameObject.AddComponent<ServiceController>() as ServiceController;
 	}
 
     void OnApplicationQuit()
@@ -51,7 +51,7 @@ public class Stats : MonoBehaviour
         GameSession.Stop();
         if(PlayerPrefs.HasKey("Userid"))
         {
-            dbController.SaveStats(GameSession, this);
+            serviceController.SaveStats(GameSession, this);
         }
     }
 }

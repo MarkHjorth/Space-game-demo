@@ -52,6 +52,8 @@ public partial class wizzService : System.Web.Services.Protocols.SoapHttpClientP
     
     private System.Threading.SendOrPostCallback GetUserSessionsOperationCompleted;
     
+    private System.Threading.SendOrPostCallback SaveSessionOperationCompleted;
+    
     /// CodeRemarks
     public wizzService() {
         this.Url = "http://178.157.216.170:8733/WCFwizzGames/";
@@ -92,6 +94,9 @@ public partial class wizzService : System.Web.Services.Protocols.SoapHttpClientP
     
     /// CodeRemarks
     public event GetUserSessionsCompletedEventHandler GetUserSessionsCompleted;
+    
+    /// CodeRemarks
+    public event SaveSessionCompletedEventHandler SaveSessionCompleted;
     
     /// CodeRemarks
     [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IwizzService/GetUserByEmail", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -460,6 +465,78 @@ public partial class wizzService : System.Web.Services.Protocols.SoapHttpClientP
         if ((this.GetUserSessionsCompleted != null)) {
             System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
             this.GetUserSessionsCompleted(this, new GetUserSessionsCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+        }
+    }
+    
+    /// CodeRemarks
+    [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IwizzService/SaveSession", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+    public void SaveSession(int userId, [System.Xml.Serialization.XmlIgnoreAttribute()] bool userIdSpecified, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] string identifyer, System.DateTime startTime, [System.Xml.Serialization.XmlIgnoreAttribute()] bool startTimeSpecified, System.DateTime endTime, [System.Xml.Serialization.XmlIgnoreAttribute()] bool endTimeSpecified, int fired, [System.Xml.Serialization.XmlIgnoreAttribute()] bool firedSpecified, int hits, [System.Xml.Serialization.XmlIgnoreAttribute()] bool hitsSpecified, int kills, [System.Xml.Serialization.XmlIgnoreAttribute()] bool killsSpecified, int deaths, [System.Xml.Serialization.XmlIgnoreAttribute()] bool deathsSpecified) {
+        this.Invoke("SaveSession", new object[] {
+                    userId,
+                    userIdSpecified,
+                    identifyer,
+                    startTime,
+                    startTimeSpecified,
+                    endTime,
+                    endTimeSpecified,
+                    fired,
+                    firedSpecified,
+                    hits,
+                    hitsSpecified,
+                    kills,
+                    killsSpecified,
+                    deaths,
+                    deathsSpecified});
+    }
+    
+    /// CodeRemarks
+    public void SaveSessionAsync(int userId, bool userIdSpecified, string identifyer, System.DateTime startTime, bool startTimeSpecified, System.DateTime endTime, bool endTimeSpecified, int fired, bool firedSpecified, int hits, bool hitsSpecified, int kills, bool killsSpecified, int deaths, bool deathsSpecified) {
+        this.SaveSessionAsync(userId, userIdSpecified, identifyer, startTime, startTimeSpecified, endTime, endTimeSpecified, fired, firedSpecified, hits, hitsSpecified, kills, killsSpecified, deaths, deathsSpecified, null);
+    }
+    
+    /// CodeRemarks
+    public void SaveSessionAsync(
+                int userId, 
+                bool userIdSpecified, 
+                string identifyer, 
+                System.DateTime startTime, 
+                bool startTimeSpecified, 
+                System.DateTime endTime, 
+                bool endTimeSpecified, 
+                int fired, 
+                bool firedSpecified, 
+                int hits, 
+                bool hitsSpecified, 
+                int kills, 
+                bool killsSpecified, 
+                int deaths, 
+                bool deathsSpecified, 
+                object userState) {
+        if ((this.SaveSessionOperationCompleted == null)) {
+            this.SaveSessionOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveSessionOperationCompleted);
+        }
+        this.InvokeAsync("SaveSession", new object[] {
+                    userId,
+                    userIdSpecified,
+                    identifyer,
+                    startTime,
+                    startTimeSpecified,
+                    endTime,
+                    endTimeSpecified,
+                    fired,
+                    firedSpecified,
+                    hits,
+                    hitsSpecified,
+                    kills,
+                    killsSpecified,
+                    deaths,
+                    deathsSpecified}, this.SaveSessionOperationCompleted, userState);
+    }
+    
+    private void OnSaveSessionOperationCompleted(object arg) {
+        if ((this.SaveSessionCompleted != null)) {
+            System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+            this.SaveSessionCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
         }
     }
     
@@ -1435,3 +1512,7 @@ public partial class GetUserSessionsCompletedEventArgs : System.ComponentModel.A
         }
     }
 }
+
+/// CodeRemarks
+[System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "0.0.0.0")]
+public delegate void SaveSessionCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);

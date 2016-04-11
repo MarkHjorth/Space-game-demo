@@ -7,7 +7,7 @@ using System.Web.Security;
 
 public class LoginScript : MonoBehaviour {
 
-    public static wizzService service;
+    private static wizzService service;
     private UserModel userModel = null;
     private string username;
     private string password;

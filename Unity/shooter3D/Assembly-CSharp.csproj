@@ -49,8 +49,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BulletScript.cs" />
-     <Compile Include="Assets\Scripts\DB\DatabaseConnection.cs" />
-     <Compile Include="Assets\Scripts\DB\DatabaseController.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GameSession.cs" />
@@ -60,6 +58,7 @@
      <Compile Include="Assets\Scripts\MenuScripts\PauseController.cs" />
      <Compile Include="Assets\Scripts\MenuScripts\PauseMenuController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\ServiceController.cs" />
      <Compile Include="Assets\Scripts\SmoothFollow.cs" />
      <Compile Include="Assets\Scripts\Stats.cs" />
      <Compile Include="Assets\Scripts\WebClient\ClientObject.cs" />
