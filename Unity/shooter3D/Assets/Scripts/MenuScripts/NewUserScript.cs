@@ -59,4 +59,5 @@ public class NewUserScript : MonoBehaviour {
     {
         SceneManager.LoadScene("Scenes/Login");
     }
+    
 }

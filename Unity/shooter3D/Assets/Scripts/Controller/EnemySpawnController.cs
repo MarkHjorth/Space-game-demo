@@ -17,7 +17,7 @@ public class EnemySpawnController : MonoBehaviour {
 	
 	}
     
-    void SpawnEnemies(int numberOfSpawns)
+    public void SpawnEnemies(int numberOfSpawns)
     {
         for (int i = 0; i < numberOfSpawns; i++)
         {
