@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     private Stats stats;
     private PauseController pauseController;
     private GameObject Hud;
+    private EnemySpawnController spawner;
     public GameObject PauseMenuPrefab;
     public GameObject HudPrefab;
 
@@ -19,6 +20,7 @@ public class GameController : MonoBehaviour
         pauseController = gameObject.AddComponent<PauseController>() as PauseController;
         pauseController.SetPauseMenu(PauseMenuPrefab);
         player = (Player)GameObject.FindGameObjectWithTag("Player").GetComponent(typeof(Player));
+        spawner = (EnemySpawnController)GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent(typeof(EnemySpawnController));
         Hud = Instantiate(HudPrefab);
 
     }
@@ -32,6 +34,11 @@ public class GameController : MonoBehaviour
     void Update()
     {
 
+    }
+    
+    public void spawnEnemy(int amount)
+    {
+        spawner.SpawnEnemies(amount);
     }
 
     public void ShotsHit()

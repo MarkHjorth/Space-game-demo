@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
     private GameController gameController;
     private GameObject player;
     private EnemySpawnController spawner;
-    public float health = 10;
+    private float health = 10;
     private AICharacterControl aiControl;
 
     void Start ()
@@ -25,9 +25,9 @@ public class Enemy : MonoBehaviour {
 
     }
     
-    void setSpawner(EnemySpawnController spawner)
+    public float getHealth()
     {
-        this.spawner = spawner;
+        return health;
     }
     
     public void Attack()
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour {
 
     public void isHit(int damage)
     {
-        health = health - damage;
+        health -= damage;
         gameController.ShotsHit();
         if (health <= 0)
         {
@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour {
     {
         //var ang = transform.rotation;
         //Instantiate(corpse, transform.position, ang);
-        spawner.SpawnEnemies(1);
+        gameController.spawnEnemy(1);
         gameController.Kills();
         Destroy(gameObject);
     }

@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
 
 	void Start ()
 	{
-        health = 10;
+        health = 100;
         nextFire = Time.time;
         fireRate = 0.1f;
         gameController = (GameController) GameObject.FindGameObjectWithTag("GameController").GetComponent(typeof(GameController));

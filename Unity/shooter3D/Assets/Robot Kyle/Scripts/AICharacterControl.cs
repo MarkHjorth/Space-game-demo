@@ -50,7 +50,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                     {
                         nextAttack = Time.time + attackRate;
                         
-                        gameController.getPlayer().isHit(1);
+                        gameController.getPlayer().isHit(5);
                     }
                     
             }
