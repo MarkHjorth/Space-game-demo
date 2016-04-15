@@ -43,25 +43,4 @@ public class PauseController : MonoBehaviour {
             Time.timeScale = 0f;
         }
     }
-
-
-//Remove the below methods!!
-
-    public void exitToMain()
-    {
-        SceneManager.LoadScene("Scenes/MainMenu");
-    }
-
-    public void continueGame()
-    {
-        pauseGame();
-    }
-
-    public void saveGame()
-    {
-    }
-
-    public void loadGame()
-    {
-    }
 }

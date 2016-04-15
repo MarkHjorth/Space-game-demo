@@ -11,7 +11,6 @@ public class PauseMenuController : MonoBehaviour {
     {
         pauseController = (PauseController)GetComponentInParent<PauseController>();
         gameController = (GameController) GameObject.FindGameObjectWithTag("GameController").GetComponent(typeof(GameController));
-	
 	}
 
     public void exitToMain()
