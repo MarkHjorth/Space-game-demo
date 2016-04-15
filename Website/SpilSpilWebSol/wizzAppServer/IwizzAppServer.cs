@@ -28,5 +28,7 @@ namespace wizzAppServer
         bool AddNewsSubscriber(string mail);
         bool ValidateEmail(string validation, string email);
         bool SendContactMail(string uName, string uEmail, string uSubject, string uMessage);
+        bool UpdatePassword(string emailAdd, string oldPass, string newPass);
+        bool ForgotPassword(string email);
     }
 }

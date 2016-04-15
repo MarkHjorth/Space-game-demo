@@ -136,7 +136,7 @@ namespace wizzAppServer
                 allStats = statsCtrl.GetAllStats();
                 return allStats;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -186,6 +186,65 @@ namespace wizzAppServer
         public bool SendContactMail(string uName, string uEmail, string uSubject, string uMessage)
         {
             return mc.SendContactMail(uName, uEmail, uSubject, uMessage);
+        }
+
+        public bool UpdatePassword(string emailAdd, string oldPass, string newPass)
+        {
+            bool updated = false;
+            updated = userCtrl.UpdatePassword(emailAdd, oldPass, newPass);
+
+            if (updated)
+            {
+                try
+                {
+                    string subject = "wizzGames - Change Password";
+                    string text = "Someone has just changed the password for your wizzGames account. If it was you, everything is fine. " +
+                        "If it was NOT you who changed the password, please contact wizzGames ASAP, so we can fix it for you!";
+
+                    string[] param = { subject, text };
+                    mc.SendMailParam(param, emailAdd);
+                    return updated;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            else
+            {
+                return updated;
+            }
+        }
+
+        public bool ForgotPassword(string email)
+        {
+            UserModel um = null;
+
+            try
+            {
+                um = GetUserByEmail(email);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            try
+            {
+                if (um != null)
+                {
+                    mc.SendForgotPassEmail(email);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

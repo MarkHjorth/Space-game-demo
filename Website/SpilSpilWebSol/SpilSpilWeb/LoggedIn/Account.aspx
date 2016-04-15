@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1 account-wall">
                 <h1 id="uName" runat="server">..</h1>
-                <div class="col-lg-8">
+                <form id="userInfo" class="col-lg-8" runat="server">
                     <table class="table">
                         <tr>
                             <td>
@@ -61,25 +61,18 @@
                                 <h5 id="userSINCE" runat="server" />
                             </td>
                         </tr>
-                        <tr id="save">
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <button>Save new info</button>
-                            </td>
-                        </tr>
                     </table>
-                    <button id="show">Edit info</button>
-                </div>
+                    <asp:Button class="btn btn-lg btn-primary center-block" Text="Edit info" ID="editInfo" runat="server" OnClick="btn_update_info_click"></asp:Button>
+                </form>
             </div>
         </div>
     </div>
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#userChangeEMAIL').hide();
-            $('#userChangePASSWORD').hide();
-            $('#save').hide();
+            //$('#userChangeEMAIL').hide();
+            //$('#userChangePASSWORD').hide();
+            //$('#save').hide();
 
             $('#show').click(function () {
                 alert("Not yet implemented! Try again tomorrow!");

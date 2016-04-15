@@ -32,25 +32,32 @@ public partial class Contact : System.Web.UI.Page
             return;
         }
 
-        string uName = "";
-        uName = name.Value;
-        string uEmail = "";
-        uEmail = email.Value;
-        string uSubject = "";
-        uSubject = subject.Value;
-        string uMessage = "";
-        uMessage = message.Text;
-
-        bool sent = service.SendContactMail(uName, uEmail, uSubject, uMessage);
-
-        if(sent)
+        if(acceptTOS.Checked)
         {
-            Response.Write("<script>alert('The message has been sent!');</script>");
-            Response.Redirect("#");
+            string uName = "";
+            uName = name.Value;
+            string uEmail = "";
+            uEmail = email.Value;
+            string uSubject = "";
+            uSubject = subject.Value;
+            string uMessage = "";
+            uMessage = message.Text;
+
+            bool sent = service.SendContactMail(uName, uEmail, uSubject, uMessage);
+
+            if (sent)
+            {
+                Response.Write("<script>alert('The message has been sent!');</script>");
+                Response.Redirect("#");
+            }
+            else
+            {
+                Response.Write("<script>alert('The message was lost in the mail!!');</script>");
+            }
         }
         else
         {
-            Response.Write("<script>alert('The message was lost in the mail!!');</script>");
+            Response.Write("<script>alert('You have to accept the terms to use the contact form!');</script>");
         }
     }
 }

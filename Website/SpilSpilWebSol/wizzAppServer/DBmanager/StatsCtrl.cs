@@ -101,8 +101,8 @@ namespace wizzAppServer.DBmanager
             Session ses = new Session();
             ses.userId = userId;
             ses.identifyer = identifyer;
-            ses.startTime = startTime;
-            ses.stopTime = endTime;
+            ses.startTime = startTime.Trim(TimeSpan.TicksPerSecond);
+            ses.stopTime = endTime.Trim(TimeSpan.TicksPerSecond);
             ses.shotsFired = fired;
             ses.shotsHit = hits;
             ses.kills = kills;

@@ -200,5 +200,22 @@ namespace WCF_wizzGames
         {
             return iws.SendContactMail(uName, uEmail, uSubject, uMessage);
         }
+
+        public bool UpdatePassword(string emailAdd, string oldPass, string newPass)
+        {
+            return iws.UpdatePassword(emailAdd, oldPass, newPass);
+        }
+
+        public bool ForgotPassword(string email)
+        {
+            try
+            {
+                return iws.ForgotPassword(email);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

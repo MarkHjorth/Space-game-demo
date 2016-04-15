@@ -85,7 +85,7 @@ namespace wizzAppServer.DBmanager
                 user.Name = name;
                 user.Email = lowMail;
                 user.Password = Encrypt(password);
-                user.DateCreated = DateTime.Now;
+                user.DateCreated = DateTime.Now.Trim(TimeSpan.TicksPerSecond);
 
                 if(IsUserNameFree(name) && EmailFree(lowMail))
                 {
@@ -177,6 +177,36 @@ namespace wizzAppServer.DBmanager
             catch (Exception ex) { throw ex; }
         }
 
+        internal bool UpdatePassword(string emailAdd, string oldPass, string newPass)
+        {
+            bool worked = false;
+            User u = new User();
+
+            try
+            {
+                u = context.Users.Where(x => x.Email == emailAdd).FirstOrDefault();
+
+                if (oldPass.GetHashCode().ToString() == u.Password)
+                {
+                    u.Password = newPass.GetHashCode().ToString();
+                    context.SubmitChanges();
+                    worked = true;
+                }
+                else if(oldPass == u.ValidationCode && DateTime.Now < u.VCUpdated)
+                {
+                    u.Password = newPass.GetHashCode().ToString();
+                    context.SubmitChanges();
+                    worked = true;
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+            return worked;
+        }
+
         //Checks if the username 'name' exists in the database. Returns true if username is FREE
         public bool IsUserNameFree(string name)
         {
@@ -196,7 +226,7 @@ namespace wizzAppServer.DBmanager
             {
                 Description description = context.Descriptions.Where(x => x.Name == who).FirstOrDefault();
                 description.Description1 = desc;
-                description.LastUpdated = DateTime.Now;
+                description.LastUpdated = DateTime.Now.Trim(TimeSpan.TicksPerSecond);
                 context.SubmitChanges();
                 return true;
             }

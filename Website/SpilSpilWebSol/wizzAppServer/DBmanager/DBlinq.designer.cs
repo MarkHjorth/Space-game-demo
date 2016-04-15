@@ -753,6 +753,10 @@ namespace wizzAppServer.DBmanager
 		
 		private System.Nullable<bool> _validated;
 		
+		private string _ValidationCode;
+		
+		private System.Nullable<System.DateTime> _VCUpdated;
+		
 		private EntitySet<Session> _Sessions;
 		
 		private EntitySet<EmailSubscriber> _EmailSubscribers;
@@ -773,6 +777,10 @@ namespace wizzAppServer.DBmanager
     partial void OnDateCreatedChanged();
     partial void OnvalidatedChanging(System.Nullable<bool> value);
     partial void OnvalidatedChanged();
+    partial void OnValidationCodeChanging(string value);
+    partial void OnValidationCodeChanged();
+    partial void OnVCUpdatedChanging(System.Nullable<System.DateTime> value);
+    partial void OnVCUpdatedChanged();
     #endregion
 		
 		public User()
@@ -898,6 +906,46 @@ namespace wizzAppServer.DBmanager
 					this._validated = value;
 					this.SendPropertyChanged("validated");
 					this.OnvalidatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidationCode", DbType="NVarChar(255)")]
+		public string ValidationCode
+		{
+			get
+			{
+				return this._ValidationCode;
+			}
+			set
+			{
+				if ((this._ValidationCode != value))
+				{
+					this.OnValidationCodeChanging(value);
+					this.SendPropertyChanging();
+					this._ValidationCode = value;
+					this.SendPropertyChanged("ValidationCode");
+					this.OnValidationCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VCUpdated", DbType="DateTime")]
+		public System.Nullable<System.DateTime> VCUpdated
+		{
+			get
+			{
+				return this._VCUpdated;
+			}
+			set
+			{
+				if ((this._VCUpdated != value))
+				{
+					this.OnVCUpdatedChanging(value);
+					this.SendPropertyChanging();
+					this._VCUpdated = value;
+					this.SendPropertyChanged("VCUpdated");
+					this.OnVCUpdatedChanged();
 				}
 			}
 		}

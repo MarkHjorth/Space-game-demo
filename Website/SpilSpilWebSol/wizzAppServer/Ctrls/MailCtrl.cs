@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using wizzAppServer.DBmanager;
 using wizzAppServer.Models;
 using SendGrid;
+using System.IO;
 
 namespace wizzAppServer.Ctrls
 {
@@ -220,7 +221,7 @@ namespace wizzAppServer.Ctrls
         /// Send an email to the spicified email address, with the parameters. 
         /// First param is the subject, second param is the email body
         /// </summary>
-        private void SendMailParam(string[] param, string email)
+        public void SendMailParam(string[] param, string email)
         {
             try
             {
@@ -253,7 +254,7 @@ namespace wizzAppServer.Ctrls
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("Could not send email: " + ex.Message);
             }
         }
 
@@ -298,6 +299,52 @@ namespace wizzAppServer.Ctrls
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public void SendForgotPassEmail(string email)
+        {
+            string subject = "Forgotten Password - wizzgames";
+
+            string bodyIntro = "You are trying to change your password. Please click the link to do so: ";
+            string linkWizz = "http://wizzgames.me/ChangePassword.aspx?code=";
+            string code = GenerateValidationCode();
+            string link = linkWizz + code + "&email=" + email;
+
+            string body = bodyIntro + link;
+
+            string[] param = { subject, body };
+
+            try
+            {
+                SendMailParam(param, email);
+            }
+            catch
+            {
+                throw new Exception("It is the email sending that is the problem.");
+            }
+
+            User u = null;
+
+            try
+            {
+                u = context.Users.Where(x => x.Email == email).FirstOrDefault();
+                u.ValidationCode = code;
+                u.VCUpdated = DateTime.Now.AddDays(1);
+            }
+            catch (Exception)
+            {
+                throw new Exception("It is the creation of the validationcode that dosent work..");
+            }
+
+            try
+            {
+                //context.Users.InsertOnSubmit(u);
+                context.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("The database will not take the user with the edits: " + ex.Message);
             }
         }
 

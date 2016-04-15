@@ -103,6 +103,18 @@
   <wsdl:message name="IwizzService_SendContactMail_OutputMessage">
     <wsdl:part name="parameters" element="tns:SendContactMailResponse" />
   </wsdl:message>
+  <wsdl:message name="IwizzService_UpdatePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_UpdatePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_ForgotPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForgotPassword" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_ForgotPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForgotPasswordResponse" />
+  </wsdl:message>
   <wsdl:portType name="IwizzService">
     <wsdl:operation name="GetUserByEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/GetUserByEmail" message="tns:IwizzService_GetUserByEmail_InputMessage" />
@@ -167,6 +179,14 @@
     <wsdl:operation name="SendContactMail">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/SendContactMail" message="tns:IwizzService_SendContactMail_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/SendContactMailResponse" message="tns:IwizzService_SendContactMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/UpdatePassword" message="tns:IwizzService_UpdatePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/UpdatePasswordResponse" message="tns:IwizzService_UpdatePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/ForgotPassword" message="tns:IwizzService_ForgotPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/ForgotPasswordResponse" message="tns:IwizzService_ForgotPassword_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IwizzService" type="tns:IwizzService">
@@ -308,6 +328,24 @@
     </wsdl:operation>
     <wsdl:operation name="SendContactMail">
       <soap:operation soapAction="http://tempuri.org/IwizzService/SendContactMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/ForgotPassword" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

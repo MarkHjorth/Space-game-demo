@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container center-block">
         <div class="row center-block">
-            <div class="account-wall col-lg-5">
+            <div class="account-wall col-lg-5" itemscope itemtype="http://schema.org/Place">
                 <h1>Ways to contact wizzGames:</h1>
                 <br />
                 <div class="col-lg-2"><a href="https://www.facebook.com/groups/1664422403836900/" target="_blank"><i class="fa fa-facebook fa-5x"></i></a></div>
@@ -38,6 +38,7 @@
                 </div>
                 <script type='text/javascript'>function init_map() { var myOptions = { zoom: 14, center: new google.maps.LatLng(57.02096155930723, 9.887620089965838), mapTypeId: google.maps.MapTypeId.ROADMAP }; map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions); marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(57.02096155930723, 9.887620089965838) }); infowindow = new google.maps.InfoWindow({ content: '<strong>wizzGames</strong><br>Sofiendalsvej 60<br>' }); google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); }); infowindow.open(map, marker); } google.maps.event.addDomListener(window, 'load', init_map);</script>
             </div>
+            <a name="conForm"></a>
 
             <div class="col-lg-2"></div>
             <div class="footer-newsletter account-wall col-lg-8 text-center center-block">
@@ -52,6 +53,9 @@
                     <input id="subject" type="text" placeholder="Type a subject" runat="server" /><br /><br />
                     <p class="newsInfo">Message: *</p>
                     <asp:TextBox ID="message" type="text" placeholder="Write your message" runat="server" required="required"/>
+                    <br />
+                    <input type="checkbox" id="acceptTOS" name="terms" class="aggree" runat="server"/>
+                    <label for="terms" class="aggree">I have read and agreed to the <a href="/Terms.aspx" target="_blank">Terms and Conditions of Use</a> and <a href="/Privacy.aspx" target="_blank">Privacy Policy</a></label>
                     <asp:Button ID="btn_contact" ClientIDMode="Static" Text="Submit" class="btn btn-lg btn-primary btn-block center-block subscribe_button" type="submit" OnClick="btn_submit_clicked" runat="server"></asp:Button>
                 </form>
             </div>

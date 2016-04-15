@@ -16,7 +16,7 @@
                         <asp:TextBox type="password" ID="pass" class="form-control center-block" placeholder="Password" required="required" runat="server" />
                         <asp:TextBox type="password" ID="confpass" class="form-control center-block" placeholder="Confirm Password" required="required" runat="server" />
                         <input type="checkbox" id="acceptTOS" name="terms" class="aggree" runat="server"/>
-                        <label for="terms" class="aggree">I have read the <a href="/terms">'Terms of Service', 'Conditions' and 'Privacy Policy'</a>, and aggreed to each one</label>
+                        <label for="terms" class="aggree">I have read and agreed to the <a href="/Terms.aspx" target="_blank">'Terms and Conditions of Use'</a> and <a href="/Privacy.aspx" target="_blank">'Privacy Policy'</a></label>
                         <asp:Button class="btn btn-lg btn-primary btn-block center-block" type="submit" Text="Create Account" ID="createAcc" runat="server" OnClick="btn_create_user_click"></asp:Button>
                         <span class="clearfix"></span>
                     </form>

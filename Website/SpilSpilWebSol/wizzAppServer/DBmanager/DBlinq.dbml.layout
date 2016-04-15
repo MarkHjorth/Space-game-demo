@@ -8,10 +8,10 @@
         <elementListCompartment Id="20107e41-e8d5-4001-8845-3131369b2e2b" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3d3d7f23-1a37-4a91-b099-fd41d80be179" absoluteBounds="0.5, 2.25, 2, 2.5401025390625">
+    <classShape Id="3d3d7f23-1a37-4a91-b099-fd41d80be179" absoluteBounds="0.5, 2.5, 2, 2.5401025390625">
       <DataClassMoniker Name="/DBlinqDataContext/Session" />
       <nestedChildShapes>
-        <elementListCompartment Id="2e96ea35-7e11-4971-a207-01fa8e4deb00" absoluteBounds="0.51500000000000012, 2.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2e96ea35-7e11-4971-a207-01fa8e4deb00" absoluteBounds="0.51500000000000012, 2.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="3ba3198f-4c9b-4bda-af5a-9a3a89b6400a" absoluteBounds="3, 0.5, 2, 1.9631982421875">
@@ -20,23 +20,23 @@
         <elementListCompartment Id="93813fe2-f00e-4d1a-94c3-22c9232aeac6" absoluteBounds="3.0149999999999997, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="efb3f128-8688-45aa-ac76-2f53acb16d17" absoluteBounds="3, 2.875, 2, 1.9631982421875">
+    <classShape Id="f0fd9e1e-f7bd-4f10-92f2-7dd0137c782d" absoluteBounds="3, 2.625, 2, 2.3478011067708335">
       <DataClassMoniker Name="/DBlinqDataContext/User" />
       <nestedChildShapes>
-        <elementListCompartment Id="5222a394-17c5-4ccf-a898-ec7230bd979f" absoluteBounds="3.015, 3.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b0d4c98f-6d89-4868-881d-8220a142b29d" absoluteBounds="3.0149999999999997, 3.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3 : 3.83255126953125); (2.5 : 3.83255126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3 : 3.79890055338542); (2.5 : 3.79890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBlinqDataContext/User/User_Session" />
       <nodes>
-        <classShapeMoniker Id="efb3f128-8688-45aa-ac76-2f53acb16d17" />
+        <classShapeMoniker Id="f0fd9e1e-f7bd-4f10-92f2-7dd0137c782d" />
         <classShapeMoniker Id="3d3d7f23-1a37-4a91-b099-fd41d80be179" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4 : 2.875); (4 : 2.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4 : 2.625); (4 : 2.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DBlinqDataContext/User/User_EmailSubscriber" />
       <nodes>
-        <classShapeMoniker Id="efb3f128-8688-45aa-ac76-2f53acb16d17" />
+        <classShapeMoniker Id="f0fd9e1e-f7bd-4f10-92f2-7dd0137c782d" />
         <classShapeMoniker Id="3ba3198f-4c9b-4bda-af5a-9a3a89b6400a" />
       </nodes>
     </associationConnector>

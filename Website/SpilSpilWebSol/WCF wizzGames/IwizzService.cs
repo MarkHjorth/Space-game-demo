@@ -61,5 +61,11 @@ namespace WCF_wizzGames
 
         [OperationContract]
         bool SendContactMail(string uName, string uEmail, string uSubject, string uMessage);
+
+        [OperationContract]
+        bool UpdatePassword(string emailAdd, string oldPass, string newPass);
+
+        [OperationContract]
+        bool ForgotPassword(string email);
     }
 }

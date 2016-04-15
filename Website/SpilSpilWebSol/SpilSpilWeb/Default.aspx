@@ -23,11 +23,13 @@
             <div class="col-lg-1"></div>
 
             <div class="footer-newsletter account-wall col-lg-5 text-center">
-                <h3 >Newsletter</h3>
+                <h3>Newsletter</h3>
                 <p class="newsInfo">
                     Sign up here to sell your soul to the dark lords of the universe. 
                     Also, you may get news and updates in your email inbox..
                 </p>
+                By signing up you agree to the <a href="/Terms.aspx" target="_blank">Terms and Conditions of Use</a> and our <a href="/Privacy.aspx" target="_blank">Privacy Policy</a> of wizzGames
+                
                 <form runat="server">
                     <input id="emailAddress" type="text" placeholder="Type your email" required runat="server" />
                     <asp:Button ID="btn_news" ClientIDMode="Static" Text="Subscribe" class="btn btn-lg btn-primary btn-block center-block subscribe_button" type="submit" runat="server" OnClick="btn_subscribe_click"></asp:Button>

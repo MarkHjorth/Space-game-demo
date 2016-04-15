@@ -65,7 +65,7 @@ public partial class newUser : System.Web.UI.Page
         }
         else
         {
-            Response.Write("<script>alert('You have to accept the terms to sign up!');</script>");
+            Response.Write("<script>alert('You have to accept our terms to sign up!');</script>");
         }
     }
 
