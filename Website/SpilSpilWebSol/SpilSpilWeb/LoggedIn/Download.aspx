@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-lg-6">
                     <h3><i class="fa fa-apple"></i> For Mac</h3>
-                    <a href="http://46.101.132.22/pages/download.php?ref=7&ext=zip&k=48c0d9b176" target="_blank"><i class="fa fa-download fa-5x"></i></a>
+                    <a href="http://downloads.wizzgames.me/pages/download.php?ref=7&ext=zip&k=48c0d9b176" target="_blank"><i class="fa fa-download fa-5x"></i></a>
                 </div>
             </div>
 
@@ -31,11 +31,11 @@
                 
                 <div class="col-lg-6">
                     <h3><i class="fa fa-windows"></i> For Windows</h3>
-                    <a href="http://46.101.132.22/?c=2&k=2a3f900a3d" target="_blank"><i class="fa fa-external-link-square fa-5x"></i></a>
+                    <a href="http://downloads.wizzgames.me/?c=2&k=2a3f900a3d" target="_blank"><i class="fa fa-external-link-square fa-5x"></i></a>
                 </div>
                 <div class="col-lg-6">
                     <h3><i class="fa fa-apple"></i> For Mac</h3>
-                    <a href="http://46.101.132.22/?c=3&k=49a9181833" target="_blank"><i class="fa fa-external-link-square fa-5x"></i></a>
+                    <a href="http://downloads.wizzgames.me/?c=3&k=49a9181833" target="_blank"><i class="fa fa-external-link-square fa-5x"></i></a>
                 </div>
             </div>
         </div>

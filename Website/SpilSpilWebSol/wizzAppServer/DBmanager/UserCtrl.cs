@@ -195,8 +195,13 @@ namespace wizzAppServer.DBmanager
                 else if(oldPass == u.ValidationCode && DateTime.Now < u.VCUpdated)
                 {
                     u.Password = newPass.GetHashCode().ToString();
+                    u.ValidationCode = "Code used";
                     context.SubmitChanges();
                     worked = true;
+                }
+                else
+                {
+                    u.ValidationCode = "Code expired";
                 }
             }
             catch(Exception ex)
