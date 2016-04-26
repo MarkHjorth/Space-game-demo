@@ -8,12 +8,14 @@
             <div class="account-wall col-lg-5" itemscope itemtype="http://schema.org/Place">
                 <h1>Ways to contact wizzGames:</h1>
                 <br />
-                <div class="col-lg-2"><a href="https://www.facebook.com/groups/1664422403836900/" target="_blank"><i class="fa fa-facebook fa-5x"></i></a></div>
+                <div class="col-lg-2"><a href="https://www.facebook.com/groups/1664422403836900/" target="_blank"><i class="fa fa-facebook fa-5x fbLink socLink"></i></a></div>
                 <div class="col-lg-2"></div>
-                <div class="col-lg-2"><a href="https://twitter.com/WizzGamesTweet" target="_blank"><i class="fa fa-twitter fa-5x"></i></a></div>
+                <div class="col-lg-2"><a href="https://twitter.com/WizzGamesTweet" target="_blank"><i class="fa fa-twitter fa-5x twitLink socLink"></i></a></div>
                 <div class="col-lg-3"></div>
-                <div class="col-lg-2"><a href="https://www.instagram.com/wizzgamesinsta/" target="_blank"><i class="fa fa-instagram fa-5x"></i></a></div>
-                <a href="https://www.google.dk/maps/place/Sofiendalsvej+60,+9200+Aalborg+SV/@57.0194986,9.8815865,15z/data=!4m2!3m1!1s0x464933ae71ccf9db:0x6c1a8b6ec94a8aa6" class="address" target="_blank"><br />
+                <div class="col-lg-2"><a href="https://www.instagram.com/wizzgamesinsta/" target="_blank"><i class="fa fa-instagram fa-5x insLink socLink"></i></a></div>
+
+                <br />
+                <a href="https://www.google.dk/maps/place/Sofiendalsvej+60,+9200+Aalborg+SV/@57.0194986,9.8815865,15z/data=!4m2!3m1!1s0x464933ae71ccf9db:0x6c1a8b6ec94a8aa6" class="address socLink" target="_blank">
                     <br />
                     <br />
                     <b>Address:</b><br />
@@ -46,16 +48,19 @@
                 <form runat="server">
                     <input id="honneyPot" type="text" runat="server" hidden="hidden" />
                     <p class="newsInfo">Name: </p>
-                    <input id="name" type="text" placeholder="Type your name" runat="server" /><br /><br />
-                    <p class="newsInfo">Email: *</p>
-                    <input id="email" type="text" placeholder="Type your email" runat="server" required="required" /><br /><br />
-                    <p class="newsInfo">Subject: </p>
-                    <input id="subject" type="text" placeholder="Type a subject" runat="server" /><br /><br />
-                    <p class="newsInfo">Message: *</p>
-                    <asp:TextBox ID="message" type="text" placeholder="Write your message" runat="server" required="required"/>
+                    <input id="name" type="text" placeholder="Type your name" runat="server" /><br />
                     <br />
-                    <input type="checkbox" id="acceptTOS" name="terms" class="aggree" runat="server"/>
-                    <label for="terms" class="aggree">I have read and agreed to the <a href="/Terms.aspx" target="_blank">Terms and Conditions of Use</a> and <a href="/Privacy.aspx" target="_blank">Privacy Policy</a></label>
+                    <p class="newsInfo">Email: *</p>
+                    <input id="email" type="text" placeholder="Type your email" runat="server" required="required" /><br />
+                    <br />
+                    <p class="newsInfo">Subject: </p>
+                    <input id="subject" type="text" placeholder="Type a subject" runat="server" /><br />
+                    <br />
+                    <p class="newsInfo">Message: *</p>
+                    <asp:TextBox ID="message" type="text" placeholder="Write your message" runat="server" required="required" />
+                    <br />
+                    <input type="checkbox" id="acceptTOS" name="terms" class="aggree" runat="server" />
+                    <label for="terms" class="aggree">I have read and agreed to the <a href="/Terms.aspx" target="_blank">Terms and Conditions of Use</a></label>
                     <asp:Button ID="btn_contact" ClientIDMode="Static" Text="Submit" class="btn btn-lg btn-primary btn-block center-block subscribe_button" type="submit" OnClick="btn_submit_clicked" runat="server"></asp:Button>
                 </form>
             </div>

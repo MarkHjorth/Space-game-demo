@@ -10,7 +10,7 @@
                     <i class="fa fa-5x fa-space-shuttle login-title">&nbspCreate account</i>
                     <form class="form-newuser" runat="server">
                         <asp:TextBox ID="honneyPot" type="text" class="hidden" runat="server" />
-                        <asp:TextBox type="text" ID="name" class="form-control center-block" placeholder="Full name" required="required" autofocus data-validation-required-message="Please enter your full name" runat="server" />
+                        <asp:TextBox type="text" ID="name" class="form-control center-block" placeholder="Username" required="required" autofocus data-validation-required-message="Please enter a Username" runat="server" />
                         <asp:TextBox type="email" ID="email" class="form-control center-block" placeholder="Email" required="required" data-validation-required-message="Please enter a valid email" runat="server" />
                         <asp:TextBox type="email" ID="confemail" class="form-control center-block" placeholder="Confirm Email" required="required" runat="server" />
                         <asp:TextBox type="password" ID="pass" class="form-control center-block" placeholder="Password" required="required" runat="server" />

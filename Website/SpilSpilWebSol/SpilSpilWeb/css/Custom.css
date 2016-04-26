@@ -11,15 +11,14 @@
 .banner {
     background-image: url(../img/BannerNoText.png);
     background-repeat: no-repeat;
-    background-position:center;
-    background-size:cover;
+    background-position: center;
+    background-size: cover;
 }
 
 .bannerText {
     padding-left: 25%;
     padding-right: 25%;
     border: 3px solid lightgray;
-
 }
 
 .blacks {
@@ -27,12 +26,12 @@
 }
 
 .shopping-item {
-  float: none;
-  margin-bottom: 20px;
-  margin-top: 5px;
-  text-align: center;
-  background-color:rgba(211,211,211,0.5);
-  border-radius:4%;
+    float: none;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    text-align: center;
+    background-color: rgba(211,211,211,0.5);
+    border-radius: 4%;
 }
 
 .insta_widget {
@@ -64,7 +63,7 @@
 
 .subscribe_button {
     margin-top: 1em;
-    text-align:center;
+    text-align: center;
     font-size: 1.5em;
     width: 80%;
     background: none repeat scroll 0 0 #1abc9c;
@@ -96,18 +95,19 @@
     padding: 1em;
     background-color: #ffffff;
     border: 1px solid #E6E5E6;
-    text-align:center;
+    text-align: center;
     border-radius: 2em;
 }
 
 .newsInfo {
-    margin-bottom:0em;
+    margin-bottom: 0em;
     margin-top: 0.5em;
     font-size: 1.7em;
 }
 
 .address {
     font-size: 2em;
+    color: black;
 }
 
 .aggree {
@@ -122,3 +122,23 @@
 .terms {
     padding: 3%;
 }
+
+.fbLink {
+    color: #3b5998;
+}
+
+.twitLink {
+    color: #55acee;
+}
+
+.insLink {
+    color: #9b6954;
+}
+
+.socLink {
+    transition: all 0.3s ease-in-out 0s;
+}
+
+    .socLink:hover {
+        color: #1abc9c;
+    }

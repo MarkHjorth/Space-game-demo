@@ -124,9 +124,9 @@ public class StatsHandler
                 })
                 .ToList();
         }
-        catch (Exception ex)
+        catch
         {
-            throw ex;
+            allStats.Add(new PlayerStats(0, "", new TimeSpan(0), 0, 0, 0, 0, 0, 0, 0));
         }
         return allStats;
     }

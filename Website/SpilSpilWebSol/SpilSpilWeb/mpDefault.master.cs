@@ -11,15 +11,22 @@ public partial class mpDeafult : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string addClass = "";
+        
         try
         {
             HtmlGenericControl controlTitle = (HtmlGenericControl)FindControl(Page.Title);
-            addClass = controlTitle.Attributes["class"];
             controlTitle.Attributes["class"] += " active";
         }
-        catch (Exception)
-        {}
+        catch
+        {
+            try
+            {
+                HtmlGenericControl controlTitle = (HtmlGenericControl)FindControl("Home");
+                controlTitle.Attributes["class"] += " active";
+            }
+            catch
+            { }
+        }
 
         Page.Title = Page.Title + " - wizzGames";
 
@@ -39,5 +46,10 @@ public partial class mpDeafult : System.Web.UI.MasterPage
     protected void signOut(object sender, EventArgs e)
     {
         FormsAuthentication.SignOut();
+    }
+
+    private void Application_Error()
+    {
+        Server.Transfer("/Error.aspx");
     }
 }
