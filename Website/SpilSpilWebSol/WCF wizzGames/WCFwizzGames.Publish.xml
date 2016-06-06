@@ -1,0 +1,11 @@
+<publishData>
+  <publishTarget publishUrl="C:\Users\David\Desktop\deploy\">
+    <file relUrl="bin/wizzAppServer.pdb" publishTime="02/29/2016 11:17:48" />
+    <file relUrl="WCF_wizzGames.wizzService.svc" publishTime="02/29/2016 11:20:58" />
+    <file relUrl="bin/wizzAppServer.dll" publishTime="02/29/2016 11:17:48" />
+    <file relUrl="Web.config" publishTime="02/29/2016 09:32:14" />
+    <file relUrl="bin/WCFwizzGames.pdb" publishTime="02/29/2016 11:17:48" />
+    <file relUrl="bin/WCFwizzGames.dll.config" publishTime="02/29/2016 09:32:14" />
+    <file relUrl="bin/WCFwizzGames.dll" publishTime="02/29/2016 11:17:48" />
+  </publishTarget>
+</publishData>

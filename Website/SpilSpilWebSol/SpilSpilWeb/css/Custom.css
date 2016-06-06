@@ -11,15 +11,14 @@
 .banner {
     background-image: url(../img/BannerNoText.png);
     background-repeat: no-repeat;
-    background-position:center;
-    background-size:cover;
+    background-position: center;
+    background-size: cover;
 }
 
 .bannerText {
     padding-left: 25%;
     padding-right: 25%;
     border: 3px solid lightgray;
-
 }
 
 .blacks {
@@ -27,12 +26,12 @@
 }
 
 .shopping-item {
-  float: none;
-  margin-bottom: 20px;
-  margin-top: 5px;
-  text-align: center;
-  background-color:rgba(211,211,211,0.5);
-  border-radius:4%;
+    float: none;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    text-align: center;
+    background-color: rgba(211,211,211,0.5);
+    border-radius: 4%;
 }
 
 .insta_widget {
@@ -47,4 +46,103 @@
 
 .aboutUs {
     margin: 0 auto;
+}
+
+.padding {
+    padding: 2em;
+}
+
+.usermenu {
+    margin: 1em;
+    background-color: ghostwhite;
+}
+
+.administration {
+    margin-top: 5em;
+}
+
+.subscribe_button {
+    margin-top: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    width: 80%;
+    background: none repeat scroll 0 0 #1abc9c;
+    border: medium none;
+    color: #fff;
+    padding: 0.375em 1.563em;
+    display: inline-block;
+}
+
+    .subscribe_button:hover {
+        background-color: #222;
+        color: #fff;
+        text-decoration: none;
+    }
+
+#emailAddress {
+    width: 100%;
+}
+
+#guide {
+    /*83,5*/
+    display: none;
+    left: auto;
+    right: 29.5em;
+    top: 5.5em;
+    position: absolute;
+    z-index: 99999;
+    width: 23em;
+    padding: 1em;
+    background-color: #ffffff;
+    border: 1px solid #E6E5E6;
+    text-align: center;
+    border-radius: 2em;
+}
+
+.newsInfo {
+    margin-bottom: 0em;
+    margin-top: 0.5em;
+    font-size: 1.7em;
+}
+
+.address {
+    font-size: 2em;
+    color: black;
+}
+
+.aggree {
+    margin-top: 2em;
+    text-indent: 0.5em;
+}
+
+.logo_img {
+    width: 70%;
+}
+
+.terms {
+    padding: 3%;
+}
+
+.fbLink {
+    color: #3b5998;
+}
+
+.twitLink {
+    color: #55acee;
+}
+
+.insLink {
+    color: #9b6954;
+}
+
+.socLink {
+    transition: all 0.3s ease-in-out 0s;
+}
+
+    .socLink:hover {
+        color: #1abc9c;
+    }
+
+.prim-header {
+    margin-top: 0.7em;
 }

@@ -1,10 +1,16 @@
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\wizzHost.exe.config
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\wizzHost.exe.manifest
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\wizzHost.application
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\wizzHost.exe
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\wizzHost.pdb
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\WCFwizzGames.dll
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\wizzAppServer.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\SendGridMail.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\SendGrid.SmtpApi.dll
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\WCFwizzGames.pdb
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\bin\Release\wizzAppServer.pdb
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Release\wizzHost.csprojResolveAssemblyReference.cache
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Release\wizzHost.exe.manifest
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Release\wizzHost.application
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Release\wizzHost.exe
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzHost\obj\Release\wizzHost.pdb

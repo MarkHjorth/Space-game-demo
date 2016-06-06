@@ -7,16 +7,28 @@ using System.Web.Security;
 
 public class LoginScript : MonoBehaviour {
 
-    public static wizzService service;
+    private static wizzService service;
+    private UserModel userModel = null;
     private string username;
     private string password;
     public InputField input_user;
     public InputField input_pass;
+    public Button newUserButton;
     public Text errormessage;
+    public Text loginText;
 
     void Start()
     {
         service = new wizzService();
+        if(PlayerPrefs.HasKey("Username"))
+        {
+            errormessage.text = "Logged in as " + PlayerPrefs.GetString("Username", "robot overlord");
+            isSignedIn(true);
+        }
+        else
+        {
+            loginText.text = "Sign in";
+        }
     }
 
     public void backToMain()
@@ -33,26 +45,64 @@ public class LoginScript : MonoBehaviour {
     {
         username = input_user.text;
         password = input_pass.text;
-        string loginName = "No user found!";
-
-        try
+        
+        if(!PlayerPrefs.HasKey("Username"))
         {
-            loginName = service.ValidateUser(username, password);
+            try
+            {
+                userModel = service.ValidateUserCred(username, password);
 
-            if (loginName.Equals("No user found!"))
-            {
-                errormessage.text = "Email or password incorrect!";
-                input_user.text = "";
-                input_pass.text = "";
+                if (userModel == null)
+                {
+                    errormessage.text = "Email or password incorrect!";
+                    input_pass.text = "";
+                }
+                else
+                {
+                    setUserData(userModel);
+                    errormessage.text = ("Welcome " + PlayerPrefs.GetString("Username", "robot overlord"));
+                    isSignedIn(true);
+                }
             }
-            else
+            catch (System.Exception ex)
             {
-                errormessage.text = ("Welcome " + loginName);
+                errormessage.text = ("Error! - " + ex.StackTrace);
             }
         }
-        catch (System.Exception ex)
+        else
         {
-            errormessage.text = ("Error! - " + ex.StackTrace);
+            deleteUserData();
+            isSignedIn(false);
+            errormessage.text = "Successfully signed out";
         }
     }
+    void isSignedIn(bool signedIn)
+    {
+        input_user.interactable = !signedIn;
+        input_pass.interactable = !signedIn;
+        newUserButton.interactable = !signedIn;
+        if(signedIn)
+        {
+            loginText.text = "Sign out";
+        } 
+        else
+        {
+            loginText.text = "Sign in";
+        }
+    }
+    
+    void deleteUserData()
+    {
+        PlayerPrefs.DeleteKey("Username");
+        PlayerPrefs.DeleteKey("Usermail");
+        PlayerPrefs.DeleteKey("Userid");
+    }
+    void setUserData(UserModel userModel)
+    {
+        
+        PlayerPrefs.SetString("Username", userModel.Name);
+        PlayerPrefs.SetString("Usermail", userModel.Email);
+        PlayerPrefs.SetInt("Userid", userModel.Id);
+    }
+    
 }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://178.157.216.170:8733/WCFwizzGames/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="UserModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sessions" nillable="true" type="tns:ArrayOfPlayerSession" />
+      <xs:element minOccurs="0" name="Validated" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserModel" nillable="true" type="tns:UserModel" />
+  <xs:complexType name="ArrayOfPlayerSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayerSession" nillable="true" type="tns:PlayerSession" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayerSession" nillable="true" type="tns:ArrayOfPlayerSession" />
+  <xs:complexType name="PlayerSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accuracy" type="xs:double" />
+      <xs:element minOccurs="0" name="Deaths" type="xs:double" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Identifyer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Kdr" type="xs:double" />
+      <xs:element minOccurs="0" name="Kills" type="xs:double" />
+      <xs:element minOccurs="0" name="PlayTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="ShotsFired" type="xs:double" />
+      <xs:element minOccurs="0" name="ShotsHit" type="xs:double" />
+      <xs:element minOccurs="0" name="StartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StopTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayerSession" nillable="true" type="tns:PlayerSession" />
+  <xs:complexType name="ArrayOfPlayerStats">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlayerStats" nillable="true" type="tns:PlayerStats" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayerStats" nillable="true" type="tns:ArrayOfPlayerStats" />
+  <xs:complexType name="PlayerStats">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accuracy" type="xs:double" />
+      <xs:element minOccurs="0" name="Deaths" type="xs:double" />
+      <xs:element minOccurs="0" name="Kdr" type="xs:double" />
+      <xs:element minOccurs="0" name="Kills" type="xs:double" />
+      <xs:element minOccurs="0" name="LvLReached" type="xs:double" />
+      <xs:element minOccurs="0" name="PlayTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="PlayerID" type="xs:int" />
+      <xs:element minOccurs="0" name="PlayerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShotsFired" type="xs:double" />
+      <xs:element minOccurs="0" name="ShotsHit" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlayerStats" nillable="true" type="tns:PlayerStats" />
+</xs:schema>

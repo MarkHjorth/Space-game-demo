@@ -8,10 +8,12 @@ public class Player : MonoBehaviour {
     public float fireRate;
     private float nextFire;
     private float precision = 5.125f;
+    private float health = 10;
     private GameController gameController;
 
 	void Start ()
 	{
+        health = 100;
         nextFire = Time.time;
         fireRate = 0.1f;
         gameController = (GameController) GameObject.FindGameObjectWithTag("GameController").GetComponent(typeof(GameController));
@@ -39,4 +41,28 @@ public class Player : MonoBehaviour {
             gameController.ShotsFired();
         }
 	}
+    
+    public float getHealth()
+    {
+        return health;
+    }
+    
+     public void isHit(int damage)
+    {
+        health = health - damage;
+        gameController.ShotsHit();
+        if (health <= 0)
+        {
+            die();
+        }
+    }
+
+    public void die()
+    {
+        //var ang = transform.rotation;
+        //Instantiate(corpse, transform.position, ang);
+        gameController.Deaths();
+        Destroy(gameObject);
+    }
+    
 }

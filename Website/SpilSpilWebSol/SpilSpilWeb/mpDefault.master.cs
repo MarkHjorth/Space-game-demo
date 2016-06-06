@@ -7,28 +7,39 @@ using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
-public partial class mpDeafuæt : System.Web.UI.MasterPage
+public partial class mpDeafult : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string addClass = "";
+        
         try
         {
             HtmlGenericControl controlTitle = (HtmlGenericControl)FindControl(Page.Title);
-            addClass = controlTitle.Attributes["class"];
             controlTitle.Attributes["class"] += " active";
         }
-        catch (Exception ex)
+        catch
         {
-            
+            try
+            {
+                HtmlGenericControl controlTitle = (HtmlGenericControl)FindControl("Home");
+                controlTitle.Attributes["class"] += " active";
+            }
+            catch
+            { }
         }
+
         Page.Title = Page.Title + " - wizzGames";
 
-        if(HttpContext.Current.User.Identity.Name != "")
+        adminLink.Visible = false;
+        if (HttpContext.Current.User.Identity.Name != "")
         {
             string s = HttpContext.Current.User.Identity.Name;
             link_login.HRef = "~/LoggedIn/LogOut.aspx";
             btn_login.InnerHtml = "Sign out";
+        }
+        if (HttpContext.Current.User.Identity.Name == "2984")
+        {
+            adminLink.Visible = true;
         }
     }
 
@@ -37,9 +48,8 @@ public partial class mpDeafuæt : System.Web.UI.MasterPage
         FormsAuthentication.SignOut();
     }
 
-    protected void newsSignUp()
+    private void Application_Error()
     {
-        string s = emailAddress.Value;
-        Response.Redirect("tba.aspx");
+        Server.Transfer("/Error.aspx");
     }
 }

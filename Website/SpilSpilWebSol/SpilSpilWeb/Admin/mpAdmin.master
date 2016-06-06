@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/mpDefault.master" AutoEventWireup="true" CodeFile="mpAdmin.master.cs" Inherits="Admin_mpAdmin" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:Panel runat="server" ID="panelMain">
+        <div class="col-md-12">
+            <div class="user-menu usermenu">
+                <ul>
+                    <li><a href="Edit2984.aspx"><i class="fa fa-rocket"></i>Edit 2984</a></li>
+                    <li><a href="EditWizzgames.aspx"><i class="fa fa-users"></i>Edit Devs</a></li>
+                    <%--<li><a href="cart.html"><i class="fa fa-user"></i>My Cart</a></li>--%>
+                    <%--<li><a href="checkout.html"><i class="fa fa-user"></i>Checkout</a></li>--%>
+                    <li><a href="/LoggedIn/LogOut.aspx"><i class="fa fa-sign-out"></i>Log Out</a></li>
+                </ul>
+            </div>
+        </div>
+        <asp:Panel runat="server" ID="panel1">
+            <asp:ContentPlaceHolder ID="ChildContent1" runat="server" />
+        </asp:Panel>
+        <asp:Panel runat="server" ID="panel2">
+            <asp:ContentPlaceHolder ID="ChildContent2" runat="server" />
+        </asp:Panel>
+        <br />
+    </asp:Panel>
+</asp:Content>
+

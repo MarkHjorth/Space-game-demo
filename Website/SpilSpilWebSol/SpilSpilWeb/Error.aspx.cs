@@ -9,5 +9,14 @@ public partial class Error : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        try
+        {
+            Exception exception = Server.GetLastError().GetBaseException();
+            stack.InnerHtml = exception.Message;
+        }
+        catch (Exception ex)
+        {
+            stack.InnerHtml = ex.Message;
+        }
     }
 }

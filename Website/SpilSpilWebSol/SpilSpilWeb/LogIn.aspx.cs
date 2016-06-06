@@ -26,11 +26,17 @@ public partial class LogIn : System.Web.UI.Page
         string userName = null;
         string mail = email.Value;
         string pass = password.Value;
+        string exceptionStr = "No exception was thrown!";
+
         try
         {
             userName = uh.validateUser(mail, pass);
         }
-        catch { }
+        catch(Exception exc)
+        {
+            exceptionStr = exc.Message;
+            Response.Write("<script>alert('No user found!');</script>");
+        }
 
 
         bool isUser = (userName != null);
@@ -41,7 +47,7 @@ public partial class LogIn : System.Web.UI.Page
         }
         else
         {
-            Response.Write("<script>alert('Hello');</script>");
+            Response.Write("<script>alert('" + exceptionStr + "');</script>");
             string filename = Server.MapPath("/LoginLog.txt");
             using (StreamWriter writer = new StreamWriter(filename, true))
             {

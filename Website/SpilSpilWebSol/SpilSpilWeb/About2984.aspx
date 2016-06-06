@@ -1,4 +1,4 @@
-﻿<%@ Page Title="2984" Language="C#" MasterPageFile="~/mpDefault.master" AutoEventWireup="true" CodeFile="About2984.aspx.cs" Inherits="About_2984" %>
+﻿<%@ Page Title="About_2984" Language="C#" MasterPageFile="~/mpDefault.master" AutoEventWireup="true" CodeFile="About2984.aspx.cs" Inherits="About_2984" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -10,7 +10,7 @@
                 </h1>
                 <h2>The Story</h2>
                 <div class="col-lg-2 center-block" ></div>
-                <p class="col-lg-8 center-block">
+                <p class="col-lg-8 center-block" id="descrption" runat="server" >
                     It is the year 2984 and Mankind have colonized most planets in the solar system. 
                     You and three others have been selected to be the pioneering crew on the Columbus 
                     expedition; the first manned expedition outside the gravity of our sun. 
