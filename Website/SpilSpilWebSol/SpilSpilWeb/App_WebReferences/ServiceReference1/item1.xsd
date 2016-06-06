@@ -60,6 +60,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ValidateUserCred">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateUserCredResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="ValidateUserCredResult" nillable="true" type="q3:UserModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="IsUserNameFree">
     <xs:complexType>
       <xs:sequence>
@@ -125,7 +140,7 @@
   <xs:element name="GetAllStatsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetAllStatsResult" nillable="true" type="q3:ArrayOfPlayerStats" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetAllStatsResult" nillable="true" type="q4:ArrayOfPlayerStats" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -139,7 +154,7 @@
   <xs:element name="GetUserStatsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetUserStatsResult" nillable="true" type="q4:PlayerStats" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetUserStatsResult" nillable="true" type="q5:PlayerStats" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -153,7 +168,102 @@
   <xs:element name="GetUserSessionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetUserSessionsResult" nillable="true" type="q5:ArrayOfPlayerSession" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/wizzAppServer.Models" minOccurs="0" name="GetUserSessionsResult" nillable="true" type="q6:ArrayOfPlayerSession" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+        <xs:element minOccurs="0" name="identifyer" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endTime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="fired" type="xs:int" />
+        <xs:element minOccurs="0" name="hits" type="xs:int" />
+        <xs:element minOccurs="0" name="kills" type="xs:int" />
+        <xs:element minOccurs="0" name="deaths" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSessionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewsSubscriber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mail" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewsSubscriberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewsSubscriberResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="validation" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidateEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ValidateEmailResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendContactMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uSubject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="uMessage" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendContactMailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendContactMailResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="emailAdd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="oldPass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newPass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePasswordResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForgotPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForgotPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ForgotPasswordResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

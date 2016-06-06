@@ -22,7 +22,9 @@ namespace WCF_wizzGames
         {
             try
             {
-                return iws.GetUserByEmail(email);
+                UserModel um = iws.GetUserByEmail(email);
+                um.Password = "This is not a password";
+                return um;
             }
             catch (Exception ex)
             {
@@ -35,7 +37,9 @@ namespace WCF_wizzGames
         {
             try
             {
-                return iws.GetUserByName(name);
+                UserModel um = iws.GetUserByName(name);
+                um.Password = "This is not a password";
+                return um;
             }
             catch (Exception ex)
             {
@@ -48,16 +52,22 @@ namespace WCF_wizzGames
         {
             try
             {
-                return iws.CreateUser(name, mail, password);
+                if(iws.CreateUser(name, mail, password) != null)
+                {
+                    return iws.CreateUser(name, mail, password);
+                }
+                else
+                {
+                    throw new NullReferenceException();
+                }
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
 
-        //Validates user credentials
+        //Validates user credentials, return user name
         public string ValidateUser(string email, string password)
         {
             try
@@ -65,10 +75,18 @@ namespace WCF_wizzGames
                 return iws.ValidateUser(email, password);
             }
             catch (Exception ex)
-            {
+            { throw ex; }
+        }
 
-                throw ex;
+        //Validates user credentials, return user
+        public UserModel ValidateUserCred(string email, string password)
+        {
+            try
+            {
+                return iws.ValidateUserCred(email, password);
             }
+            catch (Exception ex)
+            { throw ex; }
         }
 
         //Checks if username if free
@@ -156,6 +174,43 @@ namespace WCF_wizzGames
             try
             {
                 return iws.GetUserSessions(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void SaveSession(int userId, string identifyer, DateTime startTime, DateTime endTime, int fired, int hits, int kills, int deaths)
+        {
+            iws.SaveSession(userId, identifyer, startTime, endTime, fired, hits, kills, deaths);
+        }
+
+        public bool AddNewsSubscriber(string mail)
+        {
+            return iws.AddNewsSubscriber(mail);
+        }
+
+        public bool ValidateEmail(string validation, string email)
+        {
+            return iws.ValidateEmail(validation, email);
+        }
+
+        public bool SendContactMail(string uName, string uEmail, string uSubject, string uMessage)
+        {
+            return iws.SendContactMail(uName, uEmail, uSubject, uMessage);
+        }
+
+        public bool UpdatePassword(string emailAdd, string oldPass, string newPass)
+        {
+            return iws.UpdatePassword(emailAdd, oldPass, newPass);
+        }
+
+        public bool ForgotPassword(string email)
+        {
+            try
+            {
+                return iws.ForgotPassword(email);
             }
             catch (Exception ex)
             {

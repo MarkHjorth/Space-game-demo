@@ -96,6 +96,22 @@ namespace wizzAppServer.DBmanager
             return plSesList;
         }
 
+        public void SaveSession(int userId, string identifyer, DateTime startTime, DateTime endTime, int fired, int hits, int kills, int deaths)
+        {
+            Session ses = new Session();
+            ses.userId = userId;
+            ses.identifyer = identifyer;
+            ses.startTime = startTime.Trim(TimeSpan.TicksPerSecond);
+            ses.stopTime = endTime.Trim(TimeSpan.TicksPerSecond);
+            ses.shotsFired = fired;
+            ses.shotsHit = hits;
+            ses.kills = kills;
+            ses.deaths = deaths;
+
+            context.Sessions.InsertOnSubmit(ses);
+            context.SubmitChanges();
+        }
+
         //Calculates the accuracy, based on the shots fired and shots hit
         private double GetAccuracy(double fired, double hit)
         {

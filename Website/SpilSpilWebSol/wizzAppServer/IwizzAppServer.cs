@@ -15,6 +15,7 @@ namespace wizzAppServer
         UserModel GetUserByEmail(string email);
         UserModel GetUserByName(string name);
         string ValidateUser(string mail, string password);
+        UserModel ValidateUserCred(string mail, string password);
         string CreateUser(string name, string mail, string password);
         bool IsUserNameFree(string name);
         bool EmailFree(string email);
@@ -23,5 +24,11 @@ namespace wizzAppServer
         List<PlayerStats> GetAllStats();
         PlayerStats GetUserStats(string name);
         List<PlayerSession> GetUserSessions(string name);
+        void SaveSession(int userId, string identifyer, DateTime startTime, DateTime endTime, int fired, int hits, int kills, int deaths);
+        bool AddNewsSubscriber(string mail);
+        bool ValidateEmail(string validation, string email);
+        bool SendContactMail(string uName, string uEmail, string uSubject, string uMessage);
+        bool UpdatePassword(string emailAdd, string oldPass, string newPass);
+        bool ForgotPassword(string email);
     }
 }

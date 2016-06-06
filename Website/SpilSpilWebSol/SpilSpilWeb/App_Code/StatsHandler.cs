@@ -124,9 +124,9 @@ public class StatsHandler
                 })
                 .ToList();
         }
-        catch (Exception ex)
+        catch
         {
-            throw ex;
+            allStats.Add(new PlayerStats(0, "", new TimeSpan(0), 0, 0, 0, 0, 0, 0, 0));
         }
         return allStats;
     }
@@ -184,17 +184,17 @@ public class StatsHandler
 
     public List<TableRow> GetUserSessions(string name)
     {
-        List<PlayerSession> psl = GetServiceSessions(name);
+        List<PlayerSession> playerSessionList = GetServiceSessions(name);
         List<TableRow> tableList = new List<TableRow>();
 
         exclude = new string[] { "Id", "UserId", "Identifyer" };
-        List<TableHeaderCell> thcl = GetTableHeaderRow(psl.First(), exclude);
+        List<TableHeaderCell> thcl = GetTableHeaderRow(playerSessionList.First(), exclude);
         TableHeaderRow thr = new TableHeaderRow();
 
         thr.Cells.AddRange(thcl.ToArray());
         tableList.Add(thr);
 
-        foreach (PlayerSession plSe in psl)
+        foreach (PlayerSession plSe in playerSessionList)
         {
             TableRow tr = new TableRow();
             foreach (PropertyInfo pi in plSe.GetType().GetProperties())
@@ -229,6 +229,7 @@ public class StatsHandler
                     PlayTime = s.PlayTime,
                     Shots = s.ShotsFired,
                     Hits = s.ShotsHit,
+                    Accuracy = s.Accuracy,
                     Kills = s.Kills,
                     Deaths = s.Deaths,
                     Kdr = s.Kdr

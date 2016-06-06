@@ -31,6 +31,12 @@
   <wsdl:message name="IwizzService_ValidateUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IwizzService_ValidateUserCred_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserCred" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_ValidateUserCred_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserCredResponse" />
+  </wsdl:message>
   <wsdl:message name="IwizzService_IsUserNameFree_InputMessage">
     <wsdl:part name="parameters" element="tns:IsUserNameFree" />
   </wsdl:message>
@@ -73,6 +79,42 @@
   <wsdl:message name="IwizzService_GetUserSessions_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserSessionsResponse" />
   </wsdl:message>
+  <wsdl:message name="IwizzService_SaveSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSession" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_SaveSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_AddNewsSubscriber_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewsSubscriber" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_AddNewsSubscriber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewsSubscriberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_ValidateEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateEmail" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_ValidateEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_SendContactMail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendContactMail" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_SendContactMail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendContactMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_UpdatePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_UpdatePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_ForgotPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForgotPassword" />
+  </wsdl:message>
+  <wsdl:message name="IwizzService_ForgotPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForgotPasswordResponse" />
+  </wsdl:message>
   <wsdl:portType name="IwizzService">
     <wsdl:operation name="GetUserByEmail">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/GetUserByEmail" message="tns:IwizzService_GetUserByEmail_InputMessage" />
@@ -89,6 +131,10 @@
     <wsdl:operation name="ValidateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/ValidateUser" message="tns:IwizzService_ValidateUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/ValidateUserResponse" message="tns:IwizzService_ValidateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUserCred">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/ValidateUserCred" message="tns:IwizzService_ValidateUserCred_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/ValidateUserCredResponse" message="tns:IwizzService_ValidateUserCred_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="IsUserNameFree">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/IsUserNameFree" message="tns:IwizzService_IsUserNameFree_InputMessage" />
@@ -117,6 +163,30 @@
     <wsdl:operation name="GetUserSessions">
       <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/GetUserSessions" message="tns:IwizzService_GetUserSessions_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/GetUserSessionsResponse" message="tns:IwizzService_GetUserSessions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSession">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/SaveSession" message="tns:IwizzService_SaveSession_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/SaveSessionResponse" message="tns:IwizzService_SaveSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewsSubscriber">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/AddNewsSubscriber" message="tns:IwizzService_AddNewsSubscriber_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/AddNewsSubscriberResponse" message="tns:IwizzService_AddNewsSubscriber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/ValidateEmail" message="tns:IwizzService_ValidateEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/ValidateEmailResponse" message="tns:IwizzService_ValidateEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendContactMail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/SendContactMail" message="tns:IwizzService_SendContactMail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/SendContactMailResponse" message="tns:IwizzService_SendContactMail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/UpdatePassword" message="tns:IwizzService_UpdatePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/UpdatePasswordResponse" message="tns:IwizzService_UpdatePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IwizzService/ForgotPassword" message="tns:IwizzService_ForgotPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IwizzService/ForgotPasswordResponse" message="tns:IwizzService_ForgotPassword_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IwizzService" type="tns:IwizzService">
@@ -150,6 +220,15 @@
     </wsdl:operation>
     <wsdl:operation name="ValidateUser">
       <soap:operation soapAction="http://tempuri.org/IwizzService/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUserCred">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/ValidateUserCred" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -213,6 +292,60 @@
     </wsdl:operation>
     <wsdl:operation name="GetUserSessions">
       <soap:operation soapAction="http://tempuri.org/IwizzService/GetUserSessions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSession">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/SaveSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewsSubscriber">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/AddNewsSubscriber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateEmail">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/ValidateEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendContactMail">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/SendContactMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgotPassword">
+      <soap:operation soapAction="http://tempuri.org/IwizzService/ForgotPassword" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

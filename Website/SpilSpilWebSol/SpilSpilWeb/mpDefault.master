@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="mpDefault.master.cs" Inherits="mpDeafuæt" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="mpDefault.master.cs" Inherits="mpDeafult" %>
 
 <!DOCTYPE html>
 
@@ -7,6 +7,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="We are a small, two-man, project group, in the process 
+                                    of developping a, now 3D, space-shooter game. wizzGames is our 
+                                    team, and our game is called '2984'. The game 
+                                    title is loosley based on the 1948 novel 'Nineteen 
+                                    Eighty-Four'. The game is supposed to be the base for our 
+                                    fourth semester project, at UCN, which will include this 
+                                    web site, the game, a lot of database stuff and maybe even
+                                    mobile applications for IOS and maybe Android." />
 
     <title>wizzGames</title>
     <link rel="shortcut icon" href="/img/favicon.ico" />
@@ -72,17 +80,19 @@
                     <div class="row">
                         <div class="col-sm-3">
                             <div class="logo">
-                                <h1><a href="Default.aspx">wizz<span>Games </span></a></h1>
+                                <h1><a href="/Default.aspx">wizz<span>Games </span></a></h1>
                             </div>
                         </div>
 
                         <div class="col-sm-6 logo">
-                            <h1 class="text-center"><a class="bannerText" href="Default.aspx">2984</a></h1>
+                            <h1 class="text-center">
+                                <a class="bannerText" href="/Default.aspx">2984</a>
+                            </h1>
                         </div>
 
                         <div class="col-sm-3">
                             <div class="shopping-item">
-                                <a href="LogIn.aspx" id="link_login" runat="server" onclick="signOut">
+                                <a href="/LogIn.aspx" id="link_login" runat="server" onclick="signOut">
                                     <span id="btn_login" runat="server" class="log-in">Log in</span>
                                     <i class="fa fa-user"></i><%--<span class="product-count">5</span>--%>
                                 </a>
@@ -108,10 +118,11 @@
                             <ul class="nav navbar-nav">
                                 <li runat="server" id="Home"><a href="/Default.aspx">Home</a></li>
                                 <li runat="server" id="Scoreboards"><a href="/scoreboards.aspx">Scoreboards</a></li>
-                                <li runat="server" id="MyStats"><a href="/LoggedIn/Account.aspx">My Account</a></li>
-                                <li runat="server" id="Download"><a href="/Download.aspx">Download 2984</a></li>
-                                <li runat="server" id="About"><a href="/About2984.aspx">2984</a></li>
-                                <li runat="server" id="Contact"><a href="/AboutwizzGames.aspx">About wizzGames</a></li>
+                                <li runat="server" id="Account"><a href="/LoggedIn/Account.aspx">My Account</a></li>
+                                <li runat="server" id="Download"><a href="/LoggedIn/Download.aspx">Download 2984</a></li>
+                                <li runat="server" id="About_2984"><a href="/About2984.aspx">2984</a></li>
+                                <li runat="server" id="wizzGames"><a href="/AboutwizzGames.aspx">About wizzGames</a></li>
+                                <li runat="server" id="Contact"><a href="/Contact.aspx">Contact wizzGames</a></li>
                             </ul>
                         </div>
                     </div>
@@ -127,46 +138,37 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="footer-about-us">
                                 <h2>wizz<span>Games</span></h2>
-                                <p>
+                                <p itemscope itemtype="http://data-vocabulary.org/Review">
                                     We are a small, two-man, project group, in the process 
-                                    of developping a 2D space-shooter game. wizzGames is our 
+                                    of developping a, now 3D, space-shooter game. wizzGames is our 
                                     team, and our game is called '2984'. The game 
                                     title is loosley based on the 1948 novel 'Nineteen 
                                     Eighty-Four'. The game is supposed to be the base for our 
                                     fourth semester project, at UCN, which will include this 
                                     web site, the game, a lot of database stuff and maybe even
-                                    mobile applications.
+                                    mobile applications for IOS and maybe Android.
                                     <br />
                                     Read more about us on the <a href="/AboutwizzGames.aspx">About</a> page!
                                 </p>
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-md-5 col-sm-6">
                             <div class="footer-menu">
                                 <h2 class="footer-wid-title">Usefull Links</h2>
                                 <ul class="break-list">
-                                    <li><a href="/LoggedIn/Account.aspx">My account</a></li>
-                                    <li><a href="/tba.aspx">Contact devs</a></li>
                                     <li><a href="/Default.aspx">Front page</a></li>
+                                    <li><a href="/Privacy.aspx">Privacy Policy</a></li>
+                                    <li><a href="/LoggedIn/Account.aspx">My account</a></li>
+                                    <li><a href="/Terms.aspx">Terms & Conditions of Use</a></li>
+                                    <li><a href="/Contact.aspx#conForm">Contact devs</a></li>
+                                    <li id="adminLink" runat="server"><a href="/Admin/Admin.aspx">Administration</a></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-6">
-                            <div class="footer-newsletter">
-                                <h2 class="footer-wid-title">Newsletter</h2>
-                                <p>
-                                    Sign up here to sell your soul to the dark lords of the universe. 
-                                    Also, you may get news and updates in your email inbox..
-                                </p>
-                                <div class="newsletter-form">
-                                    <form method="post">
-                                        <input type="text" id="emailAddress" placeholder="Type your email" required runat="server" />
-                                        <input type="submit" value="Subscribe" />
-                                    </form>
-                                </div>
-                            </div>
+                        <div class="col-md-3 col-sm-6">
+                            <img src="/img/logo.png" class="logo_img"/>
                         </div>
                     </div>
                 </div>
@@ -187,7 +189,7 @@
                                 <a href="https://www.facebook.com/groups/1664422403836900/" target="_blank"><i class="fa fa-facebook"></i></a>
                                 <a href="https://twitter.com/WizzGamesTweet" target="_blank"><i class="fa fa-twitter"></i></a>
                                 <a href="https://www.instagram.com/wizzgamesinsta/" target="_blank"><i class="fa fa-instagram"></i></a>
-                                <a href="/tba.aspx" target="_blank"><i class="fa fa-youtube"></i></a>
+                                <a href="https://www.youtube.com/channel/UC-FyZteC5en1vIKBGo8MRzg" target="_blank"><i class="fa fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
@@ -213,6 +215,13 @@
 
             <%-- AJAX script --%>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+            <script type="text/javascript">
+                function changeLink() {
+                    var mail = document.getElementById("emailAddress").value;
+                    document.getElementById("submit").href = ("/subscribe?email=" + mail);
+                }
+            </script>
         </div>
     </div>
 </body>

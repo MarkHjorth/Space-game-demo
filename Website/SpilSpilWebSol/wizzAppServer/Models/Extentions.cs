@@ -17,5 +17,15 @@ namespace wizzAppServer.Models
         {
             return session.Select(s => s.ToPlayerSession()).ToList();
         }
+
+        public static UserModel ToUserModel(this DBmanager.User u)
+        {
+            return new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions.ToList(), u.validated.Value);
+        }
+
+        public static DateTime Trim(this DateTime date, long ticks)
+        {
+            return new DateTime(date.Ticks - (date.Ticks % ticks), date.Kind);
+        }
     }
 }

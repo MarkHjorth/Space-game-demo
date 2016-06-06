@@ -42,26 +42,50 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WCFwizzGames.dll" size="6144">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SendGrid.SmtpApi.dll" size="11776">
+      <assemblyIdentity name="SendGrid.SmtpApi" version="1.3.1.0" publicKeyToken="2AE73662C35D80E4" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Tr8ONnroeHyYUh/ImDZ95pHEdqzsPre441NzOZKxmj0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SendGridMail.dll" size="30208">
+      <assemblyIdentity name="SendGridMail" version="6.3.4.0" publicKeyToken="4F047E93159395CA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>5Q2hK4AoXjz3EpsExnHN1pJOjQ5quhxyWCY4FSUwtck=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WCFwizzGames.dll" size="7168">
       <assemblyIdentity name="WCFwizzGames" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fvsmu3EM4B3QnHmIZpIQRqSXqmw8gYWyRYGkb07iqBo=</dsig:DigestValue>
+        <dsig:DigestValue>NobNKDyhTDLVVXHKBpVfotLRG/sWcF0sUzFUH0pVMZk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzAppServer.dll" size="25600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="wizzAppServer.dll" size="37888">
       <assemblyIdentity name="wizzAppServer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0ip1VqQyno/woRokztuMKO4CuYzoVFXUH8UydzDpO/g=</dsig:DigestValue>
+        <dsig:DigestValue>pjjd3jejYNgTocgyvD+5s3cHDCnfnV5VKlgzZIaAWdE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,17 +97,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>olot2bKt8Ti15JWxJWTJPMgNfs6JxbxpXPtRxJ4JWRc=</dsig:DigestValue>
+        <dsig:DigestValue>arDSCjkCp1Hu8oGpIqFgQih9HCIGfSsbkn7mrbTvhZo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="wizzHost.exe.config" size="1476">
+  <file name="wizzHost.exe.config" size="1829">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4vj64A3bSmWDyVkLeVAre7GV7R2CZ4GdAKYgnxbyb48=</dsig:DigestValue>
+      <dsig:DigestValue>seFJHB4+ERt5+hBzgHyZe46Qw7iIwf+lqwoM2BEsLnk=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

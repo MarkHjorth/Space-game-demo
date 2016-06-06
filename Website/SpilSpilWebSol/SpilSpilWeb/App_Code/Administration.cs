@@ -15,11 +15,11 @@ public class Administration
     {
     }
 
-    public bool SaveChanges(string mark, string dave)
+    public bool SaveChanges(string name, string desc)
     {
         try
         {
-            service.SaveDevDescriptions(mark, dave);
+            service.SaveDevDescriptions(name, desc);
             return true;
         }
         catch (Exception ex)

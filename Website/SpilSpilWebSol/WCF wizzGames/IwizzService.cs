@@ -27,6 +27,9 @@ namespace WCF_wizzGames
         string ValidateUser(string mail, string password);
 
         [OperationContract]
+        UserModel ValidateUserCred(string email, string password);
+
+        [OperationContract]
         bool IsUserNameFree(string name);
 
         [OperationContract]
@@ -46,5 +49,23 @@ namespace WCF_wizzGames
 
         [OperationContract]
         List<PlayerSession> GetUserSessions(string name);
+
+        [OperationContract]
+        void SaveSession(int userId, string identifyer, DateTime startTime, DateTime endTime, int fired, int hits, int kills, int deaths);
+
+        [OperationContract]
+        bool AddNewsSubscriber(string mail);
+
+        [OperationContract]
+        bool ValidateEmail(string validation, string email);
+
+        [OperationContract]
+        bool SendContactMail(string uName, string uEmail, string uSubject, string uMessage);
+
+        [OperationContract]
+        bool UpdatePassword(string emailAdd, string oldPass, string newPass);
+
+        [OperationContract]
+        bool ForgotPassword(string email);
     }
 }

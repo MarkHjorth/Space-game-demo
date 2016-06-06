@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using wizzAppServer.Models;
+using wizzAppServer.Ctrls;
 
 namespace wizzAppServer.DBmanager
 {
@@ -27,7 +28,7 @@ namespace wizzAppServer.DBmanager
             {
                 if (u != null)
                 {
-                    um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions.ToList());
+                    um = u.ToUserModel();
                 }
 
                 return um;
@@ -43,8 +44,9 @@ namespace wizzAppServer.DBmanager
         {
             try
             {
-                User u = context.Users.Where(x => x.Email == email).FirstOrDefault();
-                UserModel um = new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions.ToList());
+                string lowEmail = email.ToLower();
+                User u = context.Users.Where(x => x.Email == lowEmail).FirstOrDefault();
+                UserModel um = u.ToUserModel();
                 return um;
             }
             catch (Exception ex)
@@ -63,7 +65,7 @@ namespace wizzAppServer.DBmanager
                 List<UserModel> allUsers = new List<UserModel>();
                 foreach (User u in users)
                 {
-                    allUsers.Add(new UserModel(u.Id, u.Name, u.Email, u.Password, u.DateCreated, u.Sessions.ToList()));
+                    allUsers.Add(u.ToUserModel());
                 }
                 return allUsers;
             }
@@ -76,16 +78,29 @@ namespace wizzAppServer.DBmanager
         //Creates a 'User' with 'name', 'mail' and 'password'. Saves to DB and returns users name
         public string CreateUser(string name, string mail, string password)
         {
+            string lowMail = mail.ToLower();
             try
             {
                 User user = new User();
                 user.Name = name;
-                user.Email = mail;
+                user.Email = lowMail;
                 user.Password = Encrypt(password);
-                user.DateCreated = DateTime.Now;
-                context.Users.InsertOnSubmit(user);
-                context.SubmitChanges();
-                return user.Name;
+                user.DateCreated = DateTime.Now.Trim(TimeSpan.TicksPerSecond);
+
+                if(IsUserNameFree(name) && EmailFree(lowMail))
+                {
+                    context.Users.InsertOnSubmit(user);
+                    context.SubmitChanges();
+                    MailCtrl mc = new MailCtrl();
+                    mc.NewUserSubscriber(lowMail);
+                    return user.Name;
+                }
+                else
+                {
+                    user = null;
+
+                    return null;
+                }
             }
             catch (Exception ex) { throw ex; }
         }
@@ -93,14 +108,37 @@ namespace wizzAppServer.DBmanager
         //Checks if the user with 'mail' and 'password' is valid. Returns user name
         public string ValidateUser(string mail, string password)
         {
+            string lowMail = mail.ToLower();
             try
             {
-                UserModel u = GetUserByEmail(mail);
+                UserModel u = GetUserByEmail(lowMail);
+                bool passFif = ComparePass(password, u);
+                bool validUser = u.Validated;
+
+                if (passFif && validUser)
+                {
+                    return u.Name;
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        //Checks if the user with 'mail' and 'password' is valid. Returns user
+        public UserModel ValidateUserCred(string mail, string password)
+        {
+            string lowMail = mail.ToLower();
+            try
+            {
+                UserModel u = GetUserByEmail(lowMail);
                 bool validUser = ComparePass(password, u);
 
                 if (validUser)
                 {
-                    return u.Name;
+                    return u;
                 }
                 else
                 {
@@ -139,6 +177,41 @@ namespace wizzAppServer.DBmanager
             catch (Exception ex) { throw ex; }
         }
 
+        internal bool UpdatePassword(string emailAdd, string oldPass, string newPass)
+        {
+            bool worked = false;
+            User u = new User();
+
+            try
+            {
+                u = context.Users.Where(x => x.Email == emailAdd).FirstOrDefault();
+
+                if (oldPass.GetHashCode().ToString() == u.Password)
+                {
+                    u.Password = newPass.GetHashCode().ToString();
+                    context.SubmitChanges();
+                    worked = true;
+                }
+                else if(oldPass == u.ValidationCode && DateTime.Now < u.VCUpdated)
+                {
+                    u.Password = newPass.GetHashCode().ToString();
+                    u.ValidationCode = "Code used";
+                    context.SubmitChanges();
+                    worked = true;
+                }
+                else
+                {
+                    u.ValidationCode = "Code expired";
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+            return worked;
+        }
+
         //Checks if the username 'name' exists in the database. Returns true if username is FREE
         public bool IsUserNameFree(string name)
         {
@@ -158,7 +231,7 @@ namespace wizzAppServer.DBmanager
             {
                 Description description = context.Descriptions.Where(x => x.Name == who).FirstOrDefault();
                 description.Description1 = desc;
-                description.LastUpdated = DateTime.Now;
+                description.LastUpdated = DateTime.Now.Trim(TimeSpan.TicksPerSecond);
                 context.SubmitChanges();
                 return true;
             }

@@ -9,6 +9,7 @@
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Sessions" nillable="true" type="tns:ArrayOfPlayerSession" />
+      <xs:element minOccurs="0" name="Validated" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UserModel" nillable="true" type="tns:UserModel" />

@@ -7,6 +7,11 @@
         <div class="row text-center account-wall administration">
             <h1 class="center-block">About wizzGames</h1>
             <form id="editDescriptions" runat="server" >
+                <div class="col-lg-12">
+                    <h2>Edit wizzGames</h2>
+                    <asp:TextBox ID="wizzDesc" runat="server">About wizzGames</asp:TextBox>
+                </div>
+                <br />
                 <div class="col-lg-6">
                     <h2>Edit Mark</h2>
                     <asp:TextBox ID="markDesc" runat="server">About Mark</asp:TextBox>

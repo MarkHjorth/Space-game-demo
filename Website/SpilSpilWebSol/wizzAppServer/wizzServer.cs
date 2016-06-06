@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using wizzAppServer.Ctrls;
 using wizzAppServer.DBmanager;
 using wizzAppServer.Models;
 
@@ -12,6 +13,7 @@ namespace wizzAppServer
     {
         private UserCtrl userCtrl = new UserCtrl();
         private StatsCtrl statsCtrl = new StatsCtrl();
+        private MailCtrl mc = new MailCtrl();
 
         //Gets the user with 'email'
         public UserModel GetUserByEmail(string email)
@@ -58,6 +60,15 @@ namespace wizzAppServer
             try
             {
                 return userCtrl.ValidateUser(mail, password);
+            }
+            catch (Exception ex) { throw ex; }
+        }
+
+        public UserModel ValidateUserCred(string mail, string password)
+        {
+            try
+            {
+                return userCtrl.ValidateUserCred(mail, password);
             }
             catch (Exception ex) { throw ex; }
         }
@@ -125,7 +136,7 @@ namespace wizzAppServer
                 allStats = statsCtrl.GetAllStats();
                 return allStats;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -150,6 +161,85 @@ namespace wizzAppServer
             try
             {
                 return statsCtrl.GetUserSessions(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void SaveSession(int userId, string identifyer, DateTime startTime, DateTime endTime, int fired, int hits, int kills, int deaths)
+        {
+            statsCtrl.SaveSession(userId, identifyer, startTime, endTime, fired, hits, kills, deaths);
+        }
+
+        public bool AddNewsSubscriber(string mail)
+        {
+            return mc.AddNewsSubscriber(mail);
+        }
+
+        public bool ValidateEmail(string validation, string email)
+        {
+            return mc.ValidateEmail(validation, email);
+        }
+
+        public bool SendContactMail(string uName, string uEmail, string uSubject, string uMessage)
+        {
+            return mc.SendContactMail(uName, uEmail, uSubject, uMessage);
+        }
+
+        public bool UpdatePassword(string emailAdd, string oldPass, string newPass)
+        {
+            bool updated = false;
+            updated = userCtrl.UpdatePassword(emailAdd, oldPass, newPass);
+
+            if (updated)
+            {
+                try
+                {
+                    string subject = "wizzGames - Change Password";
+                    string text = "Someone has just changed the password for your wizzGames account. If it was you, everything is fine. " +
+                        "If it was NOT you who changed the password, please contact wizzGames ASAP, so we can fix it for you!";
+
+                    string[] param = { subject, text };
+                    mc.SendMailParam(param, emailAdd);
+                    return updated;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+            else
+            {
+                return updated;
+            }
+        }
+
+        public bool ForgotPassword(string email)
+        {
+            UserModel um = null;
+
+            try
+            {
+                um = GetUserByEmail(email);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            try
+            {
+                if (um != null)
+                {
+                    mc.SendForgotPassEmail(email);
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception ex)
             {

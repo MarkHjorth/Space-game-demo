@@ -35,7 +35,7 @@ public partial class LogIn : System.Web.UI.Page
         catch(Exception exc)
         {
             exceptionStr = exc.Message;
-            Response.Write("<script>alert('" + exceptionStr + "');</script>");
+            Response.Write("<script>alert('No user found!');</script>");
         }
 
 
