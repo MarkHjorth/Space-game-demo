@@ -142,3 +142,7 @@
     .socLink:hover {
         color: #1abc9c;
     }
+
+.prim-header {
+    margin-top: 0.7em;
+}

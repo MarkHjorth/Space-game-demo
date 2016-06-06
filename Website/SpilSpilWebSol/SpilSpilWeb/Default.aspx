@@ -6,7 +6,7 @@
     <div class="container center-block">
         <div class="row center-block">
             <div class="col-sm-6 col-md-12 col-lg-12 center-block text-center">
-                <h1>Welcome to wizzGames</h1>
+                <h1 class="prim-header">Welcome to wizzGames</h1>
                 <div class="col-sm-6 col-md-12 col-lg-12 account-wall">
                     <h3>Instagram feed:</h3>
                     <!-- SnapWidget -->
