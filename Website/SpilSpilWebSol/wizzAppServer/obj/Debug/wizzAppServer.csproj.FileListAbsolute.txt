@@ -3,3 +3,11 @@ C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\bin\Debug\wizzAppServer.pdb
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\obj\Debug\wizzAppServer.dll
 C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\obj\Debug\wizzAppServer.pdb
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\bin\Debug\SendGrid.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\bin\Debug\SendGrid.SmtpApi.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\bin\Debug\SendGridMail.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\David\Documents\Specialisering2014\Website\SpilSpilWebSol\wizzAppServer\obj\Debug\wizzAppServer.csprojResolveAssemblyReference.cache
